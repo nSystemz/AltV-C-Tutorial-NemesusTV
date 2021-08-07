@@ -5,7 +5,7 @@ Hier findet Ihr alle Dateien zur Youtube Tutorialreihe für AltV C#
 
 Youtube: https://yt.nemesus.de
 
-Playlist: https://www.youtube.com/watch?v=Y28QzJ_1ZK0&amp;list=PLwo_W2ZlTOIk3Csvsx77vhZuKYH_NfHpi
+Playlist: https://youtube.com/playlist?list=PLwo_W2ZlTOInISZmMKibF1dw602IWYDO0
 
 Forum: https://forum.nemesus.de
 
