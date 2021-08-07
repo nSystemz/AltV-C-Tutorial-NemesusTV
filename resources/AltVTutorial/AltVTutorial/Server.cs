@@ -14,6 +14,8 @@ namespace AltVTutorial
         public override void OnStart()
         {
             Alt.Log("Server wurde gestartet!");
+            //MYSQL
+            Datenbank.InitConnection();
         }
 
         public override void OnStop()

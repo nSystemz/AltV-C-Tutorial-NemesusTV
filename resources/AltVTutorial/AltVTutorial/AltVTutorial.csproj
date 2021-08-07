@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Compile Include="Commands.cs" />
+    <Compile Include="Datenbank.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Server.cs" />
   </ItemGroup>
@@ -20,6 +21,7 @@
   <ItemGroup>
     <PackageReference Include="AltV.Net" Version="4.0.0" />
     <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="1.48.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.23" />
   </ItemGroup>
 
 </Project>

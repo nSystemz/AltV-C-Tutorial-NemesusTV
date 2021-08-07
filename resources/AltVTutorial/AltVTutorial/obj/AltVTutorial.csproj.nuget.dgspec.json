@@ -47,6 +47,10 @@
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",
               "version": "[1.48.0, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.23, )"
             }
           },
           "imports": [
