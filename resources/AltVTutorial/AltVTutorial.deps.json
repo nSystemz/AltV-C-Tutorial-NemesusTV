@@ -1,0 +1,60 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "AltVTutorial/1.0.0": {
+        "dependencies": {
+          "AltV.Net": "4.0.0",
+          "AltV.Net.Resources.Chat.Api": "1.48.0"
+        },
+        "runtime": {
+          "AltVTutorial.dll": {}
+        }
+      },
+      "AltV.Net/4.0.0": {
+        "runtime": {
+          "lib/net5.0/AltV.Net.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "AltV.Net.Resources.Chat.Api/1.48.0": {
+        "dependencies": {
+          "AltV.Net": "4.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/AltV.Net.Resources.Chat.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AltVTutorial/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AltV.Net/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-l6T/F69vEd9cFGG8zUZVXg2RIzz4TeMeM7YVgJ9w+JyMoUqll62Vm2qScZrLn73gJ2GFhfL1+5PqibORMNJ0iQ==",
+      "path": "altv.net/4.0.0",
+      "hashPath": "altv.net.4.0.0.nupkg.sha512"
+    },
+    "AltV.Net.Resources.Chat.Api/1.48.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tdFpAdzt8Cj/1XzIeLjzZalMjlA8Isyowapta2tlVEQ9XRXWrsVggMYyqzZS7bEb4BbhNieLW+ZhE9RYXf6Ttw==",
+      "path": "altv.net.resources.chat.api/1.48.0",
+      "hashPath": "altv.net.resources.chat.api.1.48.0.nupkg.sha512"
+    }
+  }
+}

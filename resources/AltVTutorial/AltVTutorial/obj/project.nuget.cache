@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "/+dzScXyulebk4dvac7E86LtMrBx6i/V4ruVfgb3/v4+V+u65bcyp7n1fZ9hQBBt0dLYOnrFwoxtzFGh8gZzeQ==",
+  "success": true,
+  "projectFilePath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net\\4.0.0\\altv.net.4.0.0.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.resources.chat.api\\1.48.0\\altv.net.resources.chat.api.1.48.0.nupkg.sha512"
+  ],
+  "logs": []
+}

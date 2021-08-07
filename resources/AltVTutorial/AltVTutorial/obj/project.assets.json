@@ -1,0 +1,132 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "AltV.Net/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/AltV.Net.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/AltV.Net.dll": {}
+        }
+      },
+      "AltV.Net.Resources.Chat.Api/1.48.0": {
+        "type": "package",
+        "dependencies": {
+          "AltV.Net": "1.48.1"
+        },
+        "compile": {
+          "lib/net5.0/AltV.Net.Resources.Chat.Api.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/AltV.Net.Resources.Chat.Api.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AltV.Net/4.0.0": {
+      "sha512": "l6T/F69vEd9cFGG8zUZVXg2RIzz4TeMeM7YVgJ9w+JyMoUqll62Vm2qScZrLn73gJ2GFhfL1+5PqibORMNJ0iQ==",
+      "type": "package",
+      "path": "altv.net/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "altv.net.4.0.0.nupkg.sha512",
+        "altv.net.nuspec",
+        "icon.png",
+        "lib/net5.0/AltV.Net.dll",
+        "license.txt"
+      ]
+    },
+    "AltV.Net.Resources.Chat.Api/1.48.0": {
+      "sha512": "tdFpAdzt8Cj/1XzIeLjzZalMjlA8Isyowapta2tlVEQ9XRXWrsVggMYyqzZS7bEb4BbhNieLW+ZhE9RYXf6Ttw==",
+      "type": "package",
+      "path": "altv.net.resources.chat.api/1.48.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "altv.net.resources.chat.api.1.48.0.nupkg.sha512",
+        "altv.net.resources.chat.api.nuspec",
+        "icon.png",
+        "lib/net5.0/AltV.Net.Resources.Chat.Api.dll",
+        "lib/netcoreapp3.1/AltV.Net.Resources.Chat.Api.dll",
+        "license.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "AltV.Net >= 4.0.0",
+      "AltV.Net.Resources.Chat.Api >= 1.48.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\tschn\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+      "projectName": "AltVTutorial",
+      "projectPath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+      "packagesPath": "C:\\Users\\tschn\\.nuget\\packages\\",
+      "outputPath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\tschn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "dependencies": {
+          "AltV.Net": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "AltV.Net.Resources.Chat.Api": {
+            "target": "Package",
+            "version": "[1.48.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

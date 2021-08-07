@@ -1,0 +1,11 @@
+J:\Tutorials\AltVServer\resources\AltVTutorial\net5.0\AltVTutorial.deps.json
+J:\Tutorials\AltVServer\resources\AltVTutorial\net5.0\AltVTutorial.dll
+J:\Tutorials\AltVServer\resources\AltVTutorial\net5.0\ref\AltVTutorial.dll
+J:\Tutorials\AltVServer\resources\AltVTutorial\net5.0\AltVTutorial.pdb
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\net5.0\AltVTutorial.GeneratedMSBuildEditorConfig.editorconfig
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\net5.0\AltVTutorial.AssemblyInfoInputs.cache
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\net5.0\AltVTutorial.AssemblyInfo.cs
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\net5.0\AltVTutorial.csproj.CoreCompileInputs.cache
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\net5.0\AltVTutorial.dll
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\net5.0\ref\AltVTutorial.dll
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\net5.0\AltVTutorial.pdb

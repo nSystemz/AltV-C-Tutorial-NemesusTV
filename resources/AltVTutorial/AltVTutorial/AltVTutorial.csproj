@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>J:\Tutorials\AltVServer\resources\AltVTutorial</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Commands.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="Server.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AltV.Net" Version="4.0.0" />
+    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="1.48.0" />
+  </ItemGroup>
+
+</Project>
