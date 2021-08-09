@@ -15,7 +15,7 @@ namespace AltVTutorial
         public void OnPlayerConnect(IPlayer iplayer, string reason)
         {
             Alt.Log($"Der Spieler {iplayer.Name} hat den Server betreten!");
-            iplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325));
+            iplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
             iplayer.Model = (uint)PedModel.Business01AMM;
         }
 
