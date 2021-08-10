@@ -50,5 +50,91 @@ namespace AltVTutorial
                 Environment.Exit(0);
             }
         }
+
+        public static bool IstAccountBereitsVorhanden(string name)
+        {
+            MySqlCommand command = Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM accounts WHERE name=@name LIMIT 1";
+            command.Parameters.AddWithValue("@name", name);
+            using(MySqlDataReader reader = command.ExecuteReader())
+            {
+                if(reader.HasRows)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static int NeuenAccountErstellen(String name, string password)
+        {
+            string saltedPw = BCrypt.HashPassword(password, BCrypt.GenerateSalt());
+
+            try
+            {
+                MySqlCommand command = Connection.CreateCommand();
+                command.CommandText = "INSERT INTO accounts (password, name) VALUES (@password, @name)";
+
+                command.Parameters.AddWithValue("@password", saltedPw);
+                command.Parameters.AddWithValue("@name", name);
+                command.ExecuteNonQuery();
+
+                return (int)command.LastInsertedId;
+            }
+            catch(Exception e)
+            {
+                Alt.Log("Fehler bei NeuenAccountErstellen: " + e.ToString());
+                return -1;
+            }
+        }
+
+        public static void AccountLaden(TPlayer.TPlayer tplayer)
+        {
+            MySqlCommand command = Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM accounts WHERE name=@name LIMIT 1";
+
+            command.Parameters.AddWithValue("@name", tplayer.SpielerName);
+
+            using(MySqlDataReader reader = command.ExecuteReader())
+            {
+                if(reader.HasRows)
+                {
+                    reader.Read();
+                    tplayer.SpielerID = reader.GetInt32("id");
+                    tplayer.Adminlevel = reader.GetInt16("adminlevel");
+                    tplayer.Geld = reader.GetInt32("geld");
+                }
+            }
+        }
+
+        public static void AccountSpeichern(TPlayer.TPlayer tplayer)
+        {
+            MySqlCommand command = Connection.CreateCommand();
+            command.CommandText = "UPDATE accounts SET adminlevel=@adminlevel, geld=@geld WHERE id=@id";
+
+            command.Parameters.AddWithValue("@adminlevel", tplayer.Adminlevel);
+            command.Parameters.AddWithValue("@geld", tplayer.Geld);
+            command.Parameters.AddWithValue("id", tplayer.SpielerID);
+        }
+
+        public static bool PasswortCheck(string name, string passwordinput)
+        {
+            string password = "";
+            MySqlCommand command = Connection.CreateCommand();
+            command.CommandText = "SELECT password FROM accounts where name@name LIMIT 1";
+            command.Parameters.AddWithValue("@name", name);
+
+            using(MySqlDataReader reader = command.ExecuteReader())
+            {
+                if(reader.HasRows)
+                {
+                    reader.Read();
+                    password = reader.GetString("password");
+                }
+            }
+
+            if (BCrypt.CheckPassword(passwordinput, password)) return true;
+            return false;
+        }
     }
 }

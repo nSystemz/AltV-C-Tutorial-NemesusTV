@@ -2,3 +2,6 @@
 
 # IDE0021: Blocktextkörper für Konstruktoren verwenden
 csharp_style_expression_bodied_constructors = false:silent
+
+# IDE0021: Blocktextkörper für Konstruktoren verwenden
+dotnet_diagnostic.IDE0021.severity = silent

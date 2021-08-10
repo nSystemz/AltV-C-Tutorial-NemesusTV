@@ -12,17 +12,17 @@ namespace AltVTutorial
     public class Events : IScript
     {
         [ScriptEvent(ScriptEventType.PlayerConnect)]
-        public void OnPlayerConnect(IPlayer iplayer, string reason)
+        public void OnPlayerConnect(TPlayer.TPlayer tplayer, string reason)
         {
-            Alt.Log($"Der Spieler {iplayer.Name} hat den Server betreten!");
-            iplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
-            iplayer.Model = (uint)PedModel.Business01AMM;
+            Alt.Log($"Der Spieler {tplayer.Name} hat den Server betreten!");
+            tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
+            tplayer.Model = (uint)PedModel.Business01AMM;
         }
 
         [ScriptEvent(ScriptEventType.PlayerDisconnect)]
-        public void OnPlayerDisconnect(IPlayer iplayer, string reason)
+        public void OnPlayerDisconnect(TPlayer.TPlayer tplayer, string reason)
         {
-            Alt.Log($"Spieler {iplayer.Name} hat den Server verlassen - Grund: {reason}!");
+            Alt.Log($"Spieler {tplayer.Name} hat den Server verlassen - Grund: {reason}!");
         }
     }
 }
