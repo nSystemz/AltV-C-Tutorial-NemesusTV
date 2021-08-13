@@ -22,7 +22,7 @@ namespace AltVTutorial
         [Command("car")]
         public void CMD_car(TPlayer.TPlayer tplayer, string VehicleName, int R = 0, int G = 0, int B = 0)
         {
-            IVehicle veh = Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 1.0f, tplayer.Position.Z), iplayer.Rotation);
+            IVehicle veh = Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 1.0f, tplayer.Position.Z), tplayer.Rotation);
             if(veh != null)
             {
                 veh.PrimaryColorRgb = new AltV.Net.Data.Rgba((byte)R, (byte)G, (byte)B, 255);

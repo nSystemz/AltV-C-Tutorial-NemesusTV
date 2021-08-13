@@ -121,7 +121,7 @@ namespace AltVTutorial
         {
             string password = "";
             MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT password FROM accounts where name@name LIMIT 1";
+            command.CommandText = "SELECT password FROM accounts where name=@name LIMIT 1";
             command.Parameters.AddWithValue("@name", name);
 
             using(MySqlDataReader reader = command.ExecuteReader())
