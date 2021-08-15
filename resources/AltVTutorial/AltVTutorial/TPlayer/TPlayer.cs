@@ -10,6 +10,7 @@ namespace AltVTutorial.TPlayer
 {
     public class TPlayer : Player
     {
+        public enum AdminRanks {Spieler,Moderator,Supporter,Administrator};
         public int SpielerID { get; set; }
         public String SpielerName { get; set; }
         public long Geld { get; set; }
@@ -22,6 +23,11 @@ namespace AltVTutorial.TPlayer
             Geld = 5000;
             Adminlevel = 0;
             Eingeloggt = false;
+        }
+
+        public bool IsSpielerAdmin(int alvl)
+        {
+            return Adminlevel >= alvl;
         }
     }
 }

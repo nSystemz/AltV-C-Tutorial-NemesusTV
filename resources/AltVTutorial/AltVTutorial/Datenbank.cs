@@ -88,12 +88,12 @@ namespace AltVTutorial
             }
         }
 
-        public static void AccountLaden(TPlayer.TPlayer tplayer)
+        public static void AccountLaden(String name, TPlayer.TPlayer tplayer)
         {
             MySqlCommand command = Connection.CreateCommand();
             command.CommandText = "SELECT * FROM accounts WHERE name=@name LIMIT 1";
 
-            command.Parameters.AddWithValue("@name", tplayer.SpielerName);
+            command.Parameters.AddWithValue("@name", name);
 
             using(MySqlDataReader reader = command.ExecuteReader())
             {
