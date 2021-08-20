@@ -26,6 +26,7 @@ namespace AltVTutorial
             {
                 veh.PrimaryColorRgb = new AltV.Net.Data.Rgba((byte)R, (byte)G, (byte)B, 255);
                 tplayer.SendChatMessage("{04B404} Das Fahrzeug wurde erfolgreich gespawned!");
+                Utils.adminLog($"Der Spieler {tplayer.SpielerName} hat ein {VehicleName} gespawned!", "TutorialServer");
             }
             else
             {

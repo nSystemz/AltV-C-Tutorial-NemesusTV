@@ -33,6 +33,7 @@ namespace AltVTutorial
             {
                 if (!tplayer.Eingeloggt && name.Length > 3 && password.Length > 5)
                 {
+                    tplayer.SpielerName = name;
                     Datenbank.NeuenAccountErstellen(name, password);
                     tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
                     tplayer.Model = (uint)PedModel.Business01AMM;
@@ -56,7 +57,8 @@ namespace AltVTutorial
                 {
                     if(Datenbank.PasswortCheck(name, password))
                     {
-                        Datenbank.AccountLaden(name,tplayer);
+                        tplayer.SpielerName = name;
+                        Datenbank.AccountLaden(tplayer);
                         tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
                         tplayer.Model = (uint)PedModel.Business01AMM;
                         tplayer.Eingeloggt = true;
