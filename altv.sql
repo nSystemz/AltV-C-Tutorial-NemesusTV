@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Aug 2021 um 22:38
+-- Erstellungszeit: 30. Aug 2021 um 11:27
 -- Server-Version: 10.4.13-MariaDB
 -- PHP-Version: 7.2.32
 
@@ -32,15 +32,17 @@ CREATE TABLE `accounts` (
   `name` varchar(35) NOT NULL,
   `password` varchar(128) NOT NULL,
   `geld` int(11) NOT NULL DEFAULT 5000,
-  `adminlevel` int(1) NOT NULL DEFAULT 0
+  `adminlevel` int(1) NOT NULL DEFAULT 0,
+  `fraktion` int(2) NOT NULL DEFAULT 0,
+  `rang` int(2) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `accounts`
 --
 
-INSERT INTO `accounts` (`id`, `name`, `password`, `geld`, `adminlevel`) VALUES
-(2, 'Nemesus', '$2a$10$GanlwtL5ZdTDn/I2F2GiFeIWuVLAOc7ONQENCpmeAawQ6IKU7lwDu', 5000, 0);
+INSERT INTO `accounts` (`id`, `name`, `password`, `geld`, `adminlevel`, `fraktion`, `rang`) VALUES
+(2, 'Nemesus', '$2a$10$GanlwtL5ZdTDn/I2F2GiFeIWuVLAOc7ONQENCpmeAawQ6IKU7lwDu', 5000, 3, 1, 6);
 
 --
 -- Indizes der exportierten Tabellen

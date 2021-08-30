@@ -51,13 +51,19 @@ namespace AltVTutorial
         {
             if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Administrator))
             {
-                Alt.Log(""+tplayer.Adminlevel);
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
             }
             AltV.Net.Data.Position positon = new AltV.Net.Data.Position(x, y, z+0.2f);
             tplayer.Position = positon;
             tplayer.SendChatMessage("{04B404}Du hast dich erfolgreich teleportiert!");
+            return;
+        }
+
+        [Command("fraktionsinfo")]
+        public void CMD_fraktionsinfo(TPlayer.TPlayer tplayer)
+        {
+            tplayer.SendChatMessage($"Du bist in der Fraktion {tplayer.HoleFraktionsName()} und hast den Rang {tplayer.HoleRangName()}!");
             return;
         }
     }

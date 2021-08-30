@@ -10,7 +10,8 @@ namespace AltVTutorial
     {
         public static void adminLog(string text, string username)
         {
-            HTTP.Post("https://discord.com/api/webhooks/878302777997152286/oy162sw3YOZhQkrE3agrTm_Jp5qPQx_t7iwAimVt9xSKZ-19kgxNta8NGhlreL73AkIk", new System.Collections.Specialized.NameValueCollection()
+            //Bitte benutzt hier euren eigenen Webhook!
+            HTTP.Post("https://discord.com/api/webhooks/881829631907487754/aLWht7jKZjTxDUFox4l9INcv6d8LzTQeMY8ZQ_qMK-EeGXqHrPzXd0lY9aTd_tnhNSGl", new System.Collections.Specialized.NameValueCollection()
             {
                 {
                     "username",
