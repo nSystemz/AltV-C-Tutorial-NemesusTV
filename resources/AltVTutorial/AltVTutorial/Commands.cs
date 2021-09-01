@@ -21,16 +21,18 @@ namespace AltVTutorial
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
             }
-            IVehicle veh = Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 1.5f, tplayer.Position.Z), tplayer.Rotation);
+            IVehicle veh = Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 2.25f, tplayer.Position.Z), tplayer.Rotation);
             if(veh != null)
             {
                 veh.PrimaryColorRgb = new AltV.Net.Data.Rgba((byte)R, (byte)G, (byte)B, 255);
                 tplayer.SendChatMessage("{04B404} Das Fahrzeug wurde erfolgreich gespawned!");
                 Utils.adminLog($"Der Spieler {tplayer.SpielerName} hat ein {VehicleName} gespawned!", "TutorialServer");
+                Utils.sendNotification(tplayer, "info", "Fahrzeug wurde erfolgreich gespawned!");
             }
             else
             {
                 tplayer.SendChatMessage("{FF0000} Das Fahrzeug konnte nicht gespawned werden!");
+                Utils.sendNotification(tplayer, "error", "Das Fahrzeug konnte nicht erstellt werden!");
             }
         }
 

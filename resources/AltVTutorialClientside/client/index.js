@@ -7,6 +7,7 @@ import * as native from "natives"
 
 //Variables
 let loginHud;
+let guiHud;
 
 //Commands
 alt.onServer('freezePlayer', (freeze) => {
@@ -30,6 +31,8 @@ alt.onServer('SendErrorMessage', (text) => {
 })
 
 alt.on('connectionComplete', () => {
+    guiHud = new alt.WebView("http://resource/gui/gui.html");
+
     loginHud = new alt.WebView("http://resource/login/login.html");
     loginHud.focus();
 
@@ -44,4 +47,8 @@ alt.on('connectionComplete', () => {
     loginHud.on('Auth.Register', (name, password) => {
         alt.emitServer('Event.Register', name, password);
     })
+})
+
+alt.onServer('sendNotification', (status, text) => {
+    guiHud.emit('sendNotification', status, text);
 })
