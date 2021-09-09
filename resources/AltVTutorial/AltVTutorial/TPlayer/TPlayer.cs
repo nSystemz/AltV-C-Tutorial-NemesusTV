@@ -13,6 +13,8 @@ namespace AltVTutorial.TPlayer
         public static String[] Fraktionen = new String[3] { "Keine Fraktion", "Los Santos Police Department", "Newsfirma" };
         public static String[] RangNamen = new String[7] { "Kein Rang", "Praktikant", "Auszubildener", "Angestellter", "Abteilungsleiter", "Ausbilder", "Chef" };
 
+        public enum ProgressBars { Healthbar = 1, Hungerbar, Thirstbar }
+
         public enum AdminRanks {Spieler,Moderator,Supporter,Administrator};
 
         public int SpielerID { get; set; }

@@ -31,6 +31,8 @@ alt.onServer('SendErrorMessage', (text) => {
 })
 
 alt.on('connectionComplete', () => {
+    loadBlips();
+
     guiHud = new alt.WebView("http://resource/gui/gui.html");
 
     loginHud = new alt.WebView("http://resource/login/login.html");
@@ -52,3 +54,90 @@ alt.on('connectionComplete', () => {
 alt.onServer('sendNotification', (status, text) => {
     guiHud.emit('sendNotification', status, text);
 })
+
+alt.onServer('updatePB', (bar, wert) => {
+    guiHud.emit('updatePB', bar, wert);
+})
+
+function loadBlips()
+{
+    createBlip(-427.85934, 1115.0637, 326.76343,8,29,1.0,false,"Zivispawn");
+}
+
+function createBlip(x,y,z,sprite,color,scale=1.0,shortRange=false,name="")
+{
+    const tempBlip = new alt.PointBlip(x,y,z);
+
+    tempBlip.sprite = sprite;
+    tempBlip.color = color;
+    tempBlip.scale = scale;
+    tempBlip.shortRange = shortRange;
+    if(name.length > 0)
+    tempBlip.name = name;
+}
+
+//DrawText2D
+function drawText2d( 
+    msg,
+    x,
+    y,
+    scale,
+    fontType,
+    r,
+    g,
+    b,
+    a,
+    useOutline = true,
+    useDropShadow = true,
+    layer = 0,
+    align = 0
+ ) {
+    let hex = msg.match('{.*}');
+    if (hex) {
+        const rgb = hexToRgb(hex[0].replace('{', '').replace('}', ''));
+        r = rgb[0];
+        g = rgb[1];
+        b = rgb[2];
+        msg = msg.replace(hex[0], '');
+    }
+ 
+    native.beginTextCommandDisplayText('STRING');
+    native.addTextComponentSubstringPlayerName(msg);
+    native.setTextFont(fontType);
+    native.setTextScale(1, scale);
+    native.setTextWrap(0.0, 1.0);
+    native.setTextCentre(true);
+    native.setTextColour(r, g, b, a);
+    native.setTextJustification(align);
+ 
+    if (useOutline) {
+        native.setTextOutline();
+    }
+ 
+    if (useDropShadow) {
+        native.setTextDropShadow();
+    }
+ 
+    native.endTextCommandDisplayText(x, y, 0);
+}
+
+//Speedometer
+function getSpeedColor(kmh) {
+    if(kmh < 65)
+        return "~g~";
+    if(kmh >= 65 && kmh < 125)
+        return "~y~";
+    if(kmh >= 125)
+        return "~r~";
+}
+
+alt.everyTick(() => {
+    const lPlayer = alt.Player.local;
+    let vehicle = lPlayer.vehicle;
+    if(vehicle)
+    {
+        let speed = vehicle.speed*3.6;
+        speed = Math.round(speed);
+        drawText2d(`${getSpeedColor(speed)}${speed} KMH`,0.45,0.91,1.5,2,255,255,255,255,true);
+    }
+});
