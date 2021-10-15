@@ -4,6 +4,7 @@
 
 import * as alt from "alt-client"
 import * as native from "natives"
+import * as NativeUI from 'includes/NativeUIMenu/NativeUI.mjs';
 
 //Variables
 let loginHud;
@@ -15,6 +16,7 @@ alt.onServer('freezePlayer', (freeze) => {
     native.freezeEntityPosition(lPlayer, freeze);
 })
 
+//Login/Register
 alt.onServer('CloseLoginHud', () => {
     alt.showCursor(false);
     alt.toggleGameControls(true);
@@ -51,14 +53,17 @@ alt.on('connectionComplete', () => {
     })
 })
 
+//Notifications
 alt.onServer('sendNotification', (status, text) => {
     guiHud.emit('sendNotification', status, text);
 })
 
+//Player Huds
 alt.onServer('updatePB', (bar, wert) => {
     guiHud.emit('updatePB', bar, wert);
 })
 
+//Blips
 function loadBlips()
 {
     createBlip(-427.85934, 1115.0637, 326.76343,8,29,1.0,false,"Zivispawn");
@@ -130,6 +135,24 @@ function getSpeedColor(kmh) {
     if(kmh >= 125)
         return "~r~";
 }
+
+//Native UI Vehiclespawner
+alt.onServer('nativeUITest', () => {
+    const ui = new NativeUI.Menu("Fahrzeug Spawner", "Spawne dir ein Fahrzeug", new NativeUI.Point(250,250));
+    ui.Open();
+
+    ui.AddItem(new NativeUI.UIMenuListItem(
+        "Fahrzeug",
+        "Fahrzeugbeschreibung",
+        new NativeUI.ItemsCollection(["Kein Fahrzeug","Sultan","Infernus"])
+    ));
+
+    ui.ItemSelect.on(item => {
+        if(item instanceof NativeUI.UIMenuListItem) {
+            alt.emitServer('Event.SpawnVehicle', item.SelectedItem.DisplayText);
+        }
+    });
+})
 
 alt.everyTick(() => {
     const lPlayer = alt.Player.local;

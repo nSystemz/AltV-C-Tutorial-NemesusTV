@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "QFMB04YscI/PZs7pRHdEGx6tyWqI6UWps05VFdMSDZmDx0T3Ij0EnPH5e7EmO5fDHW5sNpa6ghZikQ2SEaTQFQ==",
+  "dgSpecHash": "5nI03mCzb1SnbWb4A4qkwzbbN0rFEP10NqcljDDnDKjhixhLb6muaQfHEWrAmBUTiNlxeD8WAPnmIn5s1ByFwQ==",
   "success": true,
   "projectFilePath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tschn\\.nuget\\packages\\altv.net\\4.0.0\\altv.net.4.0.0.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net\\6.0.6-rc57\\altv.net.6.0.6-rc57.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.entitysync\\1.13.0\\altv.net.entitysync.1.13.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\altv.net.resources.chat.api\\1.48.0\\altv.net.resources.chat.api.1.48.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
@@ -25,6 +26,7 @@
     "C:\\Users\\tschn\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\system.threading.channels\\5.0.0\\system.threading.channels.5.0.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []

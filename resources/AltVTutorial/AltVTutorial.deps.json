@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "AltVTutorial/1.0.0": {
         "dependencies": {
-          "AltV.Net": "4.0.0",
+          "AltV.Net": "6.0.6-rc57",
+          "AltV.Net.EntitySync": "1.13.0",
           "AltV.Net.Resources.Chat.Api": "1.48.0",
           "MySql.Data": "8.0.23"
         },
@@ -16,7 +17,7 @@
           "AltVTutorial.dll": {}
         }
       },
-      "AltV.Net/4.0.0": {
+      "AltV.Net/6.0.6-rc57": {
         "runtime": {
           "lib/net5.0/AltV.Net.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -24,9 +25,20 @@
           }
         }
       },
+      "AltV.Net.EntitySync/1.13.0": {
+        "dependencies": {
+          "System.Threading.Channels": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/AltV.Net.EntitySync.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "AltV.Net.Resources.Chat.Api/1.48.0": {
         "dependencies": {
-          "AltV.Net": "4.0.0"
+          "AltV.Net": "6.0.6-rc57"
         },
         "runtime": {
           "lib/net5.0/AltV.Net.Resources.Chat.Api.dll": {
@@ -234,6 +246,7 @@
           "Microsoft.NETCore.Platforms": "3.1.0"
         }
       },
+      "System.Threading.Channels/5.0.0": {},
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
@@ -261,12 +274,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AltV.Net/4.0.0": {
+    "AltV.Net/6.0.6-rc57": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-l6T/F69vEd9cFGG8zUZVXg2RIzz4TeMeM7YVgJ9w+JyMoUqll62Vm2qScZrLn73gJ2GFhfL1+5PqibORMNJ0iQ==",
-      "path": "altv.net/4.0.0",
-      "hashPath": "altv.net.4.0.0.nupkg.sha512"
+      "sha512": "sha512-cVJtQFEGyiHvlD4bZxwdvxKGVCexHOj62Vf0Ah1Lk1usz3VKmnJkYqgf2DTm3CIifbu0Zw6qlremHanveaENjQ==",
+      "path": "altv.net/6.0.6-rc57",
+      "hashPath": "altv.net.6.0.6-rc57.nupkg.sha512"
+    },
+    "AltV.Net.EntitySync/1.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b0DkilzzJqXd0PTI7h9f/k5OVDKn60h95NU3z13y3Nz+pxlgS2V1lSE8MbVwqkdFr2Jl+3dZUwRAOs9Ic77Sbg==",
+      "path": "altv.net.entitysync/1.13.0",
+      "hashPath": "altv.net.entitysync.1.13.0.nupkg.sha512"
     },
     "AltV.Net.Resources.Chat.Api/1.48.0": {
       "type": "package",
@@ -407,6 +427,13 @@
       "sha512": "sha512-6JX7ZdaceBiLKLkYt8zJcp4xTJd1uYyXXEkPw6mnlUIjh1gZPIVKPtRXPmY5kLf6DwZmf5YLwR3QUrRonl7l0A==",
       "path": "system.text.encoding.codepages/4.4.0",
       "hashPath": "system.text.encoding.codepages.4.4.0.nupkg.sha512"
+    },
+    "System.Threading.Channels/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RLBIxntLaG9pRmmuVDwY1kc8Bvp/FQzSxPU+19VekkScKkWtVP9r8bLhm28ama3usc816UBrmkg3vv3jUea/hw==",
+      "path": "system.threading.channels/5.0.0",
+      "hashPath": "system.threading.channels.5.0.0.nupkg.sha512"
     },
     "System.Windows.Extensions/4.7.0": {
       "type": "package",

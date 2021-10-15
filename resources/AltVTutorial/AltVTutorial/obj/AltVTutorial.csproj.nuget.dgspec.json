@@ -42,7 +42,11 @@
           "dependencies": {
             "AltV.Net": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[6.0.6-rc57, )"
+            },
+            "AltV.Net.EntitySync": {
+              "target": "Package",
+              "version": "[1.13.0, )"
             },
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",

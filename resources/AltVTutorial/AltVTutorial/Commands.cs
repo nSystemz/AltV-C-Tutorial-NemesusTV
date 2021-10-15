@@ -24,7 +24,7 @@ namespace AltVTutorial
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
             }
-            IVehicle veh = Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 2.25f, tplayer.Position.Z), tplayer.Rotation);
+            IVehicle veh = Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 1.5f, tplayer.Position.Z), tplayer.Rotation);
             if(veh != null)
             {
                 veh.PrimaryColorRgb = new AltV.Net.Data.Rgba((byte)R, (byte)G, (byte)B, 255);
@@ -52,15 +52,16 @@ namespace AltVTutorial
         }
 
         [Command("telexyz")]
-        public void CMD_telexyz(TPlayer.TPlayer tplayer, float x, float y, float z)
+        public void CMD_telexyz(TPlayer.TPlayer tplayer, double x, double y, double z)
         {
             if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Administrator))
             {
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
             }
-            AltV.Net.Data.Position positon = new AltV.Net.Data.Position(x, y, z+0.2f);
+            AltV.Net.Data.Position positon = new AltV.Net.Data.Position(-421.34506f, 1122.1318f, 325.85352f);
             tplayer.Position = positon;
+            tplayer.Dimension = 0;
             tplayer.SendChatMessage("{04B404}Du hast dich erfolgreich teleportiert!");
             return;
         }
@@ -152,6 +153,12 @@ namespace AltVTutorial
             }
             tplayer.GiveWeapon(AltV.Net.Enums.WeaponModel.Pistol, 500, true);
             tplayer.SendChatMessage("{04B404}Du hast dir eine Pistole gegeben!");
+        }
+
+        [Command("nativeuitest")]
+        public void CMD_nativeuitest(TPlayer.TPlayer tplayer)
+        {
+            tplayer.Emit("nativeUITest");
         }
     }
 }
