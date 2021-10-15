@@ -7,6 +7,8 @@ Installation:
 
 Die benötigten Dateien einfach in euren AltV Server Ordner kopieren, Configs Anpassungen und fertig.
 
+Weitere Links:
+
 Youtube: https://yt.nemesus.de
 
 Playlist: https://youtube.com/playlist?list=PLwo_W2ZlTOInISZmMKibF1dw602IWYDO0
