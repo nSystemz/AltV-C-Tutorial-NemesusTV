@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "SaltyChat.Server/1.0.0": {
+        "dependencies": {
+          "AltV.Net": "6.0.2"
+        },
+        "runtime": {
+          "SaltyChat.Server.dll": {}
+        }
+      },
+      "AltV.Net/6.0.2": {
+        "runtime": {
+          "lib/net5.0/AltV.Net.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SaltyChat.Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AltV.Net/6.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tadIOUPdGz8ErhYcOP6TK4RN7o+IFQ8whoTuBLHsdY6jg0qb+mmheTeT5FkGFMidJS2u5rUKNaiHWYMgwO+INg==",
+      "path": "altv.net/6.0.2",
+      "hashPath": "altv.net.6.0.2.nupkg.sha512"
+    }
+  }
+}

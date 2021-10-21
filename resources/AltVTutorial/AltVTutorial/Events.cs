@@ -57,6 +57,7 @@ namespace AltVTutorial
                     tplayer.Eingeloggt = true;
                     tplayer.Emit("CloseLoginHud");
                     tplayer.SendChatMessage("{00c900}Erfolgreich registriert!");
+                    Alt.Emit("SaltyChat:EnablePlayer", tplayer);
                 }
             }
             else
@@ -85,6 +86,7 @@ namespace AltVTutorial
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);
+                        Alt.Emit("SaltyChat:EnablePlayer", tplayer);
                     }
                     else
                     {
