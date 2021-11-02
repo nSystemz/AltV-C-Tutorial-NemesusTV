@@ -105,6 +105,7 @@ namespace AltVTutorial
                     tplayer.Geld = reader.GetInt32("geld");
                     tplayer.Fraktion = reader.GetInt16("fraktion");
                     tplayer.Rang = reader.GetInt16("rang");
+                    tplayer.Payday = reader.GetInt16("payday");
                 }
             }
         }
@@ -112,12 +113,13 @@ namespace AltVTutorial
         public static void AccountSpeichern(TPlayer.TPlayer tplayer)
         {
             MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "UPDATE accounts SET adminlevel=@adminlevel, geld=@geld, fraktion=@fraktion, rang=@rang WHERE id=@id";
+            command.CommandText = "UPDATE accounts SET adminlevel=@adminlevel, geld=@geld, fraktion=@fraktion, rang=@rang, payday=@payday WHERE id=@id";
 
             command.Parameters.AddWithValue("@adminlevel", tplayer.Adminlevel);
             command.Parameters.AddWithValue("@geld", tplayer.Geld);
             command.Parameters.AddWithValue("@fraktion", tplayer.Fraktion);
             command.Parameters.AddWithValue("@rang", tplayer.Rang);
+            command.Parameters.AddWithValue("payday", tplayer.Payday);
             command.Parameters.AddWithValue("id", tplayer.SpielerID);
         }
 

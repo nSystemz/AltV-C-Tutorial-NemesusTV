@@ -1,12 +1,7 @@
 ﻿using AltV.Net;
 using AltV.Net.Elements.Entities;
-using AltV.Net.Enums;
 using AltVTutorial.TPlayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace AltVTutorial
 {
@@ -18,6 +13,22 @@ namespace AltVTutorial
             Utils.adminLog("Server wurde gestartet", "TutorialServer");
             //MYSQL
             Datenbank.InitConnection();
+            //Timer
+            Timer paydayTimer = new Timer(OnPaydayTimer, null, 10000, 10000);
+        }
+
+        public static void OnPaydayTimer(object state)
+        {
+            foreach(TPlayer.TPlayer tplayer in Alt.GetAllPlayers())
+            {
+                tplayer.Payday--;
+                if(tplayer.Payday <= 0)
+                {
+                    tplayer.Geld += 500;
+                    Utils.sendNotification(tplayer, "info", "Du hast einen Payday in Höhe von 500$ erhalten!");
+                    tplayer.Payday = 60;
+                }
+            }
         }
 
         public override void OnStop()

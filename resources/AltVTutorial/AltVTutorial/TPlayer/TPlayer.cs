@@ -23,6 +23,7 @@ namespace AltVTutorial.TPlayer
         public int Adminlevel { get; set; }
         public int Fraktion { get; set; }
         public int Rang { get; set; }
+        public int Payday { get; set; }
 
         public bool Eingeloggt { get; set; }
 
@@ -33,6 +34,7 @@ namespace AltVTutorial.TPlayer
             Eingeloggt = false;
             Fraktion = 0;
             Rang = 0;
+            Payday = 60;
         }
 
         public bool IsSpielerAdmin(int alvl)
