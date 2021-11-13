@@ -9,6 +9,7 @@ import * as NativeUI from 'includes/NativeUIMenu/NativeUI.mjs';
 //Variables
 let loginHud;
 let guiHud;
+let lockHud;
 
 //Commands
 alt.onServer('freezePlayer', (freeze) => {
@@ -164,3 +165,40 @@ alt.everyTick(() => {
         drawText2d(`${getSpeedColor(speed)}${speed} KMH`,0.45,0.91,1.5,2,255,255,255,255,true);
     }
 });
+
+//Lockpicking
+
+alt.onServer('showLockpicking', () => {
+    lockHud = new alt.WebView("http://resource/lockpicking/lockpicking.html");
+    lockHud.focus();
+
+    alt.showCursor(true)
+    alt.toggleGameControls(false)
+    alt.toggleVoiceControls(false)
+
+    lockHud.on('successLockpicking', () => {
+        alt.emitServer('Event.successLockpickingServer');
+
+        if(lockHud)
+        {
+            lockHud.destroy();
+        }
+
+        alt.showCursor(false)
+        alt.toggleGameControls(true)
+        alt.toggleVoiceControls(true)
+    })
+
+    lockHud.on('failedLockpicking', () => {
+        alt.emitServer('Event.failedLockpickingServer');
+
+        if(lockHud)
+        {
+            lockHud.destroy();
+        }
+
+        alt.showCursor(false)
+        alt.toggleGameControls(true)
+        alt.toggleVoiceControls(true)
+    })
+})

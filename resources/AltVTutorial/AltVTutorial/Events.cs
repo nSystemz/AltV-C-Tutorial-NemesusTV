@@ -35,7 +35,7 @@ namespace AltVTutorial
             bool v = vehicle.GetData<int>("VEHICLE_FRAKTION", out checkfrak);
             if (v && checkfrak > 0)
             {
-                if(checkfrak != tplayer.Fraktion)
+                if (checkfrak != tplayer.Fraktion)
                 {
                     tplayer.SendChatMessage("{FF0000}Dieses Fahrzeug gehört nicht zu deiner Fraktion!");
                 }
@@ -69,11 +69,11 @@ namespace AltVTutorial
         [ClientEvent("Event.Login")]
         public void OnPlayerLogin(TPlayer.TPlayer tplayer, String name, String password)
         {
-            if(Datenbank.IstAccountBereitsVorhanden(name))
+            if (Datenbank.IstAccountBereitsVorhanden(name))
             {
-                if(!tplayer.Eingeloggt && name.Length > 3 && password.Length > 5)
+                if (!tplayer.Eingeloggt && name.Length > 3 && password.Length > 5)
                 {
-                    if(Datenbank.PasswortCheck(name, password))
+                    if (Datenbank.PasswortCheck(name, password))
                     {
                         tplayer.SpielerName = name;
                         Datenbank.AccountLaden(tplayer);
@@ -120,6 +120,23 @@ namespace AltVTutorial
                 tplayer.SendChatMessage("{FF0000} Das Fahrzeug konnte nicht gespawned werden!");
                 Utils.sendNotification(tplayer, "error", "Das Fahrzeug konnte nicht erstellt werden!");
             }
+        }
+
+        [ClientEvent("Event.successLockpickingServer")]
+        public void OnSuccessLockpickingServer(TPlayer.TPlayer tplayer)
+        {
+            IVehicle veh = Utils.GetClosestVehicle(tplayer);
+            if (veh != null)
+            {
+                veh.LockState = (VehicleLockState)1;
+                Utils.sendNotification(tplayer, "info", "Du hast das Fahrzeug erfolgreich geknackt!");
+            }
+        }
+
+        [ClientEvent("Event.failedLockpickingServer")]
+        public void OnFailedLockpickingServer(TPlayer.TPlayer tplayer)
+        {
+            Utils.sendNotification(tplayer, "error", "Das Fahrzeug konnte nicht aufgeknackt werden!");
         }
     }
 }
