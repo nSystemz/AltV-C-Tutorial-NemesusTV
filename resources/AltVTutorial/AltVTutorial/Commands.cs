@@ -2,6 +2,7 @@
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using AltV.Net.Resources.Chat.Api;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Numerics;
@@ -18,21 +19,41 @@ namespace AltVTutorial
         }
 
         [Command("car")]
-        public void CMD_car(TPlayer.TPlayer tplayer, string VehicleName, int R = 0, int G = 0, int B = 0)
+        public void CMD_car(TPlayer.TPlayer tplayer, string VehicleName, string PlayerName = null, int R = 0, int G = 0, int B = 0)
         {
             if(!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Supporter))
             {
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
             }
-            IVehicle veh = Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 2.5f, tplayer.Position.Z), tplayer.Rotation);
+            TVehicle.TVehicle veh = (TVehicle.TVehicle)Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 2.5f, tplayer.Position.Z), tplayer.Rotation);
             if(veh != null)
             {
-                veh.LockState = (VehicleLockState)2;
+                veh.LockState = (VehicleLockState)1;
                 veh.PrimaryColorRgb = new AltV.Net.Data.Rgba((byte)R, (byte)G, (byte)B, 255);
-                tplayer.SendChatMessage("{04B404} Das Fahrzeug wurde erfolgreich gespawned!");
-                Utils.adminLog($"Der Spieler {tplayer.SpielerName} hat ein {VehicleName} gespawned!", "TutorialServer");
-                Utils.sendNotification(tplayer, "info", "Fahrzeug wurde erfolgreich gespawned!");
+                if (PlayerName == null)
+                {
+                    tplayer.SendChatMessage("{04B404} Das Fahrzeug wurde erfolgreich gespawned!");
+                    Utils.adminLog($"Der Spieler {tplayer.SpielerName} hat ein {VehicleName} gespawned!", "TutorialServer");
+                    Utils.sendNotification(tplayer, "info", "Fahrzeug wurde erfolgreich gespawned!");
+                }
+                else
+                {
+                    TPlayer.TPlayer target = Utils.GetPlayerByName(PlayerName);
+                    if(target == null)
+                    {
+                        Utils.sendNotification(tplayer, "error", "Ungültiger Spieler!");
+                        return;
+                    }
+                    tplayer.SendChatMessage("{04B404} Du hast erfolgreich ein Fahrzeug gespawnt und dieses einem Spieler zugewiesen!");
+                    Utils.adminLog($"Der Spieler {tplayer.SpielerName} hat ein {VehicleName} für {target.Name} erstellt!", "TutorialServer");
+                    Utils.sendNotification(tplayer, "info", "Fahrzeug wurde erfolgreich für einen Spieler erstellt!");
+                    veh.SpielerID = target.SpielerID;
+                    veh.VehicleLock = (int)veh.LockState;
+                    veh.vehicleName = VehicleName;
+                    veh.NumberplateText = VehicleName;
+                    Datenbank.FahrzeugErstellen(veh);
+                }
             }
             else
             {
@@ -166,7 +187,7 @@ namespace AltVTutorial
         [Command("lockpicking")]
         public void CMD_lockpocking(TPlayer.TPlayer tplayer)
         {
-            IVehicle veh = Utils.GetClosestVehicle(tplayer);
+            TVehicle.TVehicle veh = Utils.GetClosestVehicle(tplayer);
             if(veh != null)
             {
                 tplayer.Emit("showLockpicking");
@@ -174,6 +195,49 @@ namespace AltVTutorial
             else
             {
                 Utils.sendNotification(tplayer, "error", "Du bist nicht in der Nähe von einem Fahrzeug!");
+            }
+        }
+
+        [Command("fuel")]
+        public void CMD_fuel(TPlayer.TPlayer tplayer)
+        {
+            TVehicle.TVehicle tvehicle = null;
+            tvehicle = (TVehicle.TVehicle)tplayer.Vehicle;
+            if (tvehicle == null)
+            {
+                Utils.sendNotification(tplayer, "error", "Ungültiges Fahrzeug!");
+                return;
+            }
+            Utils.sendNotification(tplayer, "info", "Tankstatus: " + Math.Round(tvehicle.Fuel, 2) + "l");
+        }
+
+        [Command("engine")]
+        public void CMD_engine(TPlayer.TPlayer tplayer)
+        {
+            TVehicle.TVehicle tvehicle = null;
+            tvehicle = (TVehicle.TVehicle)tplayer.Vehicle;
+            tvehicle.ManualEngineControl = true;
+            if (tvehicle == null)
+            {
+                Utils.sendNotification(tplayer, "error", "Ungültiges Fahrzeug!");
+                return;
+            }
+            if(tvehicle.EngineOn == false)
+            {
+                if(tvehicle.Fuel > 0)
+                {
+                    Utils.sendNotification(tplayer, "success", "Motor erfolgreich gestartet!");
+                    tvehicle.EngineOn = true;
+                }
+                else
+                {
+                    Utils.sendNotification(tplayer, "error", "Der Tank ist leer!");
+                }
+            }
+            else
+            {
+                Utils.sendNotification(tplayer, "success", "Motor erfolgreich abgeschaltet!");
+                tvehicle.EngineOn = false;
             }
         }
     }

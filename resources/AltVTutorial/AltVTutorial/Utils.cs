@@ -44,10 +44,10 @@ namespace AltVTutorial
             return null;
         }
 
-        public static IVehicle GetClosestVehicle(TPlayer.TPlayer tplayer, float distance = 2.75f)
+        public static TVehicle.TVehicle GetClosestVehicle(TPlayer.TPlayer tplayer, float distance = 2.75f)
         {
-            IVehicle vehicle = null;
-            foreach(IVehicle veh in Alt.GetAllVehicles())
+            TVehicle.TVehicle vehicle = null;
+            foreach(TVehicle.TVehicle veh in Alt.GetAllVehicles())
             {
                 AltV.Net.Data.Position vehPos = veh.Position;
                 float distanceVehicleToPlayer = tplayer.Position.Distance(vehPos);

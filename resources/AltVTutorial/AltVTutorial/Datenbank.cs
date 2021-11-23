@@ -142,5 +142,52 @@ namespace AltVTutorial
             if (BCrypt.CheckPassword(passwordinput, password)) return true;
             return false;
         }
+
+        public static void FahrzeugErstellen(TVehicle.TVehicle veh)
+        {
+            MySqlCommand command = Connection.CreateCommand();
+            command.CommandText = "INSERT INTO fahrzeuge (owner, vehicleName, posX, posY, posZ, posA, vehicleLock, fuel, engine) VALUES (@owner, @vehicleName, @posX, @posY, @posZ, @posA, @vehicleLock, @fuel, @engine)";
+
+            command.Parameters.AddWithValue("@owner", veh.SpielerID);
+            command.Parameters.AddWithValue("@vehicleName", veh.vehicleName);
+            command.Parameters.AddWithValue("@posX", veh.Position.X);
+            command.Parameters.AddWithValue("@posY", veh.Position.Y);
+            command.Parameters.AddWithValue("@posZ", veh.Position.Z);
+            command.Parameters.AddWithValue("@posA", veh.Rotation);
+            command.Parameters.AddWithValue("@vehicleLock", veh.VehicleLock);
+            command.Parameters.AddWithValue("@fuel", veh.Fuel);
+            command.Parameters.AddWithValue("@engine", veh.EngineOn);
+            command.ExecuteNonQuery();
+        }
+
+        public static void FahrzeugeLaden()
+        {
+            MySqlCommand command = Connection.CreateCommand();
+            command.CommandText = "SELECT * from fahrzeuge";
+
+            float[] position = new float[4];
+            string vehicleName = "";
+
+            using(MySqlDataReader reader = command.ExecuteReader())
+            {
+                if(reader.HasRows)
+                {
+                    reader.Read();
+                    position[0] = reader.GetFloat("posX");
+                    position[1] = reader.GetFloat("posY");
+                    position[2] = reader.GetFloat("posZ");
+                    position[3] = reader.GetFloat("posA");
+                    vehicleName = reader.GetString("vehicleName");
+                    TVehicle.TVehicle veh = (TVehicle.TVehicle)Alt.CreateVehicle(Alt.Hash(vehicleName), new AltV.Net.Data.Position(position[0], position[1], position[2]), new AltV.Net.Data.Rotation(0, 0, position[3]));
+                    veh.VehicleLock = reader.GetInt16("vehicleLock");
+                    veh.LockState = (AltV.Net.Enums.VehicleLockState)veh.VehicleLock;
+                    veh.SpielerID = reader.GetInt32("owner");
+                    veh.vehicleName = reader.GetString("vehicleName");
+                    veh.NumberplateText = veh.vehicleName;
+                    veh.Fuel = reader.GetFloat("fuel");
+                    veh.EngineOn = Convert.ToBoolean(reader.GetInt16("engine"));
+                }
+            }
+        }
     }
 }

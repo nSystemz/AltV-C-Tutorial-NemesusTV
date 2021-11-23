@@ -20,6 +20,8 @@
     <Compile Include="Server.cs" />
     <Compile Include="TPlayer\TPlayer.cs" />
     <Compile Include="TPlayer\TPlayerFactory.cs" />
+    <Compile Include="TVehicle\TVehicle.cs" />
+    <Compile Include="TVehicle\TVehicleFactory.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
 

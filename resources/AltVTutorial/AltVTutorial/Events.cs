@@ -29,7 +29,7 @@ namespace AltVTutorial
         }
 
         [ScriptEvent(ScriptEventType.PlayerEnterVehicle)]
-        public static void OnPlayerEnterVehicle(IVehicle vehicle, TPlayer.TPlayer tplayer, byte seat)
+        public static void OnPlayerEnterVehicle(TVehicle.TVehicle vehicle, TPlayer.TPlayer tplayer, byte seat)
         {
             int checkfrak = 0;
             bool v = vehicle.GetData<int>("VEHICLE_FRAKTION", out checkfrak);
@@ -108,7 +108,7 @@ namespace AltVTutorial
         public void OnSpawnVehicle(TPlayer.TPlayer tplayer, string VehicleName)
         {
             if (VehicleName == "Kein Fahrzeug") return;
-            IVehicle veh = Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 4.5f, tplayer.Position.Z), tplayer.Rotation);
+            TVehicle.TVehicle veh = (TVehicle.TVehicle)Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 4.5f, tplayer.Position.Z), tplayer.Rotation);
             if (veh != null)
             {
                 tplayer.SendChatMessage("{04B404} Das Fahrzeug wurde erfolgreich gespawned!");
@@ -125,7 +125,7 @@ namespace AltVTutorial
         [ClientEvent("Event.successLockpickingServer")]
         public void OnSuccessLockpickingServer(TPlayer.TPlayer tplayer)
         {
-            IVehicle veh = Utils.GetClosestVehicle(tplayer);
+            TVehicle.TVehicle veh = Utils.GetClosestVehicle(tplayer);
             if (veh != null)
             {
                 veh.LockState = (VehicleLockState)1;
