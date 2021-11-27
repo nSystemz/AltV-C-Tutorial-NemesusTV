@@ -23,9 +23,10 @@ namespace AltVTutorial
         [ScriptEvent(ScriptEventType.PlayerDisconnect)]
         public void OnPlayerDisconnect(TPlayer.TPlayer tplayer, string reason)
         {
-            Alt.Log($"Spieler {tplayer.Name} hat den Server verlassen - Grund: {reason}!");
             //Spieler speichern
             Datenbank.AccountSpeichern(tplayer);
+            //Log
+            Alt.Log($"Spieler {tplayer.Name} hat den Server verlassen - Grund: {reason}!");
         }
 
         [ScriptEvent(ScriptEventType.PlayerEnterVehicle)]
@@ -137,6 +138,15 @@ namespace AltVTutorial
         public void OnFailedLockpickingServer(TPlayer.TPlayer tplayer)
         {
             Utils.sendNotification(tplayer, "error", "Das Fahrzeug konnte nicht aufgeknackt werden!");
+        }
+
+        [ClientEvent("Event.startStopEngine")]
+        public void OnStartStopEngine(TPlayer.TPlayer tplayer)
+        {
+            if (tplayer.IsInVehicle)
+            {
+                Commands.CMD_engine(tplayer);
+            }
         }
     }
 }

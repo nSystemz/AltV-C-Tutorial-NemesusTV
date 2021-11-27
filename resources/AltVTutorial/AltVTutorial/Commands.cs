@@ -212,7 +212,7 @@ namespace AltVTutorial
         }
 
         [Command("engine")]
-        public void CMD_engine(TPlayer.TPlayer tplayer)
+        public static void CMD_engine(TPlayer.TPlayer tplayer)
         {
             TVehicle.TVehicle tvehicle = null;
             tvehicle = (TVehicle.TVehicle)tplayer.Vehicle;
@@ -222,7 +222,7 @@ namespace AltVTutorial
                 Utils.sendNotification(tplayer, "error", "Ungültiges Fahrzeug!");
                 return;
             }
-            if(tvehicle.EngineOn == false)
+            if (tvehicle.EngineOn == false)
             {
                 if(tvehicle.Fuel > 0)
                 {

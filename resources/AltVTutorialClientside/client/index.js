@@ -167,7 +167,6 @@ alt.everyTick(() => {
 });
 
 //Lockpicking
-
 alt.onServer('showLockpicking', () => {
     lockHud = new alt.WebView("http://resource/lockpicking/lockpicking.html");
     lockHud.focus();
@@ -201,4 +200,12 @@ alt.onServer('showLockpicking', () => {
         alt.toggleGameControls(true)
         alt.toggleVoiceControls(true)
     })
+})
+
+//Tastendrücke
+alt.on('keydown', (key) => {
+    if(key == 77)
+    {
+        alt.emitServer('Event.startStopEngine');
+    }
 })
