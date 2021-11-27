@@ -119,8 +119,10 @@ namespace AltVTutorial
             command.Parameters.AddWithValue("@geld", tplayer.Geld);
             command.Parameters.AddWithValue("@fraktion", tplayer.Fraktion);
             command.Parameters.AddWithValue("@rang", tplayer.Rang);
-            command.Parameters.AddWithValue("payday", tplayer.Payday);
-            command.Parameters.AddWithValue("id", tplayer.SpielerID);
+            command.Parameters.AddWithValue("@payday", tplayer.Payday);
+            command.Parameters.AddWithValue("@id", tplayer.SpielerID);
+
+            command.ExecuteNonQuery();
         }
 
         public static bool PasswortCheck(string name, string passwordinput)
