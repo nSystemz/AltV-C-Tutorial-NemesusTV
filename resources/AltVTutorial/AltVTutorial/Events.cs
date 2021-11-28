@@ -26,7 +26,7 @@ namespace AltVTutorial
             //Spieler speichern
             Datenbank.AccountSpeichern(tplayer);
             //Log
-            Alt.Log($"Spieler {tplayer.Name} hat den Server verlassen - Grund: {reason}!");
+            Alt.Log($"Spieler {tplayer.Name} hat den Server verlassen!");
         }
 
         [ScriptEvent(ScriptEventType.PlayerEnterVehicle)]
