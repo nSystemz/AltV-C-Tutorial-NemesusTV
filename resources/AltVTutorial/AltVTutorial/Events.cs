@@ -25,6 +25,14 @@ namespace AltVTutorial
         {
             //Spieler speichern
             Datenbank.AccountSpeichern(tplayer);
+            //Fahrzeuge speichern
+            foreach(TVehicle.TVehicle tvehicle in Alt.GetAllVehicles())
+            {
+                if(tvehicle.vehicleID > 0 && tvehicle.SpielerID == tplayer.Id)
+                {
+                    Datenbank.SpeichereFahrzeuge(tvehicle);
+                }
+            }
             //Log
             Alt.Log($"Spieler {tplayer.Name} hat den Server verlassen!");
         }
@@ -78,7 +86,15 @@ namespace AltVTutorial
                     {
                         tplayer.SpielerName = name;
                         Datenbank.AccountLaden(tplayer);
-                        tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
+                        if(tplayer.positions[0] != 0.0 && tplayer.positions[1] != 0.0 && tplayer.positions[2] != 0.0)
+                        {
+                            tplayer.Spawn(new AltV.Net.Data.Position(tplayer.positions[0], tplayer.positions[1], tplayer.positions[2]), 0);
+                            tplayer.Rotation = new AltV.Net.Data.Rotation(0, 0, tplayer.positions[3]);
+                        }
+                        else
+                        {
+                            tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
+                        }
                         tplayer.Model = (uint)PedModel.Business01AMM;
                         tplayer.Eingeloggt = true;
                         tplayer.Emit("CloseLoginHud");

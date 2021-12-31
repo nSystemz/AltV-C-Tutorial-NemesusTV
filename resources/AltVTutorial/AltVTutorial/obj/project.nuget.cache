@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5nI03mCzb1SnbWb4A4qkwzbbN0rFEP10NqcljDDnDKjhixhLb6muaQfHEWrAmBUTiNlxeD8WAPnmIn5s1ByFwQ==",
+  "dgSpecHash": "nxuNtKU6f336c7Q+ZzBtBA7Y4o8qynXcGIwWutIivkFH84J1oy2GSOIWOtcDN5owoGfeRhGQ60uX8VV2loNc4w==",
   "success": true,
   "projectFilePath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tschn\\.nuget\\packages\\altv.net\\6.0.6-rc57\\altv.net.6.0.6-rc57.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net\\7.1.7-dev60\\altv.net.7.1.7-dev60.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\altv.net.entitysync\\1.13.0\\altv.net.entitysync.1.13.0.nupkg.sha512",
-    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.resources.chat.api\\1.48.0\\altv.net.resources.chat.api.1.48.0.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.resources.chat.api\\7.1.7-dev60\\altv.net.resources.chat.api.7.1.7-dev60.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",

@@ -42,7 +42,7 @@
           "dependencies": {
             "AltV.Net": {
               "target": "Package",
-              "version": "[6.0.6-rc57, )"
+              "version": "[7.1.7-dev60, )"
             },
             "AltV.Net.EntitySync": {
               "target": "Package",
@@ -50,7 +50,7 @@
             },
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",
-              "version": "[1.48.0, )"
+              "version": "[7.1.7-dev60, )"
             },
             "MySql.Data": {
               "target": "Package",

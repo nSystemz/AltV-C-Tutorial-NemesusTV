@@ -27,6 +27,8 @@ namespace AltVTutorial.TPlayer
 
         public bool Eingeloggt { get; set; }
 
+        public float[] positions = new float[4];
+
         public TPlayer(IServer server, IntPtr nativePointer, ushort id) : base(server, nativePointer, id)
         {
             Geld = 5000;

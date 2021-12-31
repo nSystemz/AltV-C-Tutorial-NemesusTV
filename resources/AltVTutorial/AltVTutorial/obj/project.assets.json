@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "AltV.Net/6.0.6-rc57": {
+      "AltV.Net/7.1.7-dev60": {
         "type": "package",
         "compile": {
           "lib/net5.0/AltV.Net.dll": {}
@@ -23,10 +23,10 @@
           "lib/net5.0/AltV.Net.EntitySync.dll": {}
         }
       },
-      "AltV.Net.Resources.Chat.Api/1.48.0": {
+      "AltV.Net.Resources.Chat.Api/7.1.7-dev60": {
         "type": "package",
         "dependencies": {
-          "AltV.Net": "1.48.1"
+          "AltV.Net": "7.1.7-dev60"
         },
         "compile": {
           "lib/net5.0/AltV.Net.Resources.Chat.Api.dll": {}
@@ -333,14 +333,14 @@
     }
   },
   "libraries": {
-    "AltV.Net/6.0.6-rc57": {
-      "sha512": "cVJtQFEGyiHvlD4bZxwdvxKGVCexHOj62Vf0Ah1Lk1usz3VKmnJkYqgf2DTm3CIifbu0Zw6qlremHanveaENjQ==",
+    "AltV.Net/7.1.7-dev60": {
+      "sha512": "wFDEakDVWx8Mcpo5TnTw8ElsRMu167bs9Pwj8yWAzawziAdfkV5KnOXCpGyHKQJN6iUgpbDLkZmWFUeAnirTEw==",
       "type": "package",
-      "path": "altv.net/6.0.6-rc57",
+      "path": "altv.net/7.1.7-dev60",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.6.0.6-rc57.nupkg.sha512",
+        "altv.net.7.1.7-dev60.nupkg.sha512",
         "altv.net.nuspec",
         "icon.png",
         "lib/net5.0/AltV.Net.dll",
@@ -361,18 +361,17 @@
         "license.txt"
       ]
     },
-    "AltV.Net.Resources.Chat.Api/1.48.0": {
-      "sha512": "tdFpAdzt8Cj/1XzIeLjzZalMjlA8Isyowapta2tlVEQ9XRXWrsVggMYyqzZS7bEb4BbhNieLW+ZhE9RYXf6Ttw==",
+    "AltV.Net.Resources.Chat.Api/7.1.7-dev60": {
+      "sha512": "MzWudlxHIOPav2a4YXAxzxku01GT5R6prGCwrvh63aKZxa4uTZ8iywoOD0YCMA5T7vor22fjmJPCSY/dVbgPCg==",
       "type": "package",
-      "path": "altv.net.resources.chat.api/1.48.0",
+      "path": "altv.net.resources.chat.api/7.1.7-dev60",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.resources.chat.api.1.48.0.nupkg.sha512",
+        "altv.net.resources.chat.api.7.1.7-dev60.nupkg.sha512",
         "altv.net.resources.chat.api.nuspec",
         "icon.png",
         "lib/net5.0/AltV.Net.Resources.Chat.Api.dll",
-        "lib/netcoreapp3.1/AltV.Net.Resources.Chat.Api.dll",
         "license.txt"
       ]
     },
@@ -997,9 +996,9 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "AltV.Net >= 6.0.6-rc57",
+      "AltV.Net >= 7.1.7-dev60",
       "AltV.Net.EntitySync >= 1.13.0",
-      "AltV.Net.Resources.Chat.Api >= 1.48.0",
+      "AltV.Net.Resources.Chat.Api >= 7.1.7-dev60",
       "MySql.Data >= 8.0.23"
     ]
   },
@@ -1044,7 +1043,7 @@
         "dependencies": {
           "AltV.Net": {
             "target": "Package",
-            "version": "[6.0.6-rc57, )"
+            "version": "[7.1.7-dev60, )"
           },
           "AltV.Net.EntitySync": {
             "target": "Package",
@@ -1052,7 +1051,7 @@
           },
           "AltV.Net.Resources.Chat.Api": {
             "target": "Package",
-            "version": "[1.48.0, )"
+            "version": "[7.1.7-dev60, )"
           },
           "MySql.Data": {
             "target": "Package",

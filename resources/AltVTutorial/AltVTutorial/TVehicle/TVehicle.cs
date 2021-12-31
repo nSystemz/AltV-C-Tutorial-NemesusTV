@@ -10,7 +10,7 @@ namespace AltVTutorial.TVehicle
 {
     public class TVehicle : Vehicle
     {
-
+        public int vehicleID { get; set; }
         public int SpielerID { get; set; }
         public int VehicleLock { get; set; }
         public String vehicleName { get; set; }
@@ -18,6 +18,7 @@ namespace AltVTutorial.TVehicle
 
         public TVehicle(IServer server, IntPtr nativePointer, ushort id) : base(server, nativePointer, id)
         {
+            vehicleID = 0;
             SpielerID = 0;
             VehicleLock = 1;
             vehicleName = "";
