@@ -1,5 +1,6 @@
 ﻿using AltV.Net;
 using AltV.Net.Elements.Entities;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,21 @@ namespace AltVTutorial
                 }
             }
             return null;
+        }
+
+        public static bool IsPlayerWhitelisted(TPlayer.TPlayer tplayer)
+        {
+            MySqlCommand command = Datenbank.Connection.CreateCommand();
+            command.CommandText = "SELECT id FROM whitelist WHERE socialclubid=@socialclubid LIMIT 1";
+            command.Parameters.AddWithValue("socialclubid", tplayer.SocialClubId);
+            using(MySqlDataReader reader = command.ExecuteReader())
+            {
+                if(reader.HasRows)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static TVehicle.TVehicle GetClosestVehicle(TPlayer.TPlayer tplayer, float distance = 2.75f)

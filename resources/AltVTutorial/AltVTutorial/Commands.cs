@@ -2,6 +2,7 @@
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using AltV.Net.Resources.Chat.Api;
+using MySql.Data.MySqlClient;
 using System;
 using System.Globalization;
 using System.IO;
@@ -87,6 +88,50 @@ namespace AltVTutorial
             tplayer.Dimension = 0;
             tplayer.SendChatMessage("{04B404}Du hast dich erfolgreich teleportiert!");
             return;
+        }
+
+        [Command("whitelist")]
+        public void CMD_whitelist(TPlayer.TPlayer tplayer, ulong socialclubid)
+        {
+            bool found = false;
+            if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Administrator))
+            {
+                tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
+                return;
+            }
+            if(socialclubid < 10000)
+            {
+                tplayer.SendChatMessage("{FF0000}Ungültige Socialclubid!");
+                return;
+            }
+            MySqlCommand command = Datenbank.Connection.CreateCommand();
+            command.CommandText = "SELECT id from whitelist WHERE socialclubid=@socialclubid LIMIT 1";
+            command.Parameters.AddWithValue("socialclubid", socialclubid);
+            using(MySqlDataReader reader = command.ExecuteReader())
+            {
+                if(reader.HasRows)
+                {
+                    found = true;
+                }
+            }
+            if(found == true)
+            {
+                MySqlCommand command2 = Datenbank.Connection.CreateCommand();
+                command2.CommandText = "DELETE FROM whitelist WHERE socialclubid=@socialclubid LIMIT 1";
+                command2.Parameters.AddWithValue("socialclubid", socialclubid);
+                command2.ExecuteNonQuery();
+                tplayer.SendChatMessage("{04B404}Whitelisteintrag entfernt!");
+                Utils.sendNotification(tplayer, "info", "Whitelisteintrag entfernt!");
+            }
+            else
+            {
+                MySqlCommand command3 = Datenbank.Connection.CreateCommand();
+                command3.CommandText = "INSERT INTO whitelist (socialclubid) VALUES (@socialclubid)";
+                command3.Parameters.AddWithValue("@socialclubid", socialclubid);
+                command3.ExecuteNonQuery();
+                tplayer.SendChatMessage("{04B404}Whitelisteintrag hinzugefügt!");
+                Utils.sendNotification(tplayer, "info", "Whitelisteintrag hinzugefügt!");
+            }
         }
 
         [Command("fraktionsinfo")]

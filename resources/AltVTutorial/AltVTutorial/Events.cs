@@ -63,8 +63,14 @@ namespace AltVTutorial
                     tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
                     tplayer.Model = (uint)PedModel.Business01AMM;
                     tplayer.Dimension = 0;
-                    tplayer.Eingeloggt = true;
                     tplayer.Emit("CloseLoginHud");
+                    if (!Utils.IsPlayerWhitelisted(tplayer))
+                    {
+                        tplayer.SendChatMessage("{#eb0e27}Du stehst nicht auf der Whitelist!");
+                        tplayer.Kick($"Du stehst nicht auf der Whitelist - (Socialclubid: {tplayer.SocialClubId})!");
+                        return;
+                    }
+                    tplayer.Eingeloggt = true;
                     tplayer.SendChatMessage("{00c900}Erfolgreich registriert!");
                     Alt.Emit("SaltyChat:EnablePlayer", tplayer);
                 }
@@ -96,13 +102,19 @@ namespace AltVTutorial
                             tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
                         }
                         tplayer.Model = (uint)PedModel.Business01AMM;
-                        tplayer.Eingeloggt = true;
                         tplayer.Emit("CloseLoginHud");
-                        tplayer.SendChatMessage("{00c900}Erfolgreich eingeloggt!");
                         tplayer.Health = 200;
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);
+                        if(!Utils.IsPlayerWhitelisted(tplayer))
+                        {
+                            tplayer.SendChatMessage("{#eb0e27}Du stehst nicht auf der Whitelist!");
+                            tplayer.Kick("Du stehst nicht auf der Whitelist");
+                            return;
+                        }
+                        tplayer.Eingeloggt = true;
+                        tplayer.SendChatMessage("{00c900}Erfolgreich eingeloggt!");
                         Alt.Emit("SaltyChat:EnablePlayer", tplayer);
                     }
                     else
