@@ -164,6 +164,13 @@ alt.everyTick(() => {
         speed = Math.round(speed);
         drawText2d(`${getSpeedColor(speed)}${speed} KMH`,0.45,0.91,1.5,2,255,255,255,255,true);
     }
+    drawText2d('Nemesus.de', 0.5, 0.005, 0.5, 0, 255, 255, 255, 255);
+
+    let getStreetHash = native.getStreetNameAtCoord(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z, 0, 0);
+    let streetName = native.getStreetNameFromHashKey(getStreetHash[1]);
+    let zone = native.getLabelText(native.getNameOfZone(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z));
+
+    drawText2d(`${streetName}\n${zone}`, 0.215, 0.925, 0.5, 4, 244, 210, 66, 255);
 });
 
 //Lockpicking
