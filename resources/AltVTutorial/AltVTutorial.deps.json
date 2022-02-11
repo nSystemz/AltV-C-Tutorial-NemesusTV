@@ -1,25 +1,25 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v5.0",
+    "name": ".NETCoreApp,Version=v6.0",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v5.0": {
+    ".NETCoreApp,Version=v6.0": {
       "AltVTutorial/1.0.0": {
         "dependencies": {
-          "AltV.Net": "7.1.7-dev60",
+          "AltV.Net": "9.0.2",
           "AltV.Net.EntitySync": "1.13.0",
-          "AltV.Net.Resources.Chat.Api": "7.1.7-dev60",
+          "AltV.Net.Resources.Chat.Api": "9.0.2",
           "MySql.Data": "8.0.23"
         },
         "runtime": {
           "AltVTutorial.dll": {}
         }
       },
-      "AltV.Net/7.1.7-dev60": {
+      "AltV.Net/9.0.2": {
         "runtime": {
-          "lib/net5.0/AltV.Net.dll": {
+          "lib/net6.0/AltV.Net.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -36,12 +36,12 @@
           }
         }
       },
-      "AltV.Net.Resources.Chat.Api/7.1.7-dev60": {
+      "AltV.Net.Resources.Chat.Api/9.0.2": {
         "dependencies": {
-          "AltV.Net": "7.1.7-dev60"
+          "AltV.Net": "9.0.2"
         },
         "runtime": {
-          "lib/net5.0/AltV.Net.Resources.Chat.Api.dll": {
+          "lib/net6.0/AltV.Net.Resources.Chat.Api.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -274,12 +274,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AltV.Net/7.1.7-dev60": {
+    "AltV.Net/9.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wFDEakDVWx8Mcpo5TnTw8ElsRMu167bs9Pwj8yWAzawziAdfkV5KnOXCpGyHKQJN6iUgpbDLkZmWFUeAnirTEw==",
-      "path": "altv.net/7.1.7-dev60",
-      "hashPath": "altv.net.7.1.7-dev60.nupkg.sha512"
+      "sha512": "sha512-gwMqeImXaE2Gf0ZjSlxaeiwYiYz4fRC3sANMyxLyrJ62CaH3Gn75c3W/MQ6X0k5EI3tzbH46dTxS3UfX9g4jew==",
+      "path": "altv.net/9.0.2",
+      "hashPath": "altv.net.9.0.2.nupkg.sha512"
     },
     "AltV.Net.EntitySync/1.13.0": {
       "type": "package",
@@ -288,12 +288,12 @@
       "path": "altv.net.entitysync/1.13.0",
       "hashPath": "altv.net.entitysync.1.13.0.nupkg.sha512"
     },
-    "AltV.Net.Resources.Chat.Api/7.1.7-dev60": {
+    "AltV.Net.Resources.Chat.Api/9.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MzWudlxHIOPav2a4YXAxzxku01GT5R6prGCwrvh63aKZxa4uTZ8iywoOD0YCMA5T7vor22fjmJPCSY/dVbgPCg==",
-      "path": "altv.net.resources.chat.api/7.1.7-dev60",
-      "hashPath": "altv.net.resources.chat.api.7.1.7-dev60.nupkg.sha512"
+      "sha512": "sha512-fIyB5n6Vi5Zp8Wjklo/DxPbysWw/If6jCLF2O/bfbc2B5JgZun4PoAqCLZPK5/CSxLFYmbuIDKi7HQYhwDcHaQ==",
+      "path": "altv.net.resources.chat.api/9.0.2",
+      "hashPath": "altv.net.resources.chat.api.9.0.2.nupkg.sha512"
     },
     "BouncyCastle.NetCore/1.8.5": {
       "type": "package",

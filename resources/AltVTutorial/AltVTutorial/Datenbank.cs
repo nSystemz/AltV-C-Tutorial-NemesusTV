@@ -54,7 +54,7 @@ namespace AltVTutorial
         public static bool IstAccountBereitsVorhanden(string name)
         {
             MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM accounts WHERE name=@name LIMIT 1";
+            command.CommandText = "SELECT * FROM users WHERE name=@name LIMIT 1";
             command.Parameters.AddWithValue("@name", name);
             using(MySqlDataReader reader = command.ExecuteReader())
             {
@@ -73,7 +73,7 @@ namespace AltVTutorial
             try
             {
                 MySqlCommand command = Connection.CreateCommand();
-                command.CommandText = "INSERT INTO accounts (password, name) VALUES (@password, @name)";
+                command.CommandText = "INSERT INTO users (password, name) VALUES (@password, @name)";
 
                 command.Parameters.AddWithValue("@password", saltedPw);
                 command.Parameters.AddWithValue("@name", name);
@@ -91,7 +91,7 @@ namespace AltVTutorial
         public static void AccountLaden(TPlayer.TPlayer tplayer)
         {
             MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM accounts WHERE name=@name LIMIT 1";
+            command.CommandText = "SELECT * FROM users WHERE name=@name LIMIT 1";
 
             command.Parameters.AddWithValue("@name", tplayer.SpielerName);
 
@@ -117,7 +117,7 @@ namespace AltVTutorial
         public static void AccountSpeichern(TPlayer.TPlayer tplayer)
         {
             MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "UPDATE accounts SET adminlevel=@adminlevel, geld=@geld, fraktion=@fraktion, rang=@rang, payday=@payday, posx=@posx, posy=@posy, posz=@posz, posa=@posa WHERE id=@id";
+            command.CommandText = "UPDATE users SET adminlevel=@adminlevel, geld=@geld, fraktion=@fraktion, rang=@rang, payday=@payday, posx=@posx, posy=@posy, posz=@posz, posa=@posa WHERE id=@id";
 
             command.Parameters.AddWithValue("@adminlevel", tplayer.Adminlevel);
             command.Parameters.AddWithValue("@geld", tplayer.Geld);
@@ -137,7 +137,7 @@ namespace AltVTutorial
         {
             string password = "";
             MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT password FROM accounts where name=@name LIMIT 1";
+            command.CommandText = "SELECT password FROM users where name=@name LIMIT 1";
             command.Parameters.AddWithValue("@name", name);
 
             using(MySqlDataReader reader = command.ExecuteReader())
@@ -163,7 +163,7 @@ namespace AltVTutorial
             command.Parameters.AddWithValue("@posX", veh.Position.X);
             command.Parameters.AddWithValue("@posY", veh.Position.Y);
             command.Parameters.AddWithValue("@posZ", veh.Position.Z);
-            command.Parameters.AddWithValue("@posA", veh.Rotation);
+            command.Parameters.AddWithValue("@posA", veh.Rotation.Yaw);
             command.Parameters.AddWithValue("@vehicleLock", veh.VehicleLock);
             command.Parameters.AddWithValue("@fuel", veh.Fuel);
             command.Parameters.AddWithValue("@engine", veh.EngineOn);

@@ -2,9 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <BaseOutputPath>J:\Tutorials\AltVServer\resources\AltVTutorial</BaseOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -30,9 +32,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AltV.Net" Version="7.1.7-dev60" />
+    <PackageReference Include="AltV.Net" Version="9.0.2" />
     <PackageReference Include="AltV.Net.EntitySync" Version="1.13.0" />
-    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="7.1.7-dev60" />
+    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="9.0.2" />
     <PackageReference Include="MySql.Data" Version="8.0.23" />
   </ItemGroup>
 

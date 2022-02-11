@@ -1,14 +1,14 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
-      "AltV.Net/7.1.7-dev60": {
+    "net6.0": {
+      "AltV.Net/9.0.2": {
         "type": "package",
         "compile": {
-          "lib/net5.0/AltV.Net.dll": {}
+          "lib/net6.0/AltV.Net.dll": {}
         },
         "runtime": {
-          "lib/net5.0/AltV.Net.dll": {}
+          "lib/net6.0/AltV.Net.dll": {}
         }
       },
       "AltV.Net.EntitySync/1.13.0": {
@@ -23,16 +23,16 @@
           "lib/net5.0/AltV.Net.EntitySync.dll": {}
         }
       },
-      "AltV.Net.Resources.Chat.Api/7.1.7-dev60": {
+      "AltV.Net.Resources.Chat.Api/9.0.2": {
         "type": "package",
         "dependencies": {
-          "AltV.Net": "7.1.7-dev60"
+          "AltV.Net": "9.0.2"
         },
         "compile": {
-          "lib/net5.0/AltV.Net.Resources.Chat.Api.dll": {}
+          "lib/net6.0/AltV.Net.Resources.Chat.Api.dll": {}
         },
         "runtime": {
-          "lib/net5.0/AltV.Net.Resources.Chat.Api.dll": {}
+          "lib/net6.0/AltV.Net.Resources.Chat.Api.dll": {}
         }
       },
       "BouncyCastle.NetCore/1.8.5": {
@@ -333,17 +333,17 @@
     }
   },
   "libraries": {
-    "AltV.Net/7.1.7-dev60": {
-      "sha512": "wFDEakDVWx8Mcpo5TnTw8ElsRMu167bs9Pwj8yWAzawziAdfkV5KnOXCpGyHKQJN6iUgpbDLkZmWFUeAnirTEw==",
+    "AltV.Net/9.0.2": {
+      "sha512": "gwMqeImXaE2Gf0ZjSlxaeiwYiYz4fRC3sANMyxLyrJ62CaH3Gn75c3W/MQ6X0k5EI3tzbH46dTxS3UfX9g4jew==",
       "type": "package",
-      "path": "altv.net/7.1.7-dev60",
+      "path": "altv.net/9.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.7.1.7-dev60.nupkg.sha512",
+        "altv.net.9.0.2.nupkg.sha512",
         "altv.net.nuspec",
         "icon.png",
-        "lib/net5.0/AltV.Net.dll",
+        "lib/net6.0/AltV.Net.dll",
         "license.txt"
       ]
     },
@@ -361,17 +361,17 @@
         "license.txt"
       ]
     },
-    "AltV.Net.Resources.Chat.Api/7.1.7-dev60": {
-      "sha512": "MzWudlxHIOPav2a4YXAxzxku01GT5R6prGCwrvh63aKZxa4uTZ8iywoOD0YCMA5T7vor22fjmJPCSY/dVbgPCg==",
+    "AltV.Net.Resources.Chat.Api/9.0.2": {
+      "sha512": "fIyB5n6Vi5Zp8Wjklo/DxPbysWw/If6jCLF2O/bfbc2B5JgZun4PoAqCLZPK5/CSxLFYmbuIDKi7HQYhwDcHaQ==",
       "type": "package",
-      "path": "altv.net.resources.chat.api/7.1.7-dev60",
+      "path": "altv.net.resources.chat.api/9.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.resources.chat.api.7.1.7-dev60.nupkg.sha512",
+        "altv.net.resources.chat.api.9.0.2.nupkg.sha512",
         "altv.net.resources.chat.api.nuspec",
         "icon.png",
-        "lib/net5.0/AltV.Net.Resources.Chat.Api.dll",
+        "lib/net6.0/AltV.Net.Resources.Chat.Api.dll",
         "license.txt"
       ]
     },
@@ -995,10 +995,10 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0": [
-      "AltV.Net >= 7.1.7-dev60",
+    "net6.0": [
+      "AltV.Net >= 9.0.2",
       "AltV.Net.EntitySync >= 1.13.0",
-      "AltV.Net.Resources.Chat.Api >= 7.1.7-dev60",
+      "AltV.Net.Resources.Chat.Api >= 9.0.2",
       "MySql.Data >= 8.0.23"
     ]
   },
@@ -1019,15 +1019,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "projectReferences": {}
         }
       },
@@ -1038,12 +1038,12 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
+      "net6.0": {
+        "targetAlias": "net6.0",
         "dependencies": {
           "AltV.Net": {
             "target": "Package",
-            "version": "[7.1.7-dev60, )"
+            "version": "[9.0.2, )"
           },
           "AltV.Net.EntitySync": {
             "target": "Package",
@@ -1051,7 +1051,7 @@
           },
           "AltV.Net.Resources.Chat.Api": {
             "target": "Package",
-            "version": "[7.1.7-dev60, )"
+            "version": "[9.0.2, )"
           },
           "MySql.Data": {
             "target": "Package",
@@ -1073,7 +1073,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

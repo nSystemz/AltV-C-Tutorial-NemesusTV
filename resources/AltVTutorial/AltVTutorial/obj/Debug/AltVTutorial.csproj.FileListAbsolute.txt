@@ -1,4 +1,3 @@
-J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.csprojAssemblyReference.cache
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.GeneratedMSBuildEditorConfig.editorconfig
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.AssemblyInfoInputs.cache
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.AssemblyInfo.cs
@@ -15,3 +14,4 @@ J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial.deps.json
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial.dll
 J:\Tutorials\AltVServer\resources\AltVTutorial\ref\AltVTutorial.dll
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial.pdb
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.csproj.AssemblyReference.cache
