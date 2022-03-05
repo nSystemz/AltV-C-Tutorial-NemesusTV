@@ -54,6 +54,11 @@ alt.on('connectionComplete', () => {
     })
 })
 
+//UpdateMoneyHud
+alt.onServer('updateMoneyHud', (money) => {
+    guiHud.emit('updateMoneyHud', money);
+})
+
 //Notifications
 alt.onServer('sendNotification', (status, text) => {
     guiHud.emit('sendNotification', status, text);

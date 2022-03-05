@@ -210,6 +210,12 @@ namespace AltVTutorial
             target.SendChatMessage($"Du wurdest von {tplayer.Name} zur Fraktion {TPlayer.TPlayer.Fraktionen[tplayer.Fraktion]} eingeladen!");
         }
 
+        [Command("moneytest")]
+        public void CMD_moneytest(TPlayer.TPlayer tplayer)
+        {
+            Utils.UpdateMoneyHud(tplayer, 500);
+        }
+
         [Command("pistole")]
         public void CMD_pistole(TPlayer.TPlayer tplayer)
         {

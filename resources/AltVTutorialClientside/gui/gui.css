@@ -1,5 +1,14 @@
+#moneyhud {
+    text-align: right;
+    margin-left: 1.5vw;
+    margin-top: 0.5vw;
+    font-size: 1.5vw;
+    color: #247cc9;
+    text-shadow: 2px 2px 4px #000000;
+}
+
 #container {
-    margin-top: 857px;
+    margin-top: 826px;
     margin-left: 310px;
     padding: 5px;
     width: 35px;

@@ -33,6 +33,11 @@ namespace AltVTutorial
             tplayer.Emit("sendNotification", status, text);
         }
 
+        public static void UpdateMoneyHud(TPlayer.TPlayer tplayer, long money)
+        {
+            tplayer.Emit("updateMoneyHud", money);
+        }
+
         public static TPlayer.TPlayer GetPlayerByName(string name)
         {
             foreach(TPlayer.TPlayer p in Alt.GetAllPlayers())

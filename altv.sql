@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `accounts`
+-- Tabellenstruktur für Tabelle `users`
 --
 
-CREATE TABLE `accounts` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(35) NOT NULL,
   `password` varchar(128) NOT NULL,
@@ -43,10 +43,10 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Daten für Tabelle `accounts`
+-- Daten für Tabelle `users`
 --
 
-INSERT INTO `accounts` (`id`, `name`, `password`, `geld`, `adminlevel`, `fraktion`, `rang`, `payday`, `posx`, `posy`, `posz`, `posa`) VALUES
+INSERT INTO `users` (`id`, `name`, `password`, `geld`, `adminlevel`, `fraktion`, `rang`, `payday`, `posx`, `posy`, `posz`, `posa`) VALUES
 (2, 'Nemesus', '$2a$10$GanlwtL5ZdTDn/I2F2GiFeIWuVLAOc7ONQENCpmeAawQ6IKU7lwDu', 5000, 3, 0, 0, 60, -427.002, 1115, 326.763, 0);
 
 -- --------------------------------------------------------

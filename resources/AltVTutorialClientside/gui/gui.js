@@ -1,3 +1,10 @@
+//Money Hud
+alt.on('updateMoneyHud', (money) => setMoneyHud(money));
+function setMoneyHud(money)
+{
+    $('#money').text(money);
+}
+
 //Notifications
 alt.on('sendNotification', (status,text) => notify(status, text));
 function notify(status, text)
@@ -11,7 +18,6 @@ function notify(status, text)
 }
 
 //HUD Elemente
-
 var healthbar = new ProgressBar.Circle(container, {
     strokeWidth: 6,
     easing: 'easeInOut',

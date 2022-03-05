@@ -61,7 +61,7 @@ namespace AltVTutorial
                     tplayer.SpielerName = name;
                     Datenbank.NeuenAccountErstellen(name, password);
                     tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
-                    tplayer.Model = (uint)PedModel.Business01AMM;
+                    tplayer.Model = (uint)PedModel.FreemodeMale01;
                     tplayer.Dimension = 0;
                     tplayer.Emit("CloseLoginHud");
                     if (!Utils.IsPlayerWhitelisted(tplayer))
@@ -70,6 +70,10 @@ namespace AltVTutorial
                         tplayer.Kick($"Du stehst nicht auf der Whitelist - (Socialclubid: {tplayer.SocialClubId})!");
                         return;
                     }
+                    Utils.UpdateMoneyHud(tplayer, tplayer.Geld);
+                    tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
+                    tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
+                    tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);
                     tplayer.Eingeloggt = true;
                     tplayer.SendChatMessage("{00c900}Erfolgreich registriert!");
                     Alt.Emit("SaltyChat:EnablePlayer", tplayer);
@@ -101,9 +105,10 @@ namespace AltVTutorial
                         {
                             tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
                         }
-                        tplayer.Model = (uint)PedModel.Business01AMM;
+                        tplayer.Model = (uint)PedModel.FreemodeMale01;
                         tplayer.Emit("CloseLoginHud");
                         tplayer.Health = 200;
+                        Utils.UpdateMoneyHud(tplayer, tplayer.Geld);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);
