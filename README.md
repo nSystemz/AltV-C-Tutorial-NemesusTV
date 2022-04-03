@@ -19,4 +19,6 @@ Forum: https://forum.nemesus.de
 
 Discord (Support und Smalltalk): https://discord.nemesus.de
 
+Ihr wollt uns unterstützen? https://www.buymeacoffee.com/nemesustv
+
 Viel Spass!
