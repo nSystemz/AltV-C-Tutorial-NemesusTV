@@ -10,6 +10,9 @@ import * as NativeUI from 'includes/NativeUIMenu/NativeUI.mjs';
 let loginHud;
 let guiHud;
 let lockHud;
+let invHud;
+
+let showInv = false;
 
 //Commands
 alt.onServer('freezePlayer', (freeze) => {
@@ -219,5 +222,32 @@ alt.on('keydown', (key) => {
     if(key == 77)
     {
         alt.emitServer('Event.startStopEngine');
+    }
+})
+
+alt.on('keydown', (key) => {
+    if(key == 73)
+    {
+        if(showInv == false)
+        {
+            invHud = new alt.WebView("http://localhost:8080/");
+            invHud.focus();
+            showInv = true;
+
+            alt.showCursor(true);
+            alt.toggleGameControls(false);
+            alt.toggleVoiceControls(false);
+        }
+        else
+        {
+            if(invHud)
+            {
+                invHud.destroy();
+                showInv = false;
+                alt.showCursor(false);
+                alt.toggleGameControls(true);
+                alt.toggleVoiceControls(true);
+            }
+        }
     }
 })
