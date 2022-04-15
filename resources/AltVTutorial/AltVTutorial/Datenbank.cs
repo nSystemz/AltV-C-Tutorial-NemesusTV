@@ -62,28 +62,6 @@ namespace AltVTutorial
             return false;
         }
 
-        public static int NeuenAccountErstellen(String name, string password)
-        {
-            string saltedPw = BCrypt.HashPassword(password, BCrypt.GenerateSalt());
-
-            try
-            {
-                MySqlCommand command = Connection.CreateCommand();
-                command.CommandText = "INSERT INTO users (password, name) VALUES (@password, @name)";
-
-                command.Parameters.AddWithValue("@password", saltedPw);
-                command.Parameters.AddWithValue("@name", name);
-                command.ExecuteNonQuery();
-
-                return (int)command.LastInsertedId;
-            }
-            catch(Exception e)
-            {
-                Alt.Log("Fehler bei NeuenAccountErstellen: " + e.ToString());
-                return -1;
-            }
-        }
-
         public static void AccountLaden(TPlayer.TPlayer tplayer)
         {
             MySqlCommand command = Connection.CreateCommand();
