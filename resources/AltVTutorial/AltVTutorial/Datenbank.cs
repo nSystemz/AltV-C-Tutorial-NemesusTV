@@ -47,47 +47,6 @@ namespace AltVTutorial
             }
         }
 
-        public static bool IstAccountBereitsVorhanden(string name)
-        {
-            MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM users WHERE name=@name LIMIT 1";
-            command.Parameters.AddWithValue("@name", name);
-            using(MySqlDataReader reader = command.ExecuteReader())
-            {
-                if(reader.HasRows)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public static void AccountLaden(TPlayer.TPlayer tplayer)
-        {
-            MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM users WHERE name=@name LIMIT 1";
-
-            command.Parameters.AddWithValue("@name", tplayer.Username);
-
-            using(MySqlDataReader reader = command.ExecuteReader())
-            {
-                if(reader.HasRows)
-                {
-                    reader.Read();
-                    tplayer.DBID = reader.GetInt32("id");
-                    tplayer.AdminLevel = reader.GetInt16("adminlevel");
-                    tplayer.Money = reader.GetInt32("geld");
-                    tplayer.Fraktion = reader.GetInt16("fraktion");
-                    tplayer.Rank = reader.GetInt16("rang");
-                    tplayer.Payday = reader.GetInt16("payday");
-                    tplayer.positions[0] = reader.GetFloat("posx");
-                    tplayer.positions[1] = reader.GetFloat("posy");
-                    tplayer.positions[2] = reader.GetFloat("posz");
-                    tplayer.positions[3] = reader.GetFloat("posa");
-                }
-            }
-        }
-
         public static void AccountSpeichern(TPlayer.TPlayer tplayer)
         {
             MySqlCommand command = Connection.CreateCommand();
@@ -105,26 +64,6 @@ namespace AltVTutorial
             command.Parameters.AddWithValue("@id", tplayer.DBID);
 
             command.ExecuteNonQuery();
-        }
-
-        public static bool PasswortCheck(string name, string passwordinput)
-        {
-            string password = "";
-            MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT password FROM users where name=@name LIMIT 1";
-            command.Parameters.AddWithValue("@name", name);
-
-            using(MySqlDataReader reader = command.ExecuteReader())
-            {
-                if(reader.HasRows)
-                {
-                    reader.Read();
-                    password = reader.GetString("password");
-                }
-            }
-
-            if (BCrypt.CheckPassword(passwordinput, password)) return true;
-            return false;
         }
 
         public static void FahrzeugErstellen(TVehicle.TVehicle veh)
