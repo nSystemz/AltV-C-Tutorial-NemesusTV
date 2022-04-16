@@ -15,6 +15,7 @@ namespace AltVTutorial.Logic
         /// Gets the last inserted id. (Default -1)
         /// </summary>
         public int LastInsertedId { get; private set; }
+        public User LastQueriedUser { get; private set; }
 
         /// <summary>
         /// Creates a new instance of the given user
@@ -29,7 +30,8 @@ namespace AltVTutorial.Logic
         }
 
         /// <summary>
-        /// Checks if the given username exists. If no parameter is provided, the instance username will be used
+        /// Checks if the given username exists. If no parameter is provided, the instance username will be used.
+        /// It also sets LastQueriedUser to the found user.
         /// </summary>
         /// <param name="username">OPTIONAL: Username to check against the database</param>
         /// <returns>Retruns true if the given username exists</returns>
@@ -37,6 +39,7 @@ namespace AltVTutorial.Logic
         {
             string userToCheck = (username == string.Empty) ? username : this._username;
             User result = this._db.User.Where(user => user.Username == userToCheck).FirstOrDefault();
+            LastQueriedUser = result;
             return result != null;
         }
 
@@ -47,7 +50,7 @@ namespace AltVTutorial.Logic
         /// <returns>Returns true if the registration was successfull</returns>
         public bool Register(string password)
         {
-            string saltedPassword = BCrypt.HashPassword(password, BCrypt.GenerateSalt());
+            string saltedPassword = BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt());
             User newUserAccount = new User();
             newUserAccount.Username = _username;
             newUserAccount.Password = saltedPassword;
@@ -63,6 +66,21 @@ namespace AltVTutorial.Logic
                 Alt.LogError(ex.Message);
             }
             return false;
+        }
+
+        /// <summary>
+        /// Performs a login with the given credentials
+        /// </summary>
+        /// <param name="password">Password to check against the database</param>
+        /// <returns>Returns true if the given credentials were correct</returns>
+        public bool Login(string password)
+        {
+            if (!DoesUserExist()) return false;
+
+            string saltedPassword = BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt());
+            if (!BCrypt.Net.BCrypt.Verify(password, saltedPassword)) return false;
+
+            return true;
         }
     }
 }
