@@ -27,7 +27,7 @@ namespace AltVTutorial
                 tplayer.Payday--;
                 if(tplayer.Payday <= 0)
                 {
-                    tplayer.Geld += 500;
+                    tplayer.Money += 500;
                     Utils.sendNotification(tplayer, "info", "Du hast einen Payday in Höhe von 500$ erhalten!");
                     tplayer.Payday = 60;
                 }

@@ -1,10 +1,6 @@
 ﻿using AltV.Net;
 using AltV.Net.Elements.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AltVTutorial.TPlayer
 {
@@ -15,33 +11,32 @@ namespace AltVTutorial.TPlayer
 
         public enum ProgressBars { Healthbar = 1, Hungerbar, Thirstbar }
 
-        public enum AdminRanks {Spieler,Moderator,Supporter,Administrator};
+        public enum AdminRanks { Spieler, Moderator, Supporter, Administrator };
 
-        public int SpielerID { get; set; }
-        public String SpielerName { get; set; }
-        public long Geld { get; set; }
-        public int Adminlevel { get; set; }
+        public int DBID { get; set; }
+        public string Username { get; set; }
+        public long Money { get; set; }
+        public int AdminLevel { get; set; }
         public int Fraktion { get; set; }
-        public int Rang { get; set; }
+        public int Rank { get; set; }
         public int Payday { get; set; }
 
-        public bool Eingeloggt { get; set; }
+        public bool LoggedIn { get; set; }
 
-        public float[] positions = new float[4];
 
         public TPlayer(IServer server, IntPtr nativePointer, ushort id) : base(server, nativePointer, id)
         {
-            Geld = 5000;
-            Adminlevel = 0;
-            Eingeloggt = false;
+            Money = 5000;
+            AdminLevel = 0;
+            LoggedIn = false;
             Fraktion = 0;
-            Rang = 0;
+            Rank = 0;
             Payday = 60;
         }
 
         public bool IsSpielerAdmin(int alvl)
         {
-            return Adminlevel >= alvl;
+            return AdminLevel >= alvl;
         }
 
         public bool IstSpielerInFraktion(int frak)
@@ -56,12 +51,12 @@ namespace AltVTutorial.TPlayer
 
         public int HoleRangLevel()
         {
-            return Rang;
+            return Rank;
         }
 
         public String HoleRangName()
         {
-            return RangNamen[Rang];
+            return RangNamen[Rank];
         }
     }
 }

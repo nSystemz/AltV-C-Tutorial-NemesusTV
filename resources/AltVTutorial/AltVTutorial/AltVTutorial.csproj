@@ -6,19 +6,33 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <PlatformTarget>x64</PlatformTarget>
-    <BaseOutputPath>J:\Tutorials\AltVServer\resources\AltVTutorial</BaseOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>J:\Tutorials\AltVServer\resources\AltVTutorial</OutputPath>
+    <BaseOutputPath>bin\</BaseOutputPath>
+	<OutputPath>bin\</OutputPath>
+	<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Bcrypt.cs" />
     <Compile Include="Commands.cs" />
+    <Compile Include="Database\Config.cs" />
+    <Compile Include="Database\ConnectionContext.cs" />
+    <Compile Include="Database\Models\Base.Model.cs" />
+    <Compile Include="Database\Models\PasswordReset.Model.cs" />
+    <Compile Include="Database\Models\User.Model.cs" />
+    <Compile Include="Database\Models\Vehicle.Models.cs" />
+    <Compile Include="Database\Models\Whitelist.Model.cs" />
     <Compile Include="Datenbank.cs" />
     <Compile Include="Events.cs" />
+    <Compile Include="GameEvents\Account\Login.cs" />
+    <Compile Include="GameEvents\Account\Register.cs" />
     <Compile Include="HTTP.cs" />
+    <Compile Include="Logic\Account.cs" />
+    <Compile Include="Migrations\20220416003020_BaseDatabaseStructure.cs" />
+    <Compile Include="Migrations\20220416003020_BaseDatabaseStructure.Designer.cs" />
+    <Compile Include="Migrations\20220416005018_AddPasswordToUserModel.cs" />
+    <Compile Include="Migrations\20220416005018_AddPasswordToUserModel.Designer.cs" />
+    <Compile Include="Migrations\20220416090407_AddedDatabaseDefaults.cs" />
+    <Compile Include="Migrations\20220416090407_AddedDatabaseDefaults.Designer.cs" />
+    <Compile Include="Migrations\ConnectionContextModelSnapshot.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="TPlayer\TPlayer.cs" />
     <Compile Include="TPlayer\TPlayerFactory.cs" />
@@ -36,7 +50,13 @@
     <PackageReference Include="AltV.Net.Async" Version="9.0.4" />
     <PackageReference Include="AltV.Net.EntitySync" Version="1.13.0" />
     <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="9.0.4" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkcore.Tools" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="MySql.Data" Version="8.0.23" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,6 @@
 ﻿using AltV.Net;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AltVTutorial
 {
@@ -51,106 +47,23 @@ namespace AltVTutorial
             }
         }
 
-        public static bool IstAccountBereitsVorhanden(string name)
-        {
-            MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM users WHERE name=@name LIMIT 1";
-            command.Parameters.AddWithValue("@name", name);
-            using(MySqlDataReader reader = command.ExecuteReader())
-            {
-                if(reader.HasRows)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public static int NeuenAccountErstellen(String name, string password)
-        {
-            string saltedPw = BCrypt.HashPassword(password, BCrypt.GenerateSalt());
-
-            try
-            {
-                MySqlCommand command = Connection.CreateCommand();
-                command.CommandText = "INSERT INTO users (password, name) VALUES (@password, @name)";
-
-                command.Parameters.AddWithValue("@password", saltedPw);
-                command.Parameters.AddWithValue("@name", name);
-                command.ExecuteNonQuery();
-
-                return (int)command.LastInsertedId;
-            }
-            catch(Exception e)
-            {
-                Alt.Log("Fehler bei NeuenAccountErstellen: " + e.ToString());
-                return -1;
-            }
-        }
-
-        public static void AccountLaden(TPlayer.TPlayer tplayer)
-        {
-            MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT * FROM users WHERE name=@name LIMIT 1";
-
-            command.Parameters.AddWithValue("@name", tplayer.SpielerName);
-
-            using(MySqlDataReader reader = command.ExecuteReader())
-            {
-                if(reader.HasRows)
-                {
-                    reader.Read();
-                    tplayer.SpielerID = reader.GetInt32("id");
-                    tplayer.Adminlevel = reader.GetInt16("adminlevel");
-                    tplayer.Geld = reader.GetInt32("geld");
-                    tplayer.Fraktion = reader.GetInt16("fraktion");
-                    tplayer.Rang = reader.GetInt16("rang");
-                    tplayer.Payday = reader.GetInt16("payday");
-                    tplayer.positions[0] = reader.GetFloat("posx");
-                    tplayer.positions[1] = reader.GetFloat("posy");
-                    tplayer.positions[2] = reader.GetFloat("posz");
-                    tplayer.positions[3] = reader.GetFloat("posa");
-                }
-            }
-        }
-
         public static void AccountSpeichern(TPlayer.TPlayer tplayer)
         {
             MySqlCommand command = Connection.CreateCommand();
             command.CommandText = "UPDATE users SET adminlevel=@adminlevel, geld=@geld, fraktion=@fraktion, rang=@rang, payday=@payday, posx=@posx, posy=@posy, posz=@posz, posa=@posa WHERE id=@id";
 
-            command.Parameters.AddWithValue("@adminlevel", tplayer.Adminlevel);
-            command.Parameters.AddWithValue("@geld", tplayer.Geld);
+            command.Parameters.AddWithValue("@adminlevel", tplayer.AdminLevel);
+            command.Parameters.AddWithValue("@geld", tplayer.Money);
             command.Parameters.AddWithValue("@fraktion", tplayer.Fraktion);
-            command.Parameters.AddWithValue("@rang", tplayer.Rang);
+            command.Parameters.AddWithValue("@rang", tplayer.Rank);
             command.Parameters.AddWithValue("@payday", tplayer.Payday);
             command.Parameters.AddWithValue("@posx", tplayer.Position.X);
             command.Parameters.AddWithValue("@posy", tplayer.Position.Y);
             command.Parameters.AddWithValue("@posz", tplayer.Position.Z);
             command.Parameters.AddWithValue("@posa", tplayer.Rotation.Yaw);
-            command.Parameters.AddWithValue("@id", tplayer.SpielerID);
+            command.Parameters.AddWithValue("@id", tplayer.DBID);
 
             command.ExecuteNonQuery();
-        }
-
-        public static bool PasswortCheck(string name, string passwordinput)
-        {
-            string password = "";
-            MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT password FROM users where name=@name LIMIT 1";
-            command.Parameters.AddWithValue("@name", name);
-
-            using(MySqlDataReader reader = command.ExecuteReader())
-            {
-                if(reader.HasRows)
-                {
-                    reader.Read();
-                    password = reader.GetString("password");
-                }
-            }
-
-            if (BCrypt.CheckPassword(passwordinput, password)) return true;
-            return false;
         }
 
         public static void FahrzeugErstellen(TVehicle.TVehicle veh)
