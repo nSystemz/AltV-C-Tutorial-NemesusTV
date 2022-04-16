@@ -3,6 +3,7 @@ using System;
 using AltVTutorial.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AltVTutorial.Migrations
 {
     [DbContext(typeof(ConnectionContext))]
-    partial class ConnectionContextModelSnapshot : ModelSnapshot
+    [Migration("20220416005018_AddPasswordToUserModel")]
+    partial class AddPasswordToUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
