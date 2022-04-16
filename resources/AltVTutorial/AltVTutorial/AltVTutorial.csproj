@@ -30,6 +30,8 @@
     <Compile Include="Migrations\20220416003020_BaseDatabaseStructure.Designer.cs" />
     <Compile Include="Migrations\20220416005018_AddPasswordToUserModel.cs" />
     <Compile Include="Migrations\20220416005018_AddPasswordToUserModel.Designer.cs" />
+    <Compile Include="Migrations\20220416090407_AddedDatabaseDefaults.cs" />
+    <Compile Include="Migrations\20220416090407_AddedDatabaseDefaults.Designer.cs" />
     <Compile Include="Migrations\ConnectionContextModelSnapshot.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="TPlayer\TPlayer.cs" />
