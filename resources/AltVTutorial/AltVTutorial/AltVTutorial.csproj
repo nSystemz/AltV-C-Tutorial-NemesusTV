@@ -27,6 +27,9 @@
     <Compile Include="GameEvents\Account\Register.cs" />
     <Compile Include="HTTP.cs" />
     <Compile Include="Logic\Account.cs" />
+    <Compile Include="Migrations\20220416003020_BaseDatabaseStructure.cs" />
+    <Compile Include="Migrations\20220416003020_BaseDatabaseStructure.Designer.cs" />
+    <Compile Include="Migrations\ConnectionContextModelSnapshot.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="TPlayer\TPlayer.cs" />
     <Compile Include="TPlayer\TPlayerFactory.cs" />
