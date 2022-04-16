@@ -6,11 +6,9 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <PlatformTarget>x64</PlatformTarget>
-    <BaseOutputPath>J:\Tutorials\AltVServer\resources\AltVTutorial</BaseOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>J:\Tutorials\AltVServer\resources\AltVTutorial</OutputPath>
+    <BaseOutputPath>bin\</BaseOutputPath>
+	<OutputPath>bin\</OutputPath>
+	<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <ItemGroup>
