@@ -1,7 +1,6 @@
 ﻿using AltV.Net;
 using AltVTutorial.Database;
 using AltVTutorial.Database.Models;
-using MySql.Data.MySqlClient;
 using System;
 using System.Linq;
 
@@ -10,7 +9,6 @@ namespace AltVTutorial.Logic
     class Account
     {
         private string _username;
-        private MySqlConnection _connection; // ToDo: get 
         private ConnectionContext _db;
 
         /// <summary>
@@ -25,7 +23,6 @@ namespace AltVTutorial.Logic
         public Account(string username)
         {
             this._username = username;
-            _connection = Datenbank.Connection;
             _db = new ConnectionContext();
             LastInsertedId = -1;
 
