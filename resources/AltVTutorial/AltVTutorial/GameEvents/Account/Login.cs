@@ -57,7 +57,4 @@ namespace AltVTutorial.GameEvents.Account
             }
         }
     }
-
-}
-}
 }
