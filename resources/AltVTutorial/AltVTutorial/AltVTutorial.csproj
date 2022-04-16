@@ -14,9 +14,19 @@
   <ItemGroup>
     <Compile Include="Bcrypt.cs" />
     <Compile Include="Commands.cs" />
+    <Compile Include="Database\Config.cs" />
+    <Compile Include="Database\ConnectionContext.cs" />
+    <Compile Include="Database\Models\Base.Model.cs" />
+    <Compile Include="Database\Models\PasswordReset.Model.cs" />
+    <Compile Include="Database\Models\User.Model.cs" />
+    <Compile Include="Database\Models\Vehicle.Models.cs" />
+    <Compile Include="Database\Models\Whitelist.Model.cs" />
     <Compile Include="Datenbank.cs" />
     <Compile Include="Events.cs" />
+    <Compile Include="GameEvents\Account\Login.cs" />
+    <Compile Include="GameEvents\Account\Register.cs" />
     <Compile Include="HTTP.cs" />
+    <Compile Include="Logic\Account.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="TPlayer\TPlayer.cs" />
     <Compile Include="TPlayer\TPlayerFactory.cs" />
