@@ -1,6 +1,9 @@
 ﻿using AltV.Net;
+using AltVTutorial.Database;
+using AltVTutorial.Database.Models;
 using MySql.Data.MySqlClient;
 using System;
+using System.Linq;
 
 namespace AltVTutorial.Logic
 {
@@ -8,7 +11,7 @@ namespace AltVTutorial.Logic
     {
         private string _username;
         private MySqlConnection _connection; // ToDo: get 
-        private MySqlCommand _command;
+        private ConnectionContext _db;
 
         /// <summary>
         /// Gets the last inserted id. (Default -1)
@@ -23,7 +26,7 @@ namespace AltVTutorial.Logic
         {
             this._username = username;
             _connection = Datenbank.Connection;
-            _command = _connection.CreateCommand();
+            _db = new ConnectionContext();
             LastInsertedId = -1;
 
         }
@@ -36,19 +39,8 @@ namespace AltVTutorial.Logic
         public bool DoesUserExist(string username = "")
         {
             string userToCheck = (username == string.Empty) ? username : this._username;
-            _command.CommandText = "SELECT ID FROM users WHERE name=@name LIMIT 1";
-            _command.Parameters.AddWithValue("@name", userToCheck);
-            try
-            {
-                MySqlDataReader reader = _command.ExecuteReader();
-                if (reader.HasRows)
-                    return true;
-            }
-            catch (Exception ex)
-            {
-                Alt.LogError(ex.Message);
-            }
-            return false;
+            User result = this._db.User.Where(user => user.Username == userToCheck).FirstOrDefault();
+            return result != null;
         }
 
         /// <summary>
@@ -59,15 +51,14 @@ namespace AltVTutorial.Logic
         public bool Register(string password)
         {
             string saltedPassword = BCrypt.HashPassword(password, BCrypt.GenerateSalt());
+            User newUserAccount = new User();
+            newUserAccount.Username = _username;
+            newUserAccount.Password = saltedPassword;
+            this._db.Add(newUserAccount);
             try
             {
-                MySqlCommand command = _connection.CreateCommand();
-                command.CommandText = "INSERT INTO users (password, name) VALUES (@password, @name)";
-
-                command.Parameters.AddWithValue("@password", saltedPassword);
-                command.Parameters.AddWithValue("@name", _username);
-                command.ExecuteNonQuery();
-                LastInsertedId = Convert.ToInt32(command.LastInsertedId);
+                this._db.SaveChanges();
+                LastInsertedId = newUserAccount.Id;
                 return true;
             }
             catch (Exception ex)
