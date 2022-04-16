@@ -12,7 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Bcrypt.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="Database\Config.cs" />
     <Compile Include="Database\ConnectionContext.cs" />
@@ -49,6 +48,7 @@
     <PackageReference Include="AltV.Net.Async" Version="9.0.4" />
     <PackageReference Include="AltV.Net.EntitySync" Version="1.13.0" />
     <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="9.0.4" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkcore.Tools" Version="6.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
