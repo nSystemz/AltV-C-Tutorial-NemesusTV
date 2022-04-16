@@ -10,7 +10,7 @@ namespace AltVTutorial.GameEvents.Account
         [ClientEvent("Event.Register")]
         public void OnPlayerRegister(TPlayer.TPlayer tplayer, string name, string password)
         {
-            if (!tplayer.Eingeloggt) return; // Bereits einen Account? Abbruch!
+            if (!tplayer.LoggedIn) return; // Bereits einen Account? Abbruch!
             if (name.Length < 3) return; // Username weniger als 3 Zeichen? Abbruch!
             if (password.Length < 5) return; // Passwort zu kurz? Abbruch!
 
@@ -28,11 +28,11 @@ namespace AltVTutorial.GameEvents.Account
             }
 
             // ToDo: Refactor
-            tplayer.SpielerName = name;
+            tplayer.Username = name;
             tplayer.Model = (uint)PedModel.FreemodeMale01;
             tplayer.Dimension = 0;
-            tplayer.Eingeloggt = true;
-            tplayer.SpielerID = AccountHandle.LastInsertedId;
+            tplayer.LoggedIn = true;
+            tplayer.DBID = AccountHandle.LastInsertedId;
 
             tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
 
@@ -43,7 +43,7 @@ namespace AltVTutorial.GameEvents.Account
                 tplayer.Kick($"Du stehst nicht auf der Whitelist - (Socialclubid: {tplayer.SocialClubId})!");
                 return;
             }
-            Utils.UpdateMoneyHud(tplayer, tplayer.Geld);
+            Utils.UpdateMoneyHud(tplayer, tplayer.Money);
             tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
             tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
             tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);

@@ -67,18 +67,18 @@ namespace AltVTutorial
             MySqlCommand command = Connection.CreateCommand();
             command.CommandText = "SELECT * FROM users WHERE name=@name LIMIT 1";
 
-            command.Parameters.AddWithValue("@name", tplayer.SpielerName);
+            command.Parameters.AddWithValue("@name", tplayer.Username);
 
             using(MySqlDataReader reader = command.ExecuteReader())
             {
                 if(reader.HasRows)
                 {
                     reader.Read();
-                    tplayer.SpielerID = reader.GetInt32("id");
-                    tplayer.Adminlevel = reader.GetInt16("adminlevel");
-                    tplayer.Geld = reader.GetInt32("geld");
+                    tplayer.DBID = reader.GetInt32("id");
+                    tplayer.AdminLevel = reader.GetInt16("adminlevel");
+                    tplayer.Money = reader.GetInt32("geld");
                     tplayer.Fraktion = reader.GetInt16("fraktion");
-                    tplayer.Rang = reader.GetInt16("rang");
+                    tplayer.Rank = reader.GetInt16("rang");
                     tplayer.Payday = reader.GetInt16("payday");
                     tplayer.positions[0] = reader.GetFloat("posx");
                     tplayer.positions[1] = reader.GetFloat("posy");
@@ -93,16 +93,16 @@ namespace AltVTutorial
             MySqlCommand command = Connection.CreateCommand();
             command.CommandText = "UPDATE users SET adminlevel=@adminlevel, geld=@geld, fraktion=@fraktion, rang=@rang, payday=@payday, posx=@posx, posy=@posy, posz=@posz, posa=@posa WHERE id=@id";
 
-            command.Parameters.AddWithValue("@adminlevel", tplayer.Adminlevel);
-            command.Parameters.AddWithValue("@geld", tplayer.Geld);
+            command.Parameters.AddWithValue("@adminlevel", tplayer.AdminLevel);
+            command.Parameters.AddWithValue("@geld", tplayer.Money);
             command.Parameters.AddWithValue("@fraktion", tplayer.Fraktion);
-            command.Parameters.AddWithValue("@rang", tplayer.Rang);
+            command.Parameters.AddWithValue("@rang", tplayer.Rank);
             command.Parameters.AddWithValue("@payday", tplayer.Payday);
             command.Parameters.AddWithValue("@posx", tplayer.Position.X);
             command.Parameters.AddWithValue("@posy", tplayer.Position.Y);
             command.Parameters.AddWithValue("@posz", tplayer.Position.Z);
             command.Parameters.AddWithValue("@posa", tplayer.Rotation.Yaw);
-            command.Parameters.AddWithValue("@id", tplayer.SpielerID);
+            command.Parameters.AddWithValue("@id", tplayer.DBID);
 
             command.ExecuteNonQuery();
         }

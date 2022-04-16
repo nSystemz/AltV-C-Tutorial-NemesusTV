@@ -35,7 +35,7 @@ namespace AltVTutorial
                 if (PlayerName == null)
                 {
                     tplayer.SendChatMessage("{04B404} Das Fahrzeug wurde erfolgreich gespawned!");
-                    Utils.adminLog($"Der Spieler {tplayer.SpielerName} hat ein {VehicleName} gespawned!", "TutorialServer");
+                    Utils.adminLog($"Der Spieler {tplayer.Username} hat ein {VehicleName} gespawned!", "TutorialServer");
                     Utils.sendNotification(tplayer, "info", "Fahrzeug wurde erfolgreich gespawned!");
                 }
                 else
@@ -47,9 +47,9 @@ namespace AltVTutorial
                         return;
                     }
                     tplayer.SendChatMessage("{04B404} Du hast erfolgreich ein Fahrzeug gespawnt und dieses einem Spieler zugewiesen!");
-                    Utils.adminLog($"Der Spieler {tplayer.SpielerName} hat ein {VehicleName} für {target.Name} erstellt!", "TutorialServer");
+                    Utils.adminLog($"Der Spieler {tplayer.Username} hat ein {VehicleName} für {target.Name} erstellt!", "TutorialServer");
                     Utils.sendNotification(tplayer, "info", "Fahrzeug wurde erfolgreich für einen Spieler erstellt!");
-                    veh.SpielerID = target.SpielerID;
+                    veh.SpielerID = target.DBID;
                     veh.VehicleLock = (int)veh.LockState;
                     veh.vehicleName = VehicleName;
                     veh.NumberplateText = VehicleName;
@@ -185,7 +185,7 @@ namespace AltVTutorial
                 return;
             }
             target.Fraktion = frak;
-            target.Rang = 6;
+            target.Rank = 6;
             tplayer.SendChatMessage($"Du hast {target.Name} zum Chef der Fraktion {TPlayer.TPlayer.Fraktionen[frak]}!");
             target.SendChatMessage($"Du wurdest von {tplayer.Name} zum Chef der Fraktion {TPlayer.TPlayer.Fraktionen[frak]} gemacht!");
         }
@@ -193,7 +193,7 @@ namespace AltVTutorial
         [Command("invite")]
         public void CMD_invite(TPlayer.TPlayer tplayer, string playertarget)
         {
-            if(tplayer.Fraktion == 0 || tplayer.Rang < 6)
+            if(tplayer.Fraktion == 0 || tplayer.Rank < 6)
             {
                 tplayer.SendChatMessage("{FF0000}Du bist in keiner Fraktion oder dein Rang ist zu niedrig!");
                 return;
@@ -205,7 +205,7 @@ namespace AltVTutorial
                 return;
             }
             target.Fraktion = tplayer.Fraktion;
-            target.Rang = 1;
+            target.Rank = 1;
             tplayer.SendChatMessage($"Du hast {target.Name} zur Fraktion {TPlayer.TPlayer.Fraktionen[tplayer.Fraktion]} eingeladen!");
             target.SendChatMessage($"Du wurdest von {tplayer.Name} zur Fraktion {TPlayer.TPlayer.Fraktionen[tplayer.Fraktion]} eingeladen!");
         }

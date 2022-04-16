@@ -10,7 +10,7 @@ namespace AltVTutorial.GameEvents.Account
         [ClientEvent("Event.Login")]
         public void OnPlayerLogin(TPlayer.TPlayer tplayer, String name, String password)
         {
-            if (tplayer.Eingeloggt) return; // Bereits eingeloggt? Abbruch!
+            if (tplayer.LoggedIn) return; // Bereits eingeloggt? Abbruch!
             if (name.Length < 3) return; // Username weniger als 3 Zeichen? Abbruch!
             if (password.Length < 5) return; // Passwort zu kurz? Abbruch!
 
@@ -23,7 +23,7 @@ namespace AltVTutorial.GameEvents.Account
 
             if (Datenbank.PasswortCheck(name, password))
             {
-                tplayer.SpielerName = name;
+                tplayer.Username = name;
                 Datenbank.AccountLaden(tplayer);
                 if (tplayer.positions[0] != 0.0 && tplayer.positions[1] != 0.0 && tplayer.positions[2] != 0.0)
                 {
@@ -37,7 +37,7 @@ namespace AltVTutorial.GameEvents.Account
                 tplayer.Model = (uint)PedModel.FreemodeMale01;
                 tplayer.Emit("CloseLoginHud");
                 tplayer.Health = 200;
-                Utils.UpdateMoneyHud(tplayer, tplayer.Geld);
+                Utils.UpdateMoneyHud(tplayer, tplayer.Money);
                 tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
                 tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
                 tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);
@@ -47,7 +47,7 @@ namespace AltVTutorial.GameEvents.Account
                     tplayer.Kick("Du stehst nicht auf der Whitelist");
                     return;
                 }
-                tplayer.Eingeloggt = true;
+                tplayer.LoggedIn = true;
                 tplayer.SendChatMessage("{00c900}Erfolgreich eingeloggt!");
                 Alt.Emit("SaltyChat:EnablePlayer", tplayer);
             }
