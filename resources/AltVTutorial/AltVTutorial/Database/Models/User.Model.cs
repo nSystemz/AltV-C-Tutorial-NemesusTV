@@ -9,15 +9,15 @@ namespace AltVTutorial.Database.Models
         public string EMail { get; set; }
         public DateTime VerifiedAt { get; set; }
         public string Token { get; set; }
-        public int Money { get; set; }
-        public int AdminLevel { get; set; }
-        public int Franktion { get; set; }
-        public int Rank { get; set; }
-        public double PosX { get; set; }
-        public double PosY { get; set; }
-        public double PosZ { get; set; }
-        public double PosR { get; set; }
-        public int Payday { get; set; }
+        public int Money { get; set; } = 5000;
+        public int AdminLevel { get; set; } = 0;
+        public int Fraktion { get; set; } = 0;
+        public int Rank { get; set; } = 0;
+        public float PosX { get; set; } = -425f;
+        public float PosY { get; set; } = 1123f;
+        public float PosZ { get; set; } = 325f;
+        public float PosR { get; set; } = 0f;
+        public int Payday { get; set; } = 60;
 
     }
 }
