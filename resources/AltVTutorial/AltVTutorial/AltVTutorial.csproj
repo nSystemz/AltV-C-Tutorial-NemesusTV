@@ -19,6 +19,10 @@
     <Compile Include="Datenbank.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="HTTP.cs" />
+    <Compile Include="Inventory\Inventory.cs" />
+    <Compile Include="Inventory\InventoryModel.cs" />
+    <Compile Include="Inventory\Item.cs" />
+    <Compile Include="Inventory\ItemModel.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="TPlayer\TPlayer.cs" />
     <Compile Include="TPlayer\TPlayerFactory.cs" />

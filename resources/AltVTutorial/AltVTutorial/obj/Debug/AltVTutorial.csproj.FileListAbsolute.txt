@@ -14,3 +14,4 @@ J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial.deps.json
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial.dll
 J:\Tutorials\AltVServer\resources\AltVTutorial\ref\AltVTutorial.dll
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial.pdb
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.csproj.AssemblyReference.cache
