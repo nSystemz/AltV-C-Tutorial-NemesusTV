@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 03. Apr 2022 um 13:38
+-- Erstellungszeit: 02. Jul 2022 um 10:40
 -- Server-Version: 10.4.21-MariaDB
 -- PHP-Version: 8.0.11
 
@@ -156,15 +156,16 @@ CREATE TABLE `users` (
   `posx` float NOT NULL,
   `posy` float NOT NULL,
   `posz` float NOT NULL,
-  `posa` float NOT NULL
+  `posa` float NOT NULL,
+  `einreise` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Daten für Tabelle `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `geld`, `adminlevel`, `fraktion`, `rang`, `payday`, `posx`, `posy`, `posz`, `posa`) VALUES
-(1, 'Nemesus', '', NULL, '$2a$12$qtYJFt74/XrTtecqSPvqAe2CBfyEcxJVLWqnqX5AmWKv5MnAx3FB.', 'NmkySi5R8OeUzA8wptlRVgM17MGVIYusMv3xdiGZVdrvGR2lrJfTgysZ6ESb', NULL, NULL, 1000, 3, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `geld`, `adminlevel`, `fraktion`, `rang`, `payday`, `posx`, `posy`, `posz`, `posa`, `einreise`) VALUES
+(1, 'Nemesus', '', NULL, '$2a$10$.eQUw1.ST2sIrzPYLflB3Oru1m19IVYkaSh8jiJhP/0TW8mrjf7Ze', 'NmkySi5R8OeUzA8wptlRVgM17MGVIYusMv3xdiGZVdrvGR2lrJfTgysZ6ESb', NULL, NULL, 1500, 3, 0, 0, 60, 402.699, -998.176, -99.0146, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -279,7 +280,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT für Tabelle `whitelist`

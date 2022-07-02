@@ -75,6 +75,34 @@ namespace AltVTutorial
             tplayer.SendChatMessage("{04B404}Der freeze Befehl wurde ausgeführt!");
         }
 
+        [Command("einreise")]
+        public void CMD_einreise(TPlayer.TPlayer tplayer, string playerName)
+        {
+            if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Moderator))
+            {
+                tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
+                return;
+            }
+            TPlayer.TPlayer target = Utils.GetPlayerByName(playerName);
+            if(target == null)
+            {
+                Utils.sendNotification(tplayer, "error", "Ungültiger Spieler!");
+                return;
+            }
+            if(target.Einreise == 0)
+            {
+                target.Einreise = 1;
+                tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
+                Utils.sendNotification(target, "success", "Einreise erfolgreich!");
+                Utils.sendNotification(tplayer, "success", "Einreise erfolgreich!");
+                Datenbank.AccountSpeichern(tplayer);
+            }
+            else
+            {
+                Utils.sendNotification(tplayer, "error", "Dieser Spieler muss nicht mehr einreisen!");
+            }
+        }
+
         [Command("telexyz")]
         public void CMD_telexyz(TPlayer.TPlayer tplayer, double x, double y, double z)
         {

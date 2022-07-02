@@ -73,10 +73,11 @@ namespace AltVTutorial
             try
             {
                 MySqlCommand command = Connection.CreateCommand();
-                command.CommandText = "INSERT INTO users (password, name) VALUES (@password, @name)";
+                command.CommandText = "INSERT INTO users (password, name, email) VALUES (@password, @name, @email)";
 
                 command.Parameters.AddWithValue("@password", saltedPw);
                 command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@users_email_unique", name);
                 command.ExecuteNonQuery();
 
                 return (int)command.LastInsertedId;
@@ -110,6 +111,7 @@ namespace AltVTutorial
                     tplayer.positions[1] = reader.GetFloat("posy");
                     tplayer.positions[2] = reader.GetFloat("posz");
                     tplayer.positions[3] = reader.GetFloat("posa");
+                    tplayer.Einreise = reader.GetInt16("einreise");
                 }
             }
         }
@@ -117,7 +119,7 @@ namespace AltVTutorial
         public static void AccountSpeichern(TPlayer.TPlayer tplayer)
         {
             MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "UPDATE users SET adminlevel=@adminlevel, geld=@geld, fraktion=@fraktion, rang=@rang, payday=@payday, posx=@posx, posy=@posy, posz=@posz, posa=@posa WHERE id=@id";
+            command.CommandText = "UPDATE users SET adminlevel=@adminlevel, geld=@geld, fraktion=@fraktion, rang=@rang, payday=@payday, posx=@posx, posy=@posy, posz=@posz, posa=@posa, einreise=@einreise WHERE id=@id";
 
             command.Parameters.AddWithValue("@adminlevel", tplayer.Adminlevel);
             command.Parameters.AddWithValue("@geld", tplayer.Geld);
@@ -128,6 +130,7 @@ namespace AltVTutorial
             command.Parameters.AddWithValue("@posy", tplayer.Position.Y);
             command.Parameters.AddWithValue("@posz", tplayer.Position.Z);
             command.Parameters.AddWithValue("@posa", tplayer.Rotation.Yaw);
+            command.Parameters.AddWithValue("@einreise", tplayer.Einreise);
             command.Parameters.AddWithValue("@id", tplayer.SpielerID);
 
             command.ExecuteNonQuery();

@@ -10,9 +10,9 @@ namespace AltVTutorial.TVehicle
 {
     public class TVehicleFactory : IEntityFactory<IVehicle>
     {
-        public IVehicle Create(IServer server, IntPtr entityPointer, ushort id)
+        public IVehicle Create(ICore core, IntPtr entityPointer, ushort id)
         {
-            return new TVehicle(server, entityPointer, id);
+            return new TVehicle(core, entityPointer, id);
         }
     }
 }

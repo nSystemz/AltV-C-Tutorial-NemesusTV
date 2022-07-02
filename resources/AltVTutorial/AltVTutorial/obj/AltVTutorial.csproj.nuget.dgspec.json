@@ -42,19 +42,19 @@
           "dependencies": {
             "AltV.Net": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.13, )"
             },
             "AltV.Net.Async": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.13, )"
             },
             "AltV.Net.EntitySync": {
               "target": "Package",
-              "version": "[1.13.0, )"
+              "version": "[1.18.0, )"
             },
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[10.0.13, )"
             },
             "MySql.Data": {
               "target": "Package",

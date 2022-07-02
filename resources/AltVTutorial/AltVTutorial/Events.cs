@@ -103,7 +103,15 @@ namespace AltVTutorial
                         }
                         else
                         {
-                            tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
+                            if(tplayer.Einreise == 0)
+                            {
+                                tplayer.Spawn(new AltV.Net.Data.Position(405, -993, -99), 0);
+                                tplayer.SendChatMessage("{00c900}Warte auf Einreise ...");
+                            }
+                            else
+                            {
+                                tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
+                            }
                         }
                         tplayer.Model = (uint)PedModel.FreemodeMale01;
                         tplayer.Emit("CloseLoginHud");

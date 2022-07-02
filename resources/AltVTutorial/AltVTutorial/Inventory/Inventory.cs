@@ -1,4 +1,5 @@
 ﻿using AltV.Net;
+using AltV.Net.Resources.Chat.Api;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace AltVTutorial.Inventory
 
                 command.ExecuteNonQuery();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Alt.Log($"[RemoveItem]: " + e.ToString());
             }
@@ -56,7 +57,7 @@ namespace AltVTutorial.Inventory
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Alt.Log($"[LoadAllItems]: " + e.ToString());
             }
@@ -103,9 +104,9 @@ namespace AltVTutorial.Inventory
         {
             List<InventoryModel> inventory = new List<InventoryModel>();
 
-            foreach(ItemModel item in itemList.ToList())
+            foreach (ItemModel item in itemList.ToList())
             {
-                if(item.ownerEntity == "Player" && item.ownerIdentifier == tplayer.SpielerID)
+                if (item.ownerEntity == "Player" && item.ownerIdentifier == tplayer.SpielerID)
                 {
                     InventoryModel inventoryItem = new InventoryModel();
                     Item getItem = Item.GetItemFromItemHash(item.hash);
@@ -119,6 +120,54 @@ namespace AltVTutorial.Inventory
                 }
             }
             return inventory;
+        }
+
+        public static void InventarAktionServer(TPlayer.TPlayer tplayer, int ItemId, string action)
+        {
+            List<InventoryModel> inventory = new List<InventoryModel>();
+            inventory = GetPlayerInventory(tplayer);
+
+            ItemModel item = ItemModel.GetItemModelFromId(ItemId);
+            if (item == null) return;
+
+            Item getItem = Item.GetItemFromItemHash(item.hash);
+
+            switch (action.ToLower())
+            {
+                case "konsumieren":
+                    {
+                        if (getItem.type != (int)Item.ItemTypes.Consumable) return;
+                        item.amount--;
+
+                        Utils.sendNotification(tplayer, "success", $"Du konsumierst ein/e/en {getItem.itemdescription}!");
+                        tplayer.SendChatMessage($"Du konsumierst ein/e/en {getItem.itemdescription}!");
+
+                        if (item.amount <= 0)
+                        {
+                            RemoveItem(item.id);
+                            itemList.Remove(item);
+                        }
+                        else
+                        {
+                            Inventory.UpdateItem(item);
+                        }
+                        break;
+                    }
+            }
+        }
+
+        public static ItemModel GetPlayerItemModelFromHash(int playerId, string hash)
+        {
+            ItemModel itemModel = null;
+            foreach(ItemModel item in itemList)
+            {
+                if(item.ownerEntity == "Player" && item.ownerIdentifier == playerId && item.hash == hash)
+                {
+                    itemModel = item;
+                    break;
+                }
+            }
+            return itemModel;
         }
     }
 }

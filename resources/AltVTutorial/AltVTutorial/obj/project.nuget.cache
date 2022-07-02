@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "Ij2O0CuEB9NlrSUSw9u9MNmsttTEDZj7ng9HZVb/xz0xvmOYvm8RbEFVOHdLGAL2CP/ANczimQ7GWSYetvGGgg==",
+  "dgSpecHash": "2qmPM5Xa+lL3NBUNpHjvI9OXjRUjeGGKGeMvipznUTNvxMvf17HL0OMEWr99YYITBxefWiI/w6aYHN6j0f7P4A==",
   "success": true,
   "projectFilePath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tschn\\.nuget\\packages\\altv.net\\9.0.4\\altv.net.9.0.4.nupkg.sha512",
-    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.async\\9.0.4\\altv.net.async.9.0.4.nupkg.sha512",
-    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.entitysync\\1.13.0\\altv.net.entitysync.1.13.0.nupkg.sha512",
-    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.resources.chat.api\\9.0.4\\altv.net.resources.chat.api.9.0.4.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net\\10.0.13\\altv.net.10.0.13.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.async\\10.0.13\\altv.net.async.10.0.13.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.capi\\10.0.13\\altv.net.capi.10.0.13.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.entitysync\\1.18.0\\altv.net.entitysync.1.18.0.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.resources.chat.api\\10.0.13\\altv.net.resources.chat.api.10.0.13.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\altv.net.shared\\10.0.13\\altv.net.shared.10.0.13.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",
@@ -27,7 +29,7 @@
     "C:\\Users\\tschn\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
-    "C:\\Users\\tschn\\.nuget\\packages\\system.threading.channels\\5.0.0\\system.threading.channels.5.0.0.nupkg.sha512",
+    "C:\\Users\\tschn\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []

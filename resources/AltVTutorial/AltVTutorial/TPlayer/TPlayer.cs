@@ -24,12 +24,11 @@ namespace AltVTutorial.TPlayer
         public int Fraktion { get; set; }
         public int Rang { get; set; }
         public int Payday { get; set; }
-
         public bool Eingeloggt { get; set; }
-
         public float[] positions = new float[4];
+        public int Einreise { get; set; }
 
-        public TPlayer(IServer server, IntPtr nativePointer, ushort id) : base(server, nativePointer, id)
+        public TPlayer(ICore core, IntPtr nativePointer, ushort id) : base(core, nativePointer, id)
         {
             Geld = 5000;
             Adminlevel = 0;
@@ -37,6 +36,7 @@ namespace AltVTutorial.TPlayer
             Fraktion = 0;
             Rang = 0;
             Payday = 60;
+            Einreise = 0;
         }
 
         public bool IsSpielerAdmin(int alvl)

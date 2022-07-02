@@ -16,7 +16,7 @@ namespace AltVTutorial.TVehicle
         public String vehicleName { get; set; }
         public float Fuel { get; set; }
 
-        public TVehicle(IServer server, IntPtr nativePointer, ushort id) : base(server, nativePointer, id)
+        public TVehicle(ICore core, IntPtr nativePointer, ushort id) : base(core, nativePointer, id)
         {
             vehicleID = 0;
             SpielerID = 0;

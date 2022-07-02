@@ -8,17 +8,20 @@
     ".NETCoreApp,Version=v6.0": {
       "AltVTutorial/1.0.0": {
         "dependencies": {
-          "AltV.Net": "9.0.4",
-          "AltV.Net.Async": "9.0.4",
-          "AltV.Net.EntitySync": "1.13.0",
-          "AltV.Net.Resources.Chat.Api": "9.0.4",
+          "AltV.Net": "10.0.13",
+          "AltV.Net.Async": "10.0.13",
+          "AltV.Net.EntitySync": "1.18.0",
+          "AltV.Net.Resources.Chat.Api": "10.0.13",
           "MySql.Data": "8.0.23"
         },
         "runtime": {
           "AltVTutorial.dll": {}
         }
       },
-      "AltV.Net/9.0.4": {
+      "AltV.Net/10.0.13": {
+        "dependencies": {
+          "AltV.Net.Shared": "10.0.13"
+        },
         "runtime": {
           "lib/net6.0/AltV.Net.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -26,10 +29,10 @@
           }
         }
       },
-      "AltV.Net.Async/9.0.4": {
+      "AltV.Net.Async/10.0.13": {
         "dependencies": {
-          "AltV.Net": "9.0.4",
-          "System.Threading.Channels": "5.0.0"
+          "AltV.Net": "10.0.13",
+          "System.Threading.Channels": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/AltV.Net.Async.dll": {
@@ -38,23 +41,42 @@
           }
         }
       },
-      "AltV.Net.EntitySync/1.13.0": {
-        "dependencies": {
-          "System.Threading.Channels": "5.0.0"
-        },
+      "AltV.Net.CApi/10.0.13": {
         "runtime": {
-          "lib/net5.0/AltV.Net.EntitySync.dll": {
+          "lib/net6.0/AltV.Net.CApi.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
       },
-      "AltV.Net.Resources.Chat.Api/9.0.4": {
+      "AltV.Net.EntitySync/1.18.0": {
         "dependencies": {
-          "AltV.Net": "9.0.4"
+          "System.Threading.Channels": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/AltV.Net.EntitySync.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "AltV.Net.Resources.Chat.Api/10.0.13": {
+        "dependencies": {
+          "AltV.Net": "10.0.13"
         },
         "runtime": {
           "lib/net6.0/AltV.Net.Resources.Chat.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "AltV.Net.Shared/10.0.13": {
+        "dependencies": {
+          "AltV.Net.CApi": "10.0.13"
+        },
+        "runtime": {
+          "lib/net6.0/AltV.Net.Shared.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -259,7 +281,7 @@
           "Microsoft.NETCore.Platforms": "3.1.0"
         }
       },
-      "System.Threading.Channels/5.0.0": {},
+      "System.Threading.Channels/6.0.0": {},
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
@@ -287,33 +309,47 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AltV.Net/9.0.4": {
+    "AltV.Net/10.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nBCzW5LeK8BThi7qM0D36t5c0LCdxGUxPW4Lcs0mf3EVjnrcsBu1u3VJwoR4FK3Hj41XsRQWszqZqRTcqL114w==",
-      "path": "altv.net/9.0.4",
-      "hashPath": "altv.net.9.0.4.nupkg.sha512"
+      "sha512": "sha512-99dOJlkrBhSTAlV4sO1Rm6oyOWiKjTrWW4pZDFGJ6xVNRLwIva8kJJrep+OTRVxStA1pG2Qw6KtaHGMY1KwxmA==",
+      "path": "altv.net/10.0.13",
+      "hashPath": "altv.net.10.0.13.nupkg.sha512"
     },
-    "AltV.Net.Async/9.0.4": {
+    "AltV.Net.Async/10.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4bzJz2e36CXRFEXPdfHKPf56uqxHaCa1UsJbMJJ6TbF9r44cG2sGL0cpjaKnTJGLcJ/AVRliUHC9HARid/11LQ==",
-      "path": "altv.net.async/9.0.4",
-      "hashPath": "altv.net.async.9.0.4.nupkg.sha512"
+      "sha512": "sha512-z7mjeHCAuvsW6jeyYuGIIyMHFoiB+2Cp6gl1h3aAaqps5SYlmTmtw8Goz3avsl3sb741P/3qb0e5k9bWiazKmg==",
+      "path": "altv.net.async/10.0.13",
+      "hashPath": "altv.net.async.10.0.13.nupkg.sha512"
     },
-    "AltV.Net.EntitySync/1.13.0": {
+    "AltV.Net.CApi/10.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-b0DkilzzJqXd0PTI7h9f/k5OVDKn60h95NU3z13y3Nz+pxlgS2V1lSE8MbVwqkdFr2Jl+3dZUwRAOs9Ic77Sbg==",
-      "path": "altv.net.entitysync/1.13.0",
-      "hashPath": "altv.net.entitysync.1.13.0.nupkg.sha512"
+      "sha512": "sha512-3lb7GXE5q8zVTLlIyGMWsrW298sbpYRY/BE+gRntnEERbHCtI1WMXhIO7woCsLb0oZi4FiMd1+ZPWTia9gH9Jg==",
+      "path": "altv.net.capi/10.0.13",
+      "hashPath": "altv.net.capi.10.0.13.nupkg.sha512"
     },
-    "AltV.Net.Resources.Chat.Api/9.0.4": {
+    "AltV.Net.EntitySync/1.18.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ut3EJfAmzD2FQVHcRas+JozldBtoQJC0jSBpM0S11lum8wShWzMWq2cu6y26IsoPH4pPu7KSH/+v+XNDyTuGlA==",
-      "path": "altv.net.resources.chat.api/9.0.4",
-      "hashPath": "altv.net.resources.chat.api.9.0.4.nupkg.sha512"
+      "sha512": "sha512-MQK9bitRkjq6AXEzPX4qMrfA95Iq8D8zfgAHA5y1Xk1xDymaJWrt+s5SubsueD6JCWILgHebMI8g8S1dfxRHZQ==",
+      "path": "altv.net.entitysync/1.18.0",
+      "hashPath": "altv.net.entitysync.1.18.0.nupkg.sha512"
+    },
+    "AltV.Net.Resources.Chat.Api/10.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Da621ES4Ur6Ub42v4b4QsBoJhFBj8uJJ2eYJA0CIb8+Ll+Hne4vFRuz9AUQerVdbiSU3pvdKlth5qWjRez2g1Q==",
+      "path": "altv.net.resources.chat.api/10.0.13",
+      "hashPath": "altv.net.resources.chat.api.10.0.13.nupkg.sha512"
+    },
+    "AltV.Net.Shared/10.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-F5d6T60zpALY627BwqQAM3pZApIkU07yIxAyF7g3GwVxA4JtZTmlxKwoMw05cRHRBUtjbF/hbpjLrp5cTVsotw==",
+      "path": "altv.net.shared/10.0.13",
+      "hashPath": "altv.net.shared.10.0.13.nupkg.sha512"
     },
     "BouncyCastle.NetCore/1.8.5": {
       "type": "package",
@@ -448,12 +484,12 @@
       "path": "system.text.encoding.codepages/4.4.0",
       "hashPath": "system.text.encoding.codepages.4.4.0.nupkg.sha512"
     },
-    "System.Threading.Channels/5.0.0": {
+    "System.Threading.Channels/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RLBIxntLaG9pRmmuVDwY1kc8Bvp/FQzSxPU+19VekkScKkWtVP9r8bLhm28ama3usc816UBrmkg3vv3jUea/hw==",
-      "path": "system.threading.channels/5.0.0",
-      "hashPath": "system.threading.channels.5.0.0.nupkg.sha512"
+      "sha512": "sha512-TY8/9+tI0mNaUMgntOxxaq2ndTkdXqLSxvPmas7XEqOlv9lQtB7wLjYGd756lOaO7Dvb5r/WXhluM+0Xe87v5Q==",
+      "path": "system.threading.channels/6.0.0",
+      "hashPath": "system.threading.channels.6.0.0.nupkg.sha512"
     },
     "System.Windows.Extensions/4.7.0": {
       "type": "package",

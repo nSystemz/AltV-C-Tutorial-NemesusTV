@@ -36,10 +36,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AltV.Net" Version="9.0.4" />
-    <PackageReference Include="AltV.Net.Async" Version="9.0.4" />
-    <PackageReference Include="AltV.Net.EntitySync" Version="1.13.0" />
-    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="9.0.4" />
+    <PackageReference Include="AltV.Net" Version="10.0.13" />
+    <PackageReference Include="AltV.Net.Async" Version="10.0.13" />
+    <PackageReference Include="AltV.Net.EntitySync" Version="1.18.0" />
+    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="10.0.13" />
     <PackageReference Include="MySql.Data" Version="8.0.23" />
   </ItemGroup>
 
