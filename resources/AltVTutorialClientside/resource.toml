@@ -1,0 +1,3 @@
+client-files = [ 'client/*', 'login/*', 'gui/*', 'lockpicking/*', 'charcreator/*', 'includes/*' ]
+client-main = 'client/index.js'
+type = 'js'

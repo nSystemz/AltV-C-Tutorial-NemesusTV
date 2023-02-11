@@ -5,12 +5,14 @@
 import * as alt from "alt-client"
 import * as native from "natives"
 import * as NativeUI from 'includes/NativeUIMenu/NativeUI.mjs';
+import { Vector3 } from "alt-shared";
 
 //Variables
 let loginHud;
 let guiHud;
 let lockHud;
 let invHud;
+let charHud;
 
 let showInv = false;
 
@@ -135,6 +137,20 @@ function drawText2d(
     native.endTextCommandDisplayText(x, y, 0);
 }
 
+//GetCameraOffsetX
+function getCameraOffsetX(posx, angle, dist)
+{
+    angle = angle * 0.0174533;
+    return posx + dist * Math.cos(angle);
+}
+
+//GetCameraOffsetY
+function getCameraOffsetY(posy, angle, dist)
+{
+    angle = angle * 0.0174533;
+    return posy + dist * Math.sin(angle);
+}
+
 //Speedometer
 function getSpeedColor(kmh) {
     if(kmh < 65)
@@ -176,9 +192,37 @@ alt.everyTick(() => {
 
     let getStreetHash = native.getStreetNameAtCoord(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z, 0, 0);
     let streetName = native.getStreetNameFromHashKey(getStreetHash[1]);
-    let zone = native.getLabelText(native.getNameOfZone(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z));
+    let zone = native.getFilenameForAudioConversation(native.getNameOfZone(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z));
 
     drawText2d(`${streetName}\n${zone}`, 0.215, 0.925, 0.5, 4, 244, 210, 66, 255);
+});
+
+//Charcreator
+alt.onServer('showCharCreator', () => {
+    const lPlayer = alt.Player.local;
+
+    charHud = new alt.WebView("http://localhost:8080/");
+    charHud.focus();
+
+    alt.showCursor(true);
+    alt.toggleGameControls(false);
+    alt.toggleVoiceControls(false);
+
+    let camValues = {
+        Angle: lPlayer.rot.z + 180,
+        Dist: 2.6,
+        Height: 0.2
+    };
+
+    let bodyCamStart = lPlayer.pos;
+
+    let bodyCam = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', getCameraOffsetX(bodyCamStart.x, camValues.Angle, camValues.Dist), getCameraOffsetY(bodyCamStart.y, camValues.Angle, camValues.Dist), lPlayer.pos.z + camValues.Height, 0, 0, 0, 50, 0, 0);
+
+    native.pointCamAtCoord(parseFloat(bodyCam), bodyCamStart.x, bodyCamStart.y, bodyCamStart.z + camValues.Height);
+
+    native.setCamActive(parseFloat(bodyCam), true);
+    native.renderScriptCams(true, false, 500, true, false, 0);
+    native.setCamAffectsAiming(parseFloat(bodyCam), false);
 });
 
 //Lockpicking

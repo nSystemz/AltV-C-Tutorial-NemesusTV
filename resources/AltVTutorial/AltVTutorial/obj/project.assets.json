@@ -2,10 +2,10 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "AltV.Net/10.0.13": {
+      "AltV.Net/13.0.18": {
         "type": "package",
         "dependencies": {
-          "AltV.Net.Shared": "10.0.13"
+          "AltV.Net.Shared": "13.0.18"
         },
         "compile": {
           "lib/net6.0/AltV.Net.dll": {}
@@ -14,10 +14,10 @@
           "lib/net6.0/AltV.Net.dll": {}
         }
       },
-      "AltV.Net.Async/10.0.13": {
+      "AltV.Net.Async/13.0.18": {
         "type": "package",
         "dependencies": {
-          "AltV.Net": "10.0.13",
+          "AltV.Net": "13.0.18",
           "System.Threading.Channels": "6.0.0"
         },
         "compile": {
@@ -27,7 +27,7 @@
           "lib/net6.0/AltV.Net.Async.dll": {}
         }
       },
-      "AltV.Net.CApi/10.0.13": {
+      "AltV.Net.CApi/13.0.18": {
         "type": "package",
         "compile": {
           "lib/net6.0/AltV.Net.CApi.dll": {}
@@ -48,10 +48,10 @@
           "lib/net6.0/AltV.Net.EntitySync.dll": {}
         }
       },
-      "AltV.Net.Resources.Chat.Api/10.0.13": {
+      "AltV.Net.Resources.Chat.Api/13.0.18": {
         "type": "package",
         "dependencies": {
-          "AltV.Net": "10.0.13"
+          "AltV.Net": "13.0.18"
         },
         "compile": {
           "lib/net6.0/AltV.Net.Resources.Chat.Api.dll": {}
@@ -60,10 +60,10 @@
           "lib/net6.0/AltV.Net.Resources.Chat.Api.dll": {}
         }
       },
-      "AltV.Net.Shared/10.0.13": {
+      "AltV.Net.Shared/13.0.18": {
         "type": "package",
         "dependencies": {
-          "AltV.Net.CApi": "10.0.13"
+          "AltV.Net.CApi": "13.0.18"
         },
         "compile": {
           "lib/net6.0/AltV.Net.Shared.dll": {}
@@ -373,42 +373,42 @@
     }
   },
   "libraries": {
-    "AltV.Net/10.0.13": {
-      "sha512": "99dOJlkrBhSTAlV4sO1Rm6oyOWiKjTrWW4pZDFGJ6xVNRLwIva8kJJrep+OTRVxStA1pG2Qw6KtaHGMY1KwxmA==",
+    "AltV.Net/13.0.18": {
+      "sha512": "sekCSD3bProT5JW/Y6qvEvN/vTWSpy5KFtmIKnOAeVjjtHzcTeawzEB76j5dxrQDGjF7zxNVnZCzpc+2PvNx7w==",
       "type": "package",
-      "path": "altv.net/10.0.13",
+      "path": "altv.net/13.0.18",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.10.0.13.nupkg.sha512",
+        "altv.net.13.0.18.nupkg.sha512",
         "altv.net.nuspec",
         "icon.png",
         "lib/net6.0/AltV.Net.dll",
         "license.txt"
       ]
     },
-    "AltV.Net.Async/10.0.13": {
-      "sha512": "z7mjeHCAuvsW6jeyYuGIIyMHFoiB+2Cp6gl1h3aAaqps5SYlmTmtw8Goz3avsl3sb741P/3qb0e5k9bWiazKmg==",
+    "AltV.Net.Async/13.0.18": {
+      "sha512": "kYZCdrp3XTRR0sWMUcCCcmJwNK1sBpKdQ+kODHzn9vbiiYGuEqjIETARB4ReFUfRNgk8gfVoZbYwZ9jzCIE+aw==",
       "type": "package",
-      "path": "altv.net.async/10.0.13",
+      "path": "altv.net.async/13.0.18",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.async.10.0.13.nupkg.sha512",
+        "altv.net.async.13.0.18.nupkg.sha512",
         "altv.net.async.nuspec",
         "icon.png",
         "lib/net6.0/AltV.Net.Async.dll",
         "license.txt"
       ]
     },
-    "AltV.Net.CApi/10.0.13": {
-      "sha512": "3lb7GXE5q8zVTLlIyGMWsrW298sbpYRY/BE+gRntnEERbHCtI1WMXhIO7woCsLb0oZi4FiMd1+ZPWTia9gH9Jg==",
+    "AltV.Net.CApi/13.0.18": {
+      "sha512": "ZVQ8JdueliPlmKE3+y5kgYrm/WoXc4rauScJwpsFG9HGcuR+EtE8yZX3wcsmcknV95ejm3hMiDjBQngRAsV0Bg==",
       "type": "package",
-      "path": "altv.net.capi/10.0.13",
+      "path": "altv.net.capi/13.0.18",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.capi.10.0.13.nupkg.sha512",
+        "altv.net.capi.13.0.18.nupkg.sha512",
         "altv.net.capi.nuspec",
         "icon.png",
         "lib/net6.0/AltV.Net.CApi.dll",
@@ -429,28 +429,28 @@
         "license.txt"
       ]
     },
-    "AltV.Net.Resources.Chat.Api/10.0.13": {
-      "sha512": "Da621ES4Ur6Ub42v4b4QsBoJhFBj8uJJ2eYJA0CIb8+Ll+Hne4vFRuz9AUQerVdbiSU3pvdKlth5qWjRez2g1Q==",
+    "AltV.Net.Resources.Chat.Api/13.0.18": {
+      "sha512": "dNky2/GQsc1g2u1HfBmnuK0UzhITYrZsW7FATW4xzVdRFu45JlZSsWHC/JALfYFkkywWP/YFfJzLI9ttdTVvWQ==",
       "type": "package",
-      "path": "altv.net.resources.chat.api/10.0.13",
+      "path": "altv.net.resources.chat.api/13.0.18",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.resources.chat.api.10.0.13.nupkg.sha512",
+        "altv.net.resources.chat.api.13.0.18.nupkg.sha512",
         "altv.net.resources.chat.api.nuspec",
         "icon.png",
         "lib/net6.0/AltV.Net.Resources.Chat.Api.dll",
         "license.txt"
       ]
     },
-    "AltV.Net.Shared/10.0.13": {
-      "sha512": "F5d6T60zpALY627BwqQAM3pZApIkU07yIxAyF7g3GwVxA4JtZTmlxKwoMw05cRHRBUtjbF/hbpjLrp5cTVsotw==",
+    "AltV.Net.Shared/13.0.18": {
+      "sha512": "O3Udbb4sF2+/3MlTot7ODEDI9PDK+xj96I70ah+fK4tcTBKHqbW1RmaXyOaFNUe/g2tSDaXDwreuG+ODsEeCQw==",
       "type": "package",
-      "path": "altv.net.shared/10.0.13",
+      "path": "altv.net.shared/13.0.18",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.shared.10.0.13.nupkg.sha512",
+        "altv.net.shared.13.0.18.nupkg.sha512",
         "altv.net.shared.nuspec",
         "icon.png",
         "lib/net6.0/AltV.Net.Shared.dll",
@@ -1079,10 +1079,10 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AltV.Net >= 10.0.13",
-      "AltV.Net.Async >= 10.0.13",
+      "AltV.Net >= 13.0.18",
+      "AltV.Net.Async >= 13.0.18",
       "AltV.Net.EntitySync >= 1.18.0",
-      "AltV.Net.Resources.Chat.Api >= 10.0.13",
+      "AltV.Net.Resources.Chat.Api >= 13.0.18",
       "MySql.Data >= 8.0.23"
     ]
   },
@@ -1127,11 +1127,11 @@
         "dependencies": {
           "AltV.Net": {
             "target": "Package",
-            "version": "[10.0.13, )"
+            "version": "[13.0.18, )"
           },
           "AltV.Net.Async": {
             "target": "Package",
-            "version": "[10.0.13, )"
+            "version": "[13.0.18, )"
           },
           "AltV.Net.EntitySync": {
             "target": "Package",
@@ -1139,7 +1139,7 @@
           },
           "AltV.Net.Resources.Chat.Api": {
             "target": "Package",
-            "version": "[10.0.13, )"
+            "version": "[13.0.18, )"
           },
           "MySql.Data": {
             "target": "Package",

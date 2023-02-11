@@ -277,6 +277,18 @@ namespace AltVTutorial
             }
         }
 
+        [Command("charcreator")]
+        public void CMD_charcreator(TPlayer.TPlayer tplayer)
+        {
+            tplayer.Spawn(new AltV.Net.Data.Position((float)-347.93405, (float)1277.4725, (float)333.80664), 0);
+            tplayer.Rotation = new AltV.Net.Data.Rotation((float)0, (float)0, (float)1.6821126);
+            tplayer.SetClothes(11, 15, 0, 0);
+            tplayer.SetClothes(3, 15, 0, 0);
+            tplayer.SetClothes(8, 15, 0, 0);
+            tplayer.SetClothes(6, 1, 0, 0);
+            tplayer.Emit("showCharCreator");
+        }
+
         [Command("fuel")]
         public void CMD_fuel(TPlayer.TPlayer tplayer)
         {
