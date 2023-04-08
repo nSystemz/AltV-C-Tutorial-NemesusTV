@@ -2,7 +2,7 @@ import * as alt from 'alt';
 import game from 'natives';
 import Size from "./Size.mjs";
 import Text from "../modules/Text.mjs";
-const gameScreen = game.getActiveScreenResolution(0, 0);
+const gameScreen = game.getActualScreenResolution(0, 0);
 export const Screen = {
     width: gameScreen[1],
     height: gameScreen[2],

@@ -5,7 +5,6 @@
 import * as alt from "alt-client"
 import * as native from "natives"
 import * as NativeUI from 'includes/NativeUIMenu/NativeUI.mjs';
-import { Vector3 } from "alt-shared";
 
 //Variables
 let loginHud;
@@ -13,6 +12,9 @@ let guiHud;
 let lockHud;
 let invHud;
 let charHud;
+let bodyCam;
+let bodyCamStart;
+let bodyCamSet = -1;
 
 let showInv = false;
 
@@ -201,7 +203,7 @@ alt.everyTick(() => {
 alt.onServer('showCharCreator', () => {
     const lPlayer = alt.Player.local;
 
-    charHud = new alt.WebView("http://localhost:8080/");
+    charHud = new alt.WebView("http://resource/charcreator/index.html");
     charHud.focus();
 
     alt.showCursor(true);
@@ -210,19 +212,117 @@ alt.onServer('showCharCreator', () => {
 
     let camValues = {
         Angle: lPlayer.rot.z + 180,
-        Dist: 2.6,
+        Dist: 1,
         Height: 0.2
     };
 
-    let bodyCamStart = lPlayer.pos;
+    bodyCamStart = lPlayer.pos;
 
-    let bodyCam = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', getCameraOffsetX(bodyCamStart.x, camValues.Angle, camValues.Dist), getCameraOffsetY(bodyCamStart.y, camValues.Angle, camValues.Dist), lPlayer.pos.z + camValues.Height, 0, 0, 0, 50, 0, 0);
-
-    native.pointCamAtCoord(parseFloat(bodyCam), bodyCamStart.x, bodyCamStart.y, bodyCamStart.z + camValues.Height);
-
+    bodyCam = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', getCameraOffsetX(bodyCamStart.x, camValues.Angle, camValues.Dist), getCameraOffsetY(bodyCamStart.y, camValues.Angle, camValues.Dist), lPlayer.pos.z + camValues.Height, 0, 0, 0, 50, 0, 0);
+    
     native.setCamActive(parseFloat(bodyCam), true);
     native.renderScriptCams(true, false, 500, true, false, 0);
     native.setCamAffectsAiming(parseFloat(bodyCam), false);
+
+    alt.emit('setCharCreatorCamera', 3);
+
+    charHud.on('characterCustomize1', (flag, data) => {
+        let getData = JSON.parse(data);
+        switch(flag)
+        {
+            case 'hair': {
+                alt.emit('setCharCreatorCamera', 1);
+                native.setPedComponentVariation(lPlayer, 2, parseInt(getData[0]), 0, 0);
+                break;
+            }
+            case 'faceFeatures': {
+                alt.emit('setCharCreatorCamera', 2);
+                native.setPedMicroMorph(lPlayer, 0, parseFloat(data[0]));
+                native.setPedMicroMorph(lPlayer, 1, parseFloat(data[1]));
+                native.setPedMicroMorph(lPlayer, 2, parseFloat(data[2]));
+                native.setPedMicroMorph(lPlayer, 3, parseFloat(data[3]));
+                native.setPedMicroMorph(lPlayer, 4, parseFloat(data[4]));
+                native.setPedMicroMorph(lPlayer, 5, parseFloat(data[5]));
+                native.setPedMicroMorph(lPlayer, 6, parseFloat(data[6]));
+                native.setPedMicroMorph(lPlayer, 7, parseFloat(data[7]));
+                native.setPedMicroMorph(lPlayer, 8, parseFloat(data[8]));
+                native.setPedMicroMorph(lPlayer, 9, parseFloat(data[9]));
+                native.setPedMicroMorph(lPlayer, 10, parseFloat(data[10]));
+                native.setPedMicroMorph(lPlayer, 11, parseFloat(data[11]));
+                native.setPedMicroMorph(lPlayer, 12, parseFloat(data[12]));
+                native.setPedMicroMorph(lPlayer, 13, parseFloat(data[13]));
+                native.setPedMicroMorph(lPlayer, 14, parseFloat(data[14]));
+                native.setPedMicroMorph(lPlayer, 15, parseFloat(data[15]));
+                native.setPedMicroMorph(lPlayer, 16, parseFloat(data[16]));
+                native.setPedMicroMorph(lPlayer, 17, parseFloat(data[17]));
+                native.setPedMicroMorph(lPlayer, 18, parseFloat(data[18]));
+                native.setPedMicroMorph(lPlayer, 19, parseFloat(data[19]));
+                break;
+            }
+            case 'clothing': {
+                alt.emit('setCharCreatorCamera', 0);
+                native.setPedComponentVariation(lPlayer, 11, parseInt(data[0]), 0, 0);
+                native.setPedComponentVariation(lPlayer, 3, parseInt(data[1]), 0, 0);
+                native.setPedComponentVariation(lPlayer, 4, parseInt(data[2]), 0, 0);
+                native.setPedComponentVariation(lPlayer, 6, parseInt(data[3]), 0, 0);
+            }
+        }
+    })
+});
+
+alt.on('setCharCreatorCamera', (flag) => {
+    if(bodyCamSet == flag) return;
+    const lPlayer = alt.Player.local;
+
+    let camera = {
+        Angle: lPlayer.rot.z + 180,
+        Dist: 1,
+        Height: 0.2,
+    }
+
+    switch(flag)
+    {
+        case 0: //Torso
+        {
+            camera = {
+                Angle: lPlayer.rot.z + 180,
+                Dist: 2.5,
+                Height: 0.2
+            };
+            break;
+        }
+        case 1: //Kopf
+        {
+            camera = {
+                Angle: lPlayer.rot.z + 180,
+                Dist: 0.6,
+                Height: 0.7
+            };
+            break;
+        }
+        case 2: //Gesicht
+        {
+            camera = {
+                Angle: lPlayer.rot.z + 180,
+                Dist: 0.5,
+                Height: 0.2
+            };
+            break;
+        }
+        case 3: //Torso
+        {
+            camera = {
+                Angle: lPlayer.rot.z + 180,
+                Dist: 1,
+                Height: 0.2
+            };
+            break;
+        }
+    }
+    bodyCamSet = flag;
+    bodyCamStart = lPlayer.pos;
+    native.setCamCoord(parseFloat(bodyCam), getCameraOffsetX(bodyCamStart.x, camera.Angle, camera.Dist), getCameraOffsetY(bodyCamStart.y, camera.Angle, camera.Dist), bodyCamStart.z + camera.Height);
+    native.pointCamAtCoord(parseFloat(bodyCam), bodyCamStart.x, bodyCamStart.y, bodyCamStart.z + camera.Height);
 });
 
 //Lockpicking
