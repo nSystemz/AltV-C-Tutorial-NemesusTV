@@ -15,6 +15,7 @@ namespace AltVTutorial.TVehicle
         public int VehicleLock { get; set; }
         public String vehicleName { get; set; }
         public float Fuel { get; set; }
+        public int Garage { get; set; }
 
         public TVehicle(ICore core, IntPtr nativePointer, ushort id) : base(core, nativePointer, id)
         {
@@ -24,6 +25,7 @@ namespace AltVTutorial.TVehicle
             vehicleName = "";
             ManualEngineControl = true;
             Fuel = 100f;
+            Garage = -1;
         }
     }
 }

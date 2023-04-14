@@ -193,6 +193,26 @@ namespace AltVTutorial
             }
         }
 
+        [Command("creategarage")]
+        public void CMD_creategarage(TPlayer.TPlayer tplayer, int maxcount, string name)
+        {
+            if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Supporter))
+            {
+                tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
+                return;
+            }
+            Garagen.Garagen garagen = new Garagen.Garagen();
+            garagen.name = name;
+            garagen.maxcount = maxcount;
+            garagen.posx = tplayer.Position.X;
+            garagen.posy = tplayer.Position.Y;
+            garagen.posz = tplayer.Position.Z;
+
+            Garagen.Garagen.GarageErstellen(garagen);
+
+            Utils.sendNotification(tplayer, "success", "Garage wurde erstellt!");
+        }
+
         [Command("makeleader")]
         public void CMD_makeleader(TPlayer.TPlayer tplayer, string playertarget, int frak)
         {

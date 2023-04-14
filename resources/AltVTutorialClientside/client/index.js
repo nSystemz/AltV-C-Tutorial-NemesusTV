@@ -42,6 +42,7 @@ alt.onServer('SendErrorMessage', (text) => {
 
 alt.on('connectionComplete', () => {
     loadBlips();
+    loadPeds();
 
     guiHud = new alt.WebView("http://resource/gui/gui.html");
 
@@ -92,6 +93,20 @@ function createBlip(x,y,z,sprite,color,scale=1.0,shortRange=false,name="")
     tempBlip.shortRange = shortRange;
     if(name.length > 0)
     tempBlip.name = name;
+}
+
+//Peds
+function loadPeds()
+{
+    createPed('u_m_m_aldinapoli', 4, -427.85934, 1115.0637, 326.76343, 0.0);
+}
+
+async function createPed(hash,pedtype,x,y,z,a)
+{
+    const modelHash = alt.hash(hash);
+    alt.loadModel(modelHash);
+    await alt.Utils.wait(100);
+    native.createPed(pedtype, modelHash, x, y, z, a, false, false);
 }
 
 //DrawText2D

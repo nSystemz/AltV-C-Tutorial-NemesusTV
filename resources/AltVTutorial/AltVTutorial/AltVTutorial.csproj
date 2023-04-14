@@ -18,6 +18,7 @@
     <Compile Include="Commands.cs" />
     <Compile Include="Datenbank.cs" />
     <Compile Include="Events.cs" />
+    <Compile Include="Garagen\Garagen.cs" />
     <Compile Include="HTTP.cs" />
     <Compile Include="Inventory\Inventory.cs" />
     <Compile Include="Inventory\InventoryModel.cs" />
