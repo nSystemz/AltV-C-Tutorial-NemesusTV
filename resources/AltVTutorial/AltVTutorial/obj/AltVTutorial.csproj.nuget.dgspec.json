@@ -42,11 +42,11 @@
           "dependencies": {
             "AltV.Net": {
               "target": "Package",
-              "version": "[13.0.18, )"
+              "version": "[15.0.5, )"
             },
             "AltV.Net.Async": {
               "target": "Package",
-              "version": "[13.0.18, )"
+              "version": "[15.0.5, )"
             },
             "AltV.Net.EntitySync": {
               "target": "Package",
@@ -54,11 +54,15 @@
             },
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",
-              "version": "[13.0.18, )"
+              "version": "[15.0.5, )"
             },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.23, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -67,7 +71,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -76,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

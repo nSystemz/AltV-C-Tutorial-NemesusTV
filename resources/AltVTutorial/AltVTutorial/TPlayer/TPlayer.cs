@@ -28,7 +28,7 @@ namespace AltVTutorial.TPlayer
         public float[] positions = new float[4];
         public int Einreise { get; set; }
 
-        public TPlayer(ICore core, IntPtr nativePointer, ushort id) : base(core, nativePointer, id)
+        public TPlayer(ICore core, IntPtr nativePointer, uint id) : base(core, nativePointer, id)
         {
             Geld = 5000;
             Adminlevel = 0;

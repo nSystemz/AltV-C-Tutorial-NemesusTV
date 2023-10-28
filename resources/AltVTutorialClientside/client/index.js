@@ -12,11 +12,15 @@ let guiHud;
 let lockHud;
 let invHud;
 let charHud;
+let mdcHud;
 let bodyCam;
 let bodyCamStart;
 let bodyCamSet = -1;
 
 let showInv = false;
+let mdcShow = false;
+
+let fpsBoost = false;
 
 //Commands
 alt.onServer('freezePlayer', (freeze) => {
@@ -77,6 +81,50 @@ alt.onServer('updatePB', (bar, wert) => {
     guiHud.emit('updatePB', bar, wert);
 })
 
+//Garagensystem
+alt.onServer('createGaragen', (json) => {
+    let obj = JSON.parse(json);
+    obj.forEach(function (garage) {
+        if(!garage.created)
+        {
+            garage.created = true;
+            createPed(garage.name, 4, parseFloat(garage.posx), parseFloat(garage.posy), parseFloat(garage.posz), parseFloat(garage.posa));
+        }
+    })
+})
+
+//FPS Booster
+alt.onServer('fpsBoost', () => {
+    if(fpsBoost == false)
+    {
+        fpsBoost = true;
+        native.ropeDrawShadowEnabled(false)
+        native.cascadeShadowsClearShadowSampleType()
+        native.cascadeShadowsSetAircraftMode(false)
+        native.cascadeShadowsEnableEntityTracker(true)
+        native.cascadeShadowsSetDynamicDepthMode(false)
+        native.cascadeShadowsSetEntityTrackerScale(0.0)
+        native.cascadeShadowsSetDynamicDepthValue(0.0)
+        native.cascadeShadowsSetCascadeBoundsScale(0.0)
+        native.setFlashLightFadeDistance(0.0)
+        native.setLightsCutoffDistanceTweak(0.0)
+    }
+    else
+    {
+        fpsBoost = false;
+        native.ropeDrawShadowEnabled(true)
+        native.cascadeShadowsSetAircraftMode(true)
+        native.cascadeShadowsEnableEntityTracker(false)
+        native.cascadeShadowsSetDynamicDepthMode(true)
+        native.cascadeShadowsSetEntityTrackerScale(5.0)
+        native.cascadeShadowsSetDynamicDepthValue(5.0)
+        native.cascadeShadowsSetCascadeBoundsScale(5.0)
+        native.setFlashLightFadeDistance(10.0)
+        native.setLightsCutoffDistanceTweak(10.0)
+        native.setArtificialLightsState(false)
+    }
+})
+
 //Blips
 function loadBlips()
 {
@@ -106,7 +154,53 @@ async function createPed(hash,pedtype,x,y,z,a)
     const modelHash = alt.hash(hash);
     alt.loadModel(modelHash);
     await alt.Utils.wait(100);
-    native.createPed(pedtype, modelHash, x, y, z, a, false, false);
+    return native.createPed(pedtype, modelHash, x, y, z, a, false, false);
+}
+
+//DrawText3d
+export function drawText3d(
+    msg,
+    x,
+    y,
+    z,
+    scale,
+    fontType,
+    r,
+    g,
+    b,
+    a,
+    useOutline = true,
+    useDropShadow = true,
+    layer = 0
+) {
+    let hex = msg.match('{.*}');
+    if (hex) {
+        const rgb = hexToRgb(hex[0].replace('{', '').replace('}', ''));
+        r = rgb[0];
+        g = rgb[1];
+        b = rgb[2];
+        msg = msg.replace(hex[0], '');
+    }
+
+    native.setDrawOrigin(x, y, z, 0);
+    native.beginTextCommandDisplayText('STRING');
+    native.addTextComponentSubstringPlayerName(msg);
+    native.setTextFont(fontType);
+    native.setTextScale(1, scale);
+    native.setTextWrap(0.0, 1.0);
+    native.setTextCentre(true);
+    native.setTextColour(r, g, b, a);
+
+    if (useOutline) {
+        native.setTextOutline();
+    }
+
+    if (useDropShadow) {
+        native.setTextDropShadow();
+    }
+
+    native.endTextCommandDisplayText(0, 0, 0);
+    native.clearDrawOrigin();
 }
 
 //DrawText2D
@@ -205,6 +299,7 @@ alt.everyTick(() => {
         speed = Math.round(speed);
         drawText2d(`${getSpeedColor(speed)}${speed} KMH`,0.45,0.91,1.5,2,255,255,255,255,true);
     }
+    //2D Texte
     drawText2d('Nemesus.de', 0.5, 0.005, 0.5, 0, 255, 255, 255, 255);
 
     let getStreetHash = native.getStreetNameAtCoord(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z, 0, 0);
@@ -212,6 +307,11 @@ alt.everyTick(() => {
     let zone = native.getFilenameForAudioConversation(native.getNameOfZone(alt.Player.local.pos.x, alt.Player.local.pos.y, alt.Player.local.pos.z));
 
     drawText2d(`${streetName}\n${zone}`, 0.215, 0.925, 0.5, 4, 244, 210, 66, 255);
+
+    //3D Texte
+    const playerPos = { ...alt.Player.local.pos };
+    drawText3d('Nemesus.de', playerPos.x, playerPos.y, playerPos.z, 0.5, 4, 255, 255, 255, 255, true, true);
+    drawText3d('Willkommen auf dem NemesusTV Tutorial Server', -424.85275, 1116.712, 326.76343, 0.7, 4, 255, 255, 255, 255);
 });
 
 //Charcreator
@@ -376,6 +476,33 @@ alt.onServer('showLockpicking', () => {
     })
 })
 
+
+//MDC
+alt.onServer('showMDC', () => {
+    if(mdcShow == false)
+    {
+        mdcHud = new alt.WebView("http://localhost:8080/");
+        mdcHud.focus();
+        mdcShow = true;
+
+        alt.showCursor(true);
+        alt.toggleGameControls(false);
+        alt.toggleVoiceControls(false);
+    }
+    else
+    {
+        if(mdcHud)
+        {
+            mdcHud.destroy();
+            mdcShow = false;
+
+            alt.showCursor(false);
+            alt.toggleGameControls(true);
+            alt.toggleVoiceControls(true);
+        }
+    }
+})
+
 //Tastendrücke
 alt.on('keydown', (key) => {
     if(key == 77)
@@ -385,6 +512,7 @@ alt.on('keydown', (key) => {
 })
 
 alt.on('keydown', (key) => {
+    //Inventar
     if(key == 73)
     {
         if(showInv == false)

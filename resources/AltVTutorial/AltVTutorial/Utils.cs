@@ -1,6 +1,8 @@
 ﻿using AltV.Net;
 using AltV.Net.Elements.Entities;
+using AltVTutorial.Models;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +38,12 @@ namespace AltVTutorial
         public static void UpdateMoneyHud(TPlayer.TPlayer tplayer, long money)
         {
             tplayer.Emit("updateMoneyHud", money);
+        }
+
+        public static void UpdateStatsHud(TPlayer.TPlayer tplayer)
+        {
+            Stats stats = new Stats(tplayer.Name, 10, (int)tplayer.Geld);
+            tplayer.Emit("updateStatsHud", JsonConvert.SerializeObject(stats));
         }
 
         public static TPlayer.TPlayer GetPlayerByName(string name)

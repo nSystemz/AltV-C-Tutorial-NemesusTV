@@ -204,13 +204,43 @@ namespace AltVTutorial
             Garagen.Garagen garagen = new Garagen.Garagen();
             garagen.name = name;
             garagen.maxcount = maxcount;
+            garagen.count = 0;
             garagen.posx = tplayer.Position.X;
             garagen.posy = tplayer.Position.Y;
             garagen.posz = tplayer.Position.Z;
+            garagen.posa = tplayer.Rotation.Yaw;
 
             Garagen.Garagen.GarageErstellen(garagen);
 
             Utils.sendNotification(tplayer, "success", "Garage wurde erstellt!");
+        }
+
+        [Command("deletegarage")]
+        public void CMD_deletegarage(TPlayer.TPlayer tplayer, int id)
+        {
+            if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Supporter))
+            {
+                tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
+                return;
+            }
+            Garagen.Garagen garageDelete = null;
+            foreach(Garagen.Garagen garage in Garagen.Garagen.garageList)
+            {
+                if(garage.id == id)
+                {
+                    garageDelete = garage;
+                    break;
+                }
+            }
+            if(garageDelete != null)
+            {
+                Garagen.Garagen.GarageDelete(garageDelete);
+                Utils.sendNotification(tplayer, "success", "Garage wurde gelöscht!");
+            }
+            else
+            {
+                tplayer.SendChatMessage("{FF0000}Ungültige Garage!");
+            }
         }
 
         [Command("makeleader")]
@@ -295,6 +325,12 @@ namespace AltVTutorial
             {
                 Utils.sendNotification(tplayer, "error", "Du bist nicht in der Nähe von einem Fahrzeug!");
             }
+        }
+
+        [Command("fpsboost")]
+        public void CMD_fpsboost(TPlayer.TPlayer tplayer)
+        {
+            tplayer.Emit("fpsBoost");
         }
 
         [Command("charcreator")]

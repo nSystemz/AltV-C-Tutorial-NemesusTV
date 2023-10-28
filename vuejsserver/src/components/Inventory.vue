@@ -75,7 +75,7 @@ export default {
   name: 'Inventory',
     data() {
       return {
-        showHideInventory: true,
+        showHideInventory: false,
         inventoryItems: [],
       }
   },

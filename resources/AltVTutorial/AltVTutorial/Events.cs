@@ -2,6 +2,7 @@
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using AltV.Net.Resources.Chat.Api;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace AltVTutorial
             Alt.Log($"Der Spieler {tplayer.Name} hat den Server betreten!");
             tplayer.Spawn(new AltV.Net.Data.Position(-427, 1115, 326), 0);
             tplayer.Model = (uint)PedModel.Business01AMM;
+
+            tplayer.Emit("createGaragen", JsonConvert.SerializeObject(Garagen.Garagen.garageList));
         }
 
         [ScriptEvent(ScriptEventType.PlayerDisconnect)]
@@ -71,6 +74,7 @@ namespace AltVTutorial
                         return;
                     }
                     Utils.UpdateMoneyHud(tplayer, tplayer.Geld);
+                    Utils.UpdateStatsHud(tplayer);
                     tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
                     tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
                     tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);
@@ -117,6 +121,7 @@ namespace AltVTutorial
                         tplayer.Emit("CloseLoginHud");
                         tplayer.Health = 200;
                         Utils.UpdateMoneyHud(tplayer, tplayer.Geld);
+                        Utils.UpdateStatsHud(tplayer);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);
@@ -187,6 +192,13 @@ namespace AltVTutorial
             if (tplayer.IsInVehicle)
             {
                 Commands.CMD_engine(tplayer);
+            }
+            else
+            {
+                if(tplayer.Fraktion == 1)
+                {
+                    Alt.Emit("showMDC");
+                }
             }
         }
     }

@@ -10,7 +10,7 @@ namespace AltVTutorial.TPlayer
 {
     public class TPlayerFactory : IEntityFactory<IPlayer>
     {
-        public IPlayer Create(ICore core, IntPtr entityPointer, ushort id)
+        public IPlayer Create(ICore core, IntPtr entityPointer, uint id)
         {
             return new TPlayer(core, entityPointer, id);
         }
