@@ -33,14 +33,14 @@ namespace AltVTutorial.Garagen
         public static void GarageErstellen(Garagen garage)
         {
             MySqlCommand command = Datenbank.Connection.CreateCommand();
-            command.CommandText = "INSERT INTO garagen (name, maxcount, count, posx, posy, posz, posa) VALUES (@name, @maxcount, @count, @posx, @posy, @posz, @posa)";
+            command.CommandText = "INSERT INTO garagen (name, maxcount, count, pos_x, pos_y, pos_z, pos_a) VALUES (@name, @maxcount, @count, @pos_x, @pos_y, @pos_z, @pos_a)";
             command.Parameters.AddWithValue("name", garage.name);
             command.Parameters.AddWithValue("maxcount", garage.maxcount);
             command.Parameters.AddWithValue("count", garage.count);
-            command.Parameters.AddWithValue("posx", garage.posx);
-            command.Parameters.AddWithValue("posy", garage.posy);
-            command.Parameters.AddWithValue("posz", garage.posz);
-            command.Parameters.AddWithValue("posa", garage.posa);
+            command.Parameters.AddWithValue("pos_x", garage.posx);
+            command.Parameters.AddWithValue("pos_y", garage.posy);
+            command.Parameters.AddWithValue("pos_z", garage.posz);
+            command.Parameters.AddWithValue("pos_a", garage.posa);
 
             command.ExecuteNonQuery();
 
@@ -86,10 +86,10 @@ namespace AltVTutorial.Garagen
                     garagen.name = reader.GetString("name");
                     garagen.maxcount = reader.GetInt32("maxcount");
                     garagen.count = reader.GetInt32("count");
-                    garagen.posx = reader.GetFloat("posx");
-                    garagen.posy = reader.GetFloat("posy");
-                    garagen.posz = reader.GetFloat("posz");
-                    garagen.posa = reader.GetFloat("posa");
+                    garagen.posx = reader.GetFloat("pos_x");
+                    garagen.posy = reader.GetFloat("pos_y");
+                    garagen.posz = reader.GetFloat("pos_z");
+                    garagen.posa = reader.GetFloat("pos_a");
 
                     garageList.Add(garagen);
                 }

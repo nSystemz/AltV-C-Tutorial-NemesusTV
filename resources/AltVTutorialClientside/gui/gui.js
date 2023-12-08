@@ -5,16 +5,6 @@ function setMoneyHud(money)
     $('#money').text(money);
 }
 
-//Stats Hud
-alt.on('updateStatsHud', (json) => updateStatsHud(json));
-function updateStatsHud(json)
-{
-    var stats = JSON.parse(json);
-    $('$statsname').text(stats.name);
-    $('$statslevel').text(stats.level);
-    $('$statsmoney').text(stats.money);
-}
-
 //Notifications
 alt.on('sendNotification', (status,text) => notify(status, text));
 function notify(status, text)

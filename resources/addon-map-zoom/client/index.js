@@ -69,7 +69,6 @@ function updateRadarZoomLevel() {
 
   // set radar zoom
   if (onFoot || insideVehicle) {
-    console.log('update radar zoom level to:', radarZoomLevel)
     native.setRadarZoom(radarZoomLevel);
   }
 }

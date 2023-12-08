@@ -25,7 +25,7 @@ namespace AltVTutorial.Inventory
             }
             catch (Exception e)
             {
-                Alt.Log($"[RemoveItem]: " + e.ToString());
+                Utils.ConsoleLog("error", $"[RemoveItem]: " + e.ToString());
             }
         }
 
@@ -59,7 +59,7 @@ namespace AltVTutorial.Inventory
             }
             catch (Exception e)
             {
-                Alt.Log($"[LoadAllItems]: " + e.ToString());
+                Utils.ConsoleLog("error", $"[LoadAllItems]: " + e.ToString());
             }
             return itemList;
         }

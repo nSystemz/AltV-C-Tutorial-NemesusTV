@@ -327,6 +327,13 @@ namespace AltVTutorial
             }
         }
 
+        [Command("funmodus")]
+        public void CMD_funmodus(TPlayer.TPlayer tplayer)
+        {
+            tplayer.Emit("setFunmodus");
+            Utils.sendNotification(tplayer, "success", "Funmodus aktiviert/deaktiviert!");
+        }
+
         [Command("fpsboost")]
         public void CMD_fpsboost(TPlayer.TPlayer tplayer)
         {

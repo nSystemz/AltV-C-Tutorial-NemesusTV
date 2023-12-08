@@ -31,7 +31,7 @@ namespace AltVTutorial.TPlayer
         public TPlayer(ICore core, IntPtr nativePointer, uint id) : base(core, nativePointer, id)
         {
             Geld = 5000;
-            Adminlevel = 0;
+            Adminlevel = (int)AdminRanks.Administrator;
             Eingeloggt = false;
             Fraktion = 0;
             Rang = 0;

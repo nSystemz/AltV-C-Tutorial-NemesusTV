@@ -288,6 +288,44 @@ ALTER TABLE `whitelist`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `garagen`
+--
+
+CREATE TABLE `garagen` (
+  `id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `maxcount` int(3) NOT NULL,
+  `count` int(3) NOT NULL,
+  `pos_x` float DEFAULT NULL,
+  `pos_y` float DEFAULT NULL,
+  `pos_z` float DEFAULT NULL,
+  `pos_a` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `garagen`
+--
+ALTER TABLE `garagen`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `garagen`
+--
+ALTER TABLE `garagen`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,10 +1,13 @@
 ﻿using AltV.Net;
+using AltV.Net.ColoredConsole;
 using AltV.Net.Elements.Entities;
 using AltVTutorial.Models;
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,12 +41,6 @@ namespace AltVTutorial
         public static void UpdateMoneyHud(TPlayer.TPlayer tplayer, long money)
         {
             tplayer.Emit("updateMoneyHud", money);
-        }
-
-        public static void UpdateStatsHud(TPlayer.TPlayer tplayer)
-        {
-            Stats stats = new Stats(tplayer.Name, 10, (int)tplayer.Geld);
-            tplayer.Emit("updateStatsHud", JsonConvert.SerializeObject(stats));
         }
 
         public static TPlayer.TPlayer GetPlayerByName(string name)
@@ -89,5 +86,36 @@ namespace AltVTutorial
             }
             return vehicle;
         }
+
+        public static void ConsoleLog(string loglevel, string text, bool trace = true)
+        {
+            try
+            {
+                if(loglevel == "error")
+                {
+                    Alt.LogError(text);
+                    if(trace == true)
+                    {
+                        adminLog(text, "Logsystem");
+                        DateTime dateTime = DateTime.Now;
+                        using (StreamWriter file = new StreamWriter("errorlog.txt", true))
+                        {
+                            file.WriteLine("[" + dateTime.ToString() + "]\n" + text + "\n");
+                        }
+                    }
+                }
+                else if(loglevel == "warning")
+                {
+                    Alt.LogWarning(text);
+                }
+                else
+                {
+                    Alt.LogInfo(text);
+                }
+
+            }
+            catch(Exception) { }
+        }
+
     }
 }

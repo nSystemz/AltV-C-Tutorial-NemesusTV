@@ -16,7 +16,7 @@ namespace AltVTutorial
         [ScriptEvent(ScriptEventType.PlayerConnect)]
         public void OnPlayerConnect(TPlayer.TPlayer tplayer, string reason)
         {
-            Alt.Log($"Der Spieler {tplayer.Name} hat den Server betreten!");
+            Utils.ConsoleLog("info", $"Der Spieler {tplayer.Name} hat den Server betreten!");
             tplayer.Spawn(new AltV.Net.Data.Position(-427, 1115, 326), 0);
             tplayer.Model = (uint)PedModel.Business01AMM;
 
@@ -37,7 +37,7 @@ namespace AltVTutorial
                 }
             }
             //Log
-            Alt.Log($"Spieler {tplayer.Name} hat den Server verlassen!");
+            Utils.ConsoleLog("info", $"Spieler {tplayer.Name} hat den Server verlassen!");
         }
 
         [ScriptEvent(ScriptEventType.PlayerEnterVehicle)]
@@ -74,7 +74,6 @@ namespace AltVTutorial
                         return;
                     }
                     Utils.UpdateMoneyHud(tplayer, tplayer.Geld);
-                    Utils.UpdateStatsHud(tplayer);
                     tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
                     tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
                     tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);
@@ -121,7 +120,6 @@ namespace AltVTutorial
                         tplayer.Emit("CloseLoginHud");
                         tplayer.Health = 200;
                         Utils.UpdateMoneyHud(tplayer, tplayer.Geld);
-                        Utils.UpdateStatsHud(tplayer);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Thirstbar, 0.3);

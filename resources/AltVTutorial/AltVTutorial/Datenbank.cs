@@ -20,9 +20,9 @@ namespace AltVTutorial
         public Datenbank ()
         {
             this.Host = "localhost";
-            this.Username = "altv";
-            this.Password = "12345";
-            this.Database = "altv";
+            this.Username = "altv2";
+            this.Password = "altv2";
+            this.Database = "altv2";
         }
 
         public static String GetConnectionString()
@@ -40,12 +40,12 @@ namespace AltVTutorial
             {
                 Connection.Open();
                 DatenbankVerbindung = true;
-                Alt.Log("MYSQL Verbindung erfolgreich aufgebaut!");
+                Utils.ConsoleLog("warning", "MYSQL Verbindung erfolgreich aufgebaut!");
             } catch(Exception e)
             {
                 DatenbankVerbindung = false;
-                Alt.Log("MYSQL Verbindung konnte nicht aufgebaut werden");
-                Alt.Log(e.ToString());
+                Utils.ConsoleLog("error", "MYSQL Verbindung konnte nicht aufgebaut werden");
+                Utils.ConsoleLog("error", e.ToString());
                 System.Threading.Thread.Sleep(5000);
                 Environment.Exit(0);
             }
@@ -77,14 +77,14 @@ namespace AltVTutorial
 
                 command.Parameters.AddWithValue("@password", saltedPw);
                 command.Parameters.AddWithValue("@name", name);
-                command.Parameters.AddWithValue("@users_email_unique", name);
+                command.Parameters.AddWithValue("@email", "email@email.de");
                 command.ExecuteNonQuery();
 
                 return (int)command.LastInsertedId;
             }
             catch(Exception e)
             {
-                Alt.Log("Fehler bei NeuenAccountErstellen: " + e.ToString());
+                Utils.ConsoleLog("error", "Fehler bei NeuenAccountErstellen: " + e.ToString());
                 return -1;
             }
         }

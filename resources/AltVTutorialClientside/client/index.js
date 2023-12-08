@@ -21,6 +21,7 @@ let showInv = false;
 let mdcShow = false;
 
 let fpsBoost = false;
+let funmodus = false;
 
 //Commands
 alt.onServer('freezePlayer', (freeze) => {
@@ -123,6 +124,10 @@ alt.onServer('fpsBoost', () => {
         native.setLightsCutoffDistanceTweak(10.0)
         native.setArtificialLightsState(false)
     }
+})
+
+alt.onServer('setFunmodus', () => {
+    funmodus = !funmodus;
 })
 
 //Blips
@@ -508,6 +513,34 @@ alt.on('keydown', (key) => {
     if(key == 77)
     {
         alt.emitServer('Event.startStopEngine');
+    }
+    //Funmodus
+    let vehicle = lPlayer.vehicle;
+    if(funmodus == false)
+    {
+        //Jump
+        if(key == 17)
+        {
+            if(vehicle)
+            {
+                let velo = getEntityVelocity(vehicle);
+                velo.x = velo.x * 2.25;
+                velo.y = velo.y * 2.25;
+                setEntityVelocity(velocity, velo.x, velo.y, velo.z);
+            }
+        }
+        //Speedboost
+        if(key == 18)
+        {
+            if(vehicle)
+            {
+                let velo = getEntityVelocity(vehicle);
+                velo.x = velo.x + 0.1;
+                velo.y = velo.y + 0.1;
+                velo.z = velo.z + 7.5;
+                setEntityVelocity(velocity, velo.x, velo.y, velo.z);
+            }
+        }
     }
 })
 

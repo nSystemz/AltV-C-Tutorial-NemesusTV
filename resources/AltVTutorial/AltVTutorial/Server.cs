@@ -10,12 +10,13 @@ namespace AltVTutorial
     {
         public override void OnStart()
         {
-            Alt.Log("Server wurde gestartet!");
+            Utils.ConsoleLog("warning", "Tutorial Gamemode von NemesusTV erfolgreich geladen!");
+            Utils.ConsoleLog("warning", "--> https://nemesus.de <--");
             Utils.adminLog("Server wurde gestartet", "TutorialServer");
             //MYSQL
             Datenbank.InitConnection();
             Datenbank.FahrzeugeLaden();
-            Garagen.Garagen.GarageLoad();
+            //Garagen.Garagen.GarageLoad();
             //Timer
             Timer paydayTimer = new Timer(OnPaydayTimer, null, 60000, 60000);
             Timer fuelTimer = new Timer(OnFuelTimer, null, 60000, 60000);
@@ -52,7 +53,7 @@ namespace AltVTutorial
 
         public override void OnStop()
         {
-            Alt.Log("Server wurde beendet!");
+            Utils.ConsoleLog("warning", "Server wurde beendet!");
         }
 
         public override IEntityFactory<IPlayer> GetPlayerFactory()
