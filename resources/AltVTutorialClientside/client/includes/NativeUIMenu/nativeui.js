@@ -723,11 +723,11 @@ class Screen {
             (mousePosition.Y > topLeft.Y && mousePosition.Y < topLeft.Y + boxSize.Height));
     }
     static GetTextWidth(text, font, scale) {
-        game__default.beginTextCommandGetWidth("CELL_EMAIL_BCON");
+        game__default.beginTextCommandGetScreenWidthOfDisplayText("CELL_EMAIL_BCON");
         Text.AddLongString(text);
         game__default.setTextFont(font);
         game__default.setTextScale(1.0, scale);
-        const width = game__default.endTextCommandGetWidth(true);
+        const width = game__default.endTextCommandGetScreenWidthOfDisplayText(true);
         const res = Screen.ResolutionMaintainRatio;
         return res.Width * width;
     }
@@ -2122,7 +2122,7 @@ class NativeUI {
                 }
             }
             if (menuPool.length === 0) {
-                game__default.setMouseCursorSprite(1);
+                game__default.setMouseCursorStyle(1);
             }
         }
     }
@@ -2383,7 +2383,7 @@ class NativeUI {
         return false;
     }
     IsMouseInListItemArrows(item, topLeft, safezone) {
-        game__default.beginTextCommandGetWidth("jamyfafi");
+        game__default.beginTextCommandGetScreenWidthOfDisplayText("jamyfafi");
         game__default.addTextComponentSubstringPlayerName(item.Text);
         let res = Screen.ResolutionMaintainRatio;
         let screenw = res.Width;
@@ -2391,7 +2391,7 @@ class NativeUI {
         const height = 1080.0;
         const ratio = screenw / screenh;
         let width = height * ratio;
-        const labelSize = game__default.endTextCommandGetWidth(false) * width * 0.35;
+        const labelSize = game__default.endTextCommandGetScreenWidthOfDisplayText(false) * width * 0.35;
         const labelSizeX = 5 + labelSize + 10;
         const arrowSizeX = 431 - labelSizeX;
         return Screen.IsMouseInBounds(topLeft, new Size(labelSizeX, 38))
@@ -2412,14 +2412,14 @@ class NativeUI {
             limit = this._maxItem;
         if (Screen.IsMouseInBounds(new Point(0, 0), new Size(30, 1080)) && this._mouseEdgeEnabled) {
             game__default.setGameplayCamRelativeHeading(game__default.getGameplayCamRelativeHeading() + 5.0);
-            game__default.setMouseCursorSprite(6);
+            game__default.setMouseCursorStyle(6);
         }
         else if (Screen.IsMouseInBounds(new Point(Screen.ResolutionMaintainRatio.Width - 30.0, 0), new Size(30, 1080)) && this._mouseEdgeEnabled) {
             game__default.setGameplayCamRelativeHeading(game__default.getGameplayCamRelativeHeading() - 5.0);
-            game__default.setMouseCursorSprite(7);
+            game__default.setMouseCursorStyle(7);
         }
         else if (this._mouseEdgeEnabled) {
-            game__default.setMouseCursorSprite(1);
+            game__default.setMouseCursorStyle(1);
         }
         for (let i = this._minItem; i <= limit; i++) {
             let xpos = this._offset.X;
@@ -2431,7 +2431,7 @@ class NativeUI {
                 uiMenuItem.Hovered = true;
                 const res = this.IsMouseInListItemArrows(this.MenuItems[i], new Point(xpos, ypos), 0);
                 if (uiMenuItem.Hovered && res == 1 && (this.MenuItems[i] instanceof UIMenuListItem || this.MenuItems[i] instanceof UIMenuAutoListItem || this.MenuItems[i] instanceof UIMenuDynamicListItem)) {
-                    game__default.setMouseCursorSprite(5);
+                    game__default.setMouseCursorStyle(5);
                 }
                 if (game__default.isControlJustReleased(0, 24) || game__default.isDisabledControlJustReleased(0, 24))
                     if (uiMenuItem.Selected && uiMenuItem.Enabled) {

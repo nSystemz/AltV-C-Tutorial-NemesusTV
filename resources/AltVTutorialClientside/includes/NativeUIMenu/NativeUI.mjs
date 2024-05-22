@@ -174,7 +174,7 @@ export default class NativeUI {
                 }
             }
             if (menuPool.length === 0) {
-                game.setMouseCursorSprite(1);
+                game.setMouseCursorStyle(1);
             }
         }
     }
@@ -365,7 +365,7 @@ export default class NativeUI {
     }
     IsMouseInListItemArrows(item, topLeft, safezone // TODO: Ability to scroll left and right
     ) {
-        game.beginTextCommandGetWidth("jamyfafi");
+        game.beginTextCommandGetScreenWidthOfDisplayText("jamyfafi");
         game.addTextComponentSubstringPlayerName(item.Text);
         let res = Screen.ResolutionMaintainRatio();
         let screenw = res.Width;
@@ -373,7 +373,7 @@ export default class NativeUI {
         const height = 1080.0;
         const ratio = screenw / screenh;
         let width = height * ratio;
-        const labelSize = game.endTextCommandGetWidth(false) * width * 0.35;
+        const labelSize = game.endTextCommandGetScreenWidthOfDisplayText(false) * width * 0.35;
         const labelSizeX = 5 + labelSize + 10;
         const arrowSizeX = 431 - labelSizeX;
         return Screen.IsMouseInBounds(topLeft, new Size(labelSizeX, 38))
@@ -398,15 +398,15 @@ export default class NativeUI {
         if (Screen.IsMouseInBounds(new Point(0, 0), new Size(30, 1080)) &&
             this.MouseEdgeEnabled) {
             game.setGameplayCamRelativeHeading(game.getGameplayCamRelativeHeading() + 5.0);
-            game.setMouseCursorSprite(6);
+            game.setMouseCursorStyle(6);
         }
         else if (Screen.IsMouseInBounds(new Point(Screen.ResolutionMaintainRatio().Width - 30.0, 0), new Size(30, 1080)) &&
             this.MouseEdgeEnabled) {
             game.setGameplayCamRelativeHeading(game.getGameplayCamRelativeHeading() - 5.0);
-            game.setMouseCursorSprite(7);
+            game.setMouseCursorStyle(7);
         }
         else if (this.MouseEdgeEnabled) {
-            game.setMouseCursorSprite(1);
+            game.setMouseCursorStyle(1);
         }
         for (let i = this._minItem; i <= limit; i++) {
             let xpos = this.offset.X;
@@ -419,7 +419,7 @@ export default class NativeUI {
                 uiMenuItem.Hovered = true;
                 const res = this.IsMouseInListItemArrows(this.MenuItems[i], new Point(xpos, ypos), 0);
                 if (uiMenuItem.Hovered && res == 1 && (this.MenuItems[i] instanceof UIMenuListItem || this.MenuItems[i] instanceof UIMenuDynamicListItem)) {
-                    game.setMouseCursorSprite(5);
+                    game.setMouseCursorStyle(5);
                 }
                 if (game.isControlJustPressed(0, 24) ||
                     game.isDisabledControlJustPressed(0, 24))

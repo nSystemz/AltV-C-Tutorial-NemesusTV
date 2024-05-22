@@ -5,11 +5,11 @@ import * as alt from 'alt';
 import * as game from 'natives';
 export default class StringMeasurer {
 	static MeasureStringWidthNoConvert(input) {
-		game.beginTextCommandGetWidth("STRING");
+		game.beginTextCommandGetScreenWidthOfDisplayText("STRING");
 		ResText.AddLongString(input);
 		game.setTextFont(0);
 		game.setTextScale(0.35, 0.35);
-		return game.endTextCommandGetWidth(true);
+		return game.endTextCommandGetScreenWidthOfDisplayText(true);
 		
     }
     static MeasureString(str) {

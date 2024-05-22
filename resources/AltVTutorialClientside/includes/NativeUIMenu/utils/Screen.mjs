@@ -27,14 +27,14 @@ export const Screen = {
     },
     GetTextWidth: (text, font, scale) => {
         // Start by requesting the game to start processing a width measurement
-        game.beginTextCommandGetWidth("THREESTRINGS"); // CELL_EMAIL_BCON
+        game.beginTextCommandGetScreenWidthOfDisplayText("THREESTRINGS"); // CELL_EMAIL_BCON
         // Add the text string
         Text.AddLongString(text);
         // Set the properties for the text
         game.setTextFont(font);
         game.setTextScale(1.0, scale);
         // Ask the game for the relative string width
-        const width = game.endTextCommandGetWidth(true);
+        const width = game.endTextCommandGetScreenWidthOfDisplayText(true);
         // And return the literal result
         const res = Screen.ResolutionMaintainRatio();
         return res.Width * width;

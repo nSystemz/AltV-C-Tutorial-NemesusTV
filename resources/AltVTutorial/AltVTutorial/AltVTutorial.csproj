@@ -14,9 +14,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Bcrypt.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="Datenbank.cs" />
+    <Compile Include="DBContext\Context.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Garagen\Garagen.cs" />
     <Compile Include="HTTP.cs" />
@@ -24,6 +24,7 @@
     <Compile Include="Inventory\InventoryModel.cs" />
     <Compile Include="Inventory\Item.cs" />
     <Compile Include="Inventory\ItemModel.cs" />
+    <Compile Include="Models\Haus.cs" />
     <Compile Include="Models\Stats.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="TPlayer\TPlayer.cs" />
@@ -38,12 +39,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AltV.Net" Version="15.0.5" />
-    <PackageReference Include="AltV.Net.Async" Version="15.0.5" />
+    <PackageReference Include="AltV.Net" Version="16.0.10" />
+    <PackageReference Include="AltV.Net.Async" Version="16.0.10" />
     <PackageReference Include="AltV.Net.EntitySync" Version="1.18.0" />
-    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="15.0.5" />
+    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="16.0.10" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.15" />
     <PackageReference Include="MySql.Data" Version="8.0.23" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

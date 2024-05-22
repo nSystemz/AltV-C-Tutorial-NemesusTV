@@ -2,7 +2,9 @@
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using AltV.Net.Resources.Chat.Api;
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Globalization;
 using System.IO;
@@ -22,34 +24,34 @@ namespace AltVTutorial
         [Command("car")]
         public void CMD_car(TPlayer.TPlayer tplayer, string VehicleName, string PlayerName = null, int R = 0, int G = 0, int B = 0)
         {
-            if(!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Supporter))
+            if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Supporter))
             {
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
             }
             TVehicle.TVehicle veh = (TVehicle.TVehicle)Alt.CreateVehicle(Alt.Hash(VehicleName), new AltV.Net.Data.Position(tplayer.Position.X, tplayer.Position.Y + 2.5f, tplayer.Position.Z), tplayer.Rotation);
-            if(veh != null)
+            if (veh != null)
             {
                 veh.LockState = (VehicleLockState)1;
                 veh.PrimaryColorRgb = new AltV.Net.Data.Rgba((byte)R, (byte)G, (byte)B, 255);
                 if (PlayerName == null)
                 {
                     tplayer.SendChatMessage("{04B404} Das Fahrzeug wurde erfolgreich gespawned!");
-                    Utils.adminLog($"Der Spieler {tplayer.SpielerName} hat ein {VehicleName} gespawned!", "TutorialServer");
+                    Utils.adminLog($"Der Spieler {tplayer.name} hat ein {VehicleName} gespawned!", "TutorialServer");
                     Utils.sendNotification(tplayer, "info", "Fahrzeug wurde erfolgreich gespawned!");
                 }
                 else
                 {
                     TPlayer.TPlayer target = Utils.GetPlayerByName(PlayerName);
-                    if(target == null)
+                    if (target == null)
                     {
                         Utils.sendNotification(tplayer, "error", "Ungültiger Spieler!");
                         return;
                     }
                     tplayer.SendChatMessage("{04B404} Du hast erfolgreich ein Fahrzeug gespawnt und dieses einem Spieler zugewiesen!");
-                    Utils.adminLog($"Der Spieler {tplayer.SpielerName} hat ein {VehicleName} für {target.Name} erstellt!", "TutorialServer");
+                    Utils.adminLog($"Der Spieler {tplayer.name} hat ein {VehicleName} für {target.Name} erstellt!", "TutorialServer");
                     Utils.sendNotification(tplayer, "info", "Fahrzeug wurde erfolgreich für einen Spieler erstellt!");
-                    veh.SpielerID = target.SpielerID;
+                    veh.SpielerID = target.id;
                     veh.VehicleLock = (int)veh.LockState;
                     veh.vehicleName = VehicleName;
                     veh.NumberplateText = VehicleName;
@@ -66,7 +68,7 @@ namespace AltVTutorial
         [Command("freezeme")]
         public void CMD_freezeme(TPlayer.TPlayer tplayer, bool freeze)
         {
-            if(!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Moderator))
+            if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Moderator))
             {
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
@@ -84,14 +86,14 @@ namespace AltVTutorial
                 return;
             }
             TPlayer.TPlayer target = Utils.GetPlayerByName(playerName);
-            if(target == null)
+            if (target == null)
             {
                 Utils.sendNotification(tplayer, "error", "Ungültiger Spieler!");
                 return;
             }
-            if(target.Einreise == 0)
+            if (target.einreise == 0)
             {
-                target.Einreise = 1;
+                target.einreise = 1;
                 tplayer.Spawn(new AltV.Net.Data.Position(-425, 1123, 325), 0);
                 Utils.sendNotification(target, "success", "Einreise erfolgreich!");
                 Utils.sendNotification(tplayer, "success", "Einreise erfolgreich!");
@@ -102,6 +104,117 @@ namespace AltVTutorial
                 Utils.sendNotification(tplayer, "error", "Dieser Spieler muss nicht mehr einreisen!");
             }
         }
+
+        [Command("pet")]
+        public void CMD_pet(TPlayer.TPlayer tplayer)
+        {
+            if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Moderator))
+            {
+                tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
+                return;
+            }
+            if(tplayer.pet == null)
+            {
+                tplayer.pet = (Ped)Alt.CreatePed(PedModel.Husky, new AltV.Net.Data.Position((float)(tplayer.Position.X +2.5), tplayer.Position.Y, tplayer.Position.Z), tplayer.Rotation);
+                Utils.sendNotification(tplayer, "success", "Das Tier wurde erstellt!");
+                Alt.Emit("PetFollowPlayer", tplayer, tplayer.pet);
+            }
+            else
+            {
+                tplayer.pet.Destroy();
+                tplayer.pet = null;
+                Utils.sendNotification(tplayer, "success", "Das Tier wurde gelöscht!");
+            }
+        }
+
+
+
+        [Command("testeupoutfit", greedyArg: true)]
+        public void CMD_testeupoutfit(TPlayer.TPlayer tplayer, String outfitname)
+        {
+
+            try
+            {
+                String json1 = "";
+                String json2 = "";
+                if (outfitname.Length < 5 || outfitname.Length > 35)
+                {
+                    tplayer.SendChatMessage("Ungültiger Outfitname!");
+                    return;
+                }
+
+                MySqlCommand command = Datenbank.Connection.CreateCommand();
+                command.CommandText = "SELECT json1,json2 FROM eupoutfits WHERE owner='EUP' AND name=@name LIMIT 1";
+                command.Parameters.AddWithValue("name", outfitname);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    reader.Read();
+                    if (reader.HasRows)
+                    {
+                        json1 = reader.GetString("json1");
+                        json2 = reader.GetString("json2");
+                    }
+                    reader.Close();
+                }
+
+                string[] json1Array = new string[14];
+                string[] json2Array = new string[14];
+
+                json1 = json1.Substring(1, json1.Length - 2);
+                json2 = json2.Substring(1, json2.Length - 2);
+
+                json1Array = json1.Split(",");
+                json2Array = json2.Split(",");
+
+                tplayer.ClearProps(0);
+                tplayer.ClearProps(1);
+                tplayer.ClearProps(2);
+                tplayer.ClearProps(6);
+                tplayer.ClearProps(7);
+                tplayer.SetClothes(10, 0, 0, 0);
+                tplayer.SetClothes(5, 0, 0, 0);
+                tplayer.SetClothes(7, 0, 0, 0);
+                tplayer.SetClothes(1, 0, 0, 0);
+                tplayer.SetClothes(9, 0, 0, 0);
+
+                //Top
+                tplayer.SetClothes(11, (ushort)(Convert.ToInt32(json1Array[5]) - 1), (byte)(Convert.ToInt32(json2Array[5]) - 1), 0);
+                //Torso
+                tplayer.SetClothes(3, (ushort)(Convert.ToInt32(json1Array[6]) - 1), (byte)(Convert.ToInt32(json2Array[6]) - 1), 0);
+                //Legs
+                tplayer.SetClothes(4, (ushort)(Convert.ToInt32(json1Array[9]) - 1), (byte)(Convert.ToInt32(json2Array[9]) - 1), 0);
+                //Shoes
+                tplayer.SetClothes(6, (ushort)(Convert.ToInt32(json1Array[10]) - 1), (byte)(Convert.ToInt32(json2Array[10]) - 1), 0);
+                //Undershirt
+                tplayer.SetClothes(8, (ushort)(Convert.ToInt32(json1Array[8]) - 1), (byte)(Convert.ToInt32(json2Array[8]) - 1), 0);
+                //Bag
+                tplayer.SetClothes(5, (ushort)(Convert.ToInt32(json1Array[13]) - 1), (byte)(Convert.ToInt32(json2Array[13]) - 1), 0);
+                //Glasses
+                tplayer.SetProps(1, (ushort)(Convert.ToInt32(json1Array[1]) - 1), (byte)(Convert.ToInt32(json2Array[1]) - 1));
+                //Hat
+                tplayer.SetProps(0, (ushort)(Convert.ToInt32(json1Array[0]) - 1), (byte)(Convert.ToInt32(json2Array[0]) - 1));
+                //Mask
+                tplayer.SetClothes(1, (ushort)(Convert.ToInt32(json1Array[4]) - 1), (byte)(Convert.ToInt32(json2Array[4]) - 1), 0);
+                //Ears
+                tplayer.SetProps(2, (ushort)(Convert.ToInt32(json1Array[2]) - 1), (byte)(Convert.ToInt32(json2Array[2]) - 1));
+                //Watches
+                tplayer.SetProps(6, (ushort)(Convert.ToInt32(json1Array[3]) - 1), (byte)(Convert.ToInt32(json2Array[3]) - 1));
+                //Bracelets
+                tplayer.SetProps(7, (ushort)(Convert.ToInt32(json1Array[7]) - 1), (byte)(Convert.ToInt32(json2Array[7]) - 1));
+                //Accessories
+                tplayer.SetClothes(7, (ushort)(Convert.ToUInt16(json1Array[11]) - 1), (byte)(Convert.ToInt32(json2Array[11]) - 1), 0);
+                //Armor
+                tplayer.SetClothes(9, (ushort)(Convert.ToInt32(json1Array[12]) - 1), (byte)(Convert.ToInt32(json2Array[12]) - 1), 0);
+                tplayer.SendChatMessage("Testoutfit (EUP) gesetzt!");
+            }
+            catch (Exception e)
+            {
+                Alt.Log($"[CMD_testeupoutfit]: " + e.ToString());
+            }
+            return;
+        }
+
+
 
         [Command("telexyz")]
         public void CMD_telexyz(TPlayer.TPlayer tplayer, double x, double y, double z)
@@ -127,7 +240,7 @@ namespace AltVTutorial
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
             }
-            if(socialclubid < 10000)
+            if (socialclubid < 10000)
             {
                 tplayer.SendChatMessage("{FF0000}Ungültige Socialclubid!");
                 return;
@@ -135,14 +248,14 @@ namespace AltVTutorial
             MySqlCommand command = Datenbank.Connection.CreateCommand();
             command.CommandText = "SELECT id from whitelist WHERE socialclubid=@socialclubid LIMIT 1";
             command.Parameters.AddWithValue("socialclubid", socialclubid);
-            using(MySqlDataReader reader = command.ExecuteReader())
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
-                if(reader.HasRows)
+                if (reader.HasRows)
                 {
                     found = true;
                 }
             }
-            if(found == true)
+            if (found == true)
             {
                 MySqlCommand command2 = Datenbank.Connection.CreateCommand();
                 command2.CommandText = "DELETE FROM whitelist WHERE socialclubid=@socialclubid LIMIT 1";
@@ -162,6 +275,19 @@ namespace AltVTutorial
             }
         }
 
+        [Command("colshapetest")]
+        public void CMD_colshapetest(TPlayer.TPlayer tplayer)
+        {
+            if(tplayer.colshapeid == Server.testShape.Id)
+            {
+                tplayer.SendChatMessage("Du bist im richtigen Colshape!");
+            }
+            else
+            {
+                tplayer.SendChatMessage("Du bist im falschen Colshape!");
+            }
+        }
+
         [Command("fraktionsinfo")]
         public void CMD_fraktionsinfo(TPlayer.TPlayer tplayer)
         {
@@ -172,7 +298,7 @@ namespace AltVTutorial
         [Command("save", greedyArg: true)]
         public void CMD_save(TPlayer.TPlayer tplayer, string position)
         {
-            if(!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Moderator))
+            if (!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Moderator))
             {
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
@@ -187,7 +313,7 @@ namespace AltVTutorial
 
             tplayer.SendChatMessage(message);
 
-            using(StreamWriter file = new StreamWriter(@"./savedpositions.txt", true))
+            using (StreamWriter file = new StreamWriter(@"./savedpositions.txt", true))
             {
                 file.WriteLine(message);
             }
@@ -205,10 +331,10 @@ namespace AltVTutorial
             garagen.name = name;
             garagen.maxcount = maxcount;
             garagen.count = 0;
-            garagen.posx = tplayer.Position.X;
-            garagen.posy = tplayer.Position.Y;
-            garagen.posz = tplayer.Position.Z;
-            garagen.posa = tplayer.Rotation.Yaw;
+            garagen.pos_x = tplayer.Position.X;
+            garagen.pos_y = tplayer.Position.Y;
+            garagen.pos_z = tplayer.Position.Z;
+            garagen.pos_a = tplayer.Rotation.Yaw;
 
             Garagen.Garagen.GarageErstellen(garagen);
 
@@ -224,15 +350,15 @@ namespace AltVTutorial
                 return;
             }
             Garagen.Garagen garageDelete = null;
-            foreach(Garagen.Garagen garage in Garagen.Garagen.garageList)
+            foreach (Garagen.Garagen garage in Garagen.Garagen.garageList)
             {
-                if(garage.id == id)
+                if (garage.id == id)
                 {
                     garageDelete = garage;
                     break;
                 }
             }
-            if(garageDelete != null)
+            if (garageDelete != null)
             {
                 Garagen.Garagen.GarageDelete(garageDelete);
                 Utils.sendNotification(tplayer, "success", "Garage wurde gelöscht!");
@@ -252,18 +378,18 @@ namespace AltVTutorial
                 return;
             }
             TPlayer.TPlayer target = Utils.GetPlayerByName(playertarget);
-            if(target == null)
+            if (target == null)
             {
                 tplayer.SendChatMessage("{FF0000}Ungültiger Spieler!");
                 return;
             }
-            if(frak < 0 || frak > TPlayer.TPlayer.Fraktionen.Length)
+            if (frak < 0 || frak > TPlayer.TPlayer.Fraktionen.Length)
             {
                 tplayer.SendChatMessage("{FF0000}Ungültige Fraktion!");
                 return;
             }
-            target.Fraktion = frak;
-            target.Rang = 6;
+            target.fraktion = frak;
+            target.rang = 6;
             tplayer.SendChatMessage($"Du hast {target.Name} zum Chef der Fraktion {TPlayer.TPlayer.Fraktionen[frak]}!");
             target.SendChatMessage($"Du wurdest von {tplayer.Name} zum Chef der Fraktion {TPlayer.TPlayer.Fraktionen[frak]} gemacht!");
         }
@@ -271,7 +397,7 @@ namespace AltVTutorial
         [Command("invite")]
         public void CMD_invite(TPlayer.TPlayer tplayer, string playertarget)
         {
-            if(tplayer.Fraktion == 0 || tplayer.Rang < 6)
+            if (tplayer.fraktion == 0 || tplayer.rang < 6)
             {
                 tplayer.SendChatMessage("{FF0000}Du bist in keiner Fraktion oder dein Rang ist zu niedrig!");
                 return;
@@ -282,10 +408,10 @@ namespace AltVTutorial
                 tplayer.SendChatMessage("{FF0000}Ungültiger Spieler!");
                 return;
             }
-            target.Fraktion = tplayer.Fraktion;
-            target.Rang = 1;
-            tplayer.SendChatMessage($"Du hast {target.Name} zur Fraktion {TPlayer.TPlayer.Fraktionen[tplayer.Fraktion]} eingeladen!");
-            target.SendChatMessage($"Du wurdest von {tplayer.Name} zur Fraktion {TPlayer.TPlayer.Fraktionen[tplayer.Fraktion]} eingeladen!");
+            target.fraktion = tplayer.fraktion;
+            target.rang = 1;
+            tplayer.SendChatMessage($"Du hast {target.Name} zur Fraktion {TPlayer.TPlayer.Fraktionen[tplayer.fraktion]} eingeladen!");
+            target.SendChatMessage($"Du wurdest von {tplayer.Name} zur Fraktion {TPlayer.TPlayer.Fraktionen[tplayer.fraktion]} eingeladen!");
         }
 
         [Command("moneytest")]
@@ -297,7 +423,7 @@ namespace AltVTutorial
         [Command("pistole")]
         public void CMD_pistole(TPlayer.TPlayer tplayer)
         {
-            if(tplayer.Fraktion != 1)
+            if (tplayer.fraktion != 1)
             {
                 string msg = "{FF0000}Du bist nicht im PD!";
                 tplayer.SendChatMessage(msg);
@@ -317,7 +443,7 @@ namespace AltVTutorial
         public void CMD_lockpocking(TPlayer.TPlayer tplayer)
         {
             TVehicle.TVehicle veh = Utils.GetClosestVehicle(tplayer);
-            if(veh != null)
+            if (veh != null)
             {
                 tplayer.Emit("showLockpicking");
             }
@@ -378,7 +504,7 @@ namespace AltVTutorial
             }
             if (tvehicle.EngineOn == false)
             {
-                if(tvehicle.Fuel > 0)
+                if (tvehicle.Fuel > 0)
                 {
                     Utils.sendNotification(tplayer, "success", "Motor erfolgreich gestartet!");
                     tvehicle.EngineOn = true;

@@ -1,13 +1,19 @@
-﻿using AltV.Net;
-using AltV.Net.Elements.Entities;
+﻿using AltV.Net;using AltV.Net.Elements.Entities;
+using AltVTutorial.Models;
 using AltVTutorial.TPlayer;
 using AltVTutorial.TVehicle;
+using System;
+using System.Linq;
+using System.Numerics;
 using System.Threading;
+using System.Xml.Linq;
 
 namespace AltVTutorial
 {
     class Server : Resource
     {
+        public static IColShape testShape;
+
         public override void OnStart()
         {
             Utils.ConsoleLog("warning", "Tutorial Gamemode von NemesusTV erfolgreich geladen!");
@@ -20,18 +26,23 @@ namespace AltVTutorial
             //Timer
             Timer paydayTimer = new Timer(OnPaydayTimer, null, 60000, 60000);
             Timer fuelTimer = new Timer(OnFuelTimer, null, 60000, 60000);
+            Timer weatherTimer = new Timer(Events.OnWeatherChange, null, 60000 * 60, 60000 * 60);
+            //Wettersystem
+            Events.OnWeatherChange(null);
+            //Colshapes
+            testShape = Alt.CreateColShapeCircle(new Vector3(0, 0, 0), 3.0f);
         }
 
         public static void OnPaydayTimer(object state)
         {
             foreach(TPlayer.TPlayer tplayer in Alt.GetAllPlayers())
             {
-                tplayer.Payday--;
-                if(tplayer.Payday <= 0)
+                tplayer.payday--;
+                if(tplayer.payday <= 0)
                 {
-                    tplayer.Geld += 500;
+                    tplayer.geld += 500;
                     Utils.sendNotification(tplayer, "info", "Du hast einen Payday in Höhe von 500$ erhalten!");
-                    tplayer.Payday = 60;
+                    tplayer.payday = 60;
                 }
             }
         }

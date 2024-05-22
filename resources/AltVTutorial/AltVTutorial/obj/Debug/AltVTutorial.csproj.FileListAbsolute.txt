@@ -2,7 +2,6 @@ J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutori
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.AssemblyInfoInputs.cache
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.AssemblyInfo.cs
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.csproj.CoreCompileInputs.cache
-J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.csproj.CopyComplete
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.dll
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\ref\AltVTutorial.dll
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.pdb
@@ -15,3 +14,4 @@ J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial.dll
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial.pdb
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTutorial.csproj.AssemblyReference.cache
 J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\refint\AltVTutorial.dll
+J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\obj\Debug\AltVTuto.D20590A9.Up2Date

@@ -106,7 +106,7 @@ namespace AltVTutorial.Inventory
 
             foreach (ItemModel item in itemList.ToList())
             {
-                if (item.ownerEntity == "Player" && item.ownerIdentifier == tplayer.SpielerID)
+                if (item.ownerEntity == "Player" && item.ownerIdentifier == tplayer.id)
                 {
                     InventoryModel inventoryItem = new InventoryModel();
                     Item getItem = Item.GetItemFromItemHash(item.hash);

@@ -23,6 +23,19 @@ let mdcShow = false;
 let fpsBoost = false;
 let funmodus = false;
 
+const DISCORD_APP_ID = '1216463013029347399';
+
+const nametags = new Map();
+
+//Nametags
+alt.onServer('addToNametag', (playerId, playerName) => {
+    nametags.set(playerId, playerName);
+});
+
+alt.onServer('removeFromNametag', (playerId) => {
+    nametags.remove(playerId);
+});
+
 //Commands
 alt.onServer('freezePlayer', (freeze) => {
     const lPlayer = alt.Player.local.scriptID;
@@ -49,6 +62,10 @@ alt.on('connectionComplete', () => {
     loadBlips();
     loadPeds();
 
+    alt.showCursor(true)
+    alt.toggleGameControls(false)
+    alt.toggleVoiceControls(false)
+
     guiHud = new alt.WebView("http://resource/gui/gui.html");
 
     loginHud = new alt.WebView("http://resource/login/login.html");
@@ -65,7 +82,21 @@ alt.on('connectionComplete', () => {
     loginHud.on('Auth.Register', (name, password) => {
         alt.emitServer('Event.Register', name, password);
     })
+
+    //getOAuth2Token();
 })
+
+async function getOAuth2Token()
+{
+    try {
+        const token = await alt.Discord.requestOAuth2Token(DISCORD_APP_ID);
+        alt.emitServer('Event.OAuth2Request', token);
+    }
+    catch (e)
+    {
+        alt.logError(e);
+    }
+}
 
 //UpdateMoneyHud
 alt.onServer('updateMoneyHud', (money) => {
@@ -298,6 +329,8 @@ alt.onServer('nativeUITest', () => {
 alt.everyTick(() => {
     const lPlayer = alt.Player.local;
     let vehicle = lPlayer.vehicle;
+    const players = alt.Player.all;
+
     if(vehicle)
     {
         let speed = vehicle.speed*3.6;
@@ -317,6 +350,27 @@ alt.everyTick(() => {
     const playerPos = { ...alt.Player.local.pos };
     drawText3d('Nemesus.de', playerPos.x, playerPos.y, playerPos.z, 0.5, 4, 255, 255, 255, 255, true, true);
     drawText3d('Willkommen auf dem NemesusTV Tutorial Server', -424.85275, 1116.712, 326.76343, 0.7, 4, 255, 255, 255, 255);
+
+    //Nametag
+    for(let i = 0; i < players.length; i++)
+    {
+        const player = players[i];
+        if(player && player !== lPlayer)
+        {
+            const [x, y, z] = game.getEntityCoords(player.scriptID, true);
+            const playerId = player.id;
+
+            if(nametags.has(playerId))
+            {
+                const playerName = nametags.get(playerId);
+                const distance = game.getDistanceBetweenCoords(x, y, z, lPlayer.pos.x, lPlayer.pos.y, lPlayer.pos.z, true);
+
+                if(distance < 45.0) {
+                    drawText3d(playerName, x, y, z+1.2, 0.4, 0, 255, 255, 255, 255, true);
+                }
+            }
+        }
+    }
 });
 
 //Charcreator
@@ -508,8 +562,15 @@ alt.onServer('showMDC', () => {
     }
 })
 
+//UpdateMoneyHud
+alt.onServer('PetFollowPlayer', (player, ped) => {
+    native.freezeEntityPosition(ped, false);
+    alt.taskFollowToOffsetOfEntity(ped, player, 2.5, 2.5, 2.5, 1.5, 1, 1.5, true);
+})
+
 //Tastendrücke
 alt.on('keydown', (key) => {
+    const lPlayer = alt.Player.local;
     if(key == 77)
     {
         alt.emitServer('Event.startStopEngine');
@@ -545,6 +606,11 @@ alt.on('keydown', (key) => {
 })
 
 alt.on('keydown', (key) => {
+    //Adminmenü
+    if(key == 0x71) //F2
+    {
+        createAdminMenu();
+    }
     //Inventar
     if(key == 73)
     {
@@ -571,3 +637,26 @@ alt.on('keydown', (key) => {
         }
     }
 })
+
+//Adminmenü
+function createAdminMenu() {
+    const ui = new NativeUI.Menu("Adminmenü", "Tutorial von Nemesus.de", new NativeUI.Point(150,150));
+
+    alt.Player.all.forEach(player => {
+        ui.AddItem(new NativeUI.UIMenuListItem(
+            player.name,
+            "Spielerbeschreibung",
+            new NativeUI.ItemsCollection(["Kick"])
+        ));
+    });
+
+    ui.Open();
+
+    ui.ItemSelect.on(item => {
+        if(item instanceof NativeUI.UIMenuListItem) {
+            //item.SelectedItem.DisplayText
+            alt.log(JSON.stringify(item));
+        }
+    });
+
+}
