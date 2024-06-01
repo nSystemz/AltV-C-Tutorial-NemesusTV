@@ -20,6 +20,8 @@ Weitere Links:
 
 Youtube: https://yt.nemesus.de
 
+Tutorial zum aufsetzen dieses Tutorial Templates: https://www.youtube.com/watch?v=1PCipkl_VVI
+
 Playlist: https://youtube.com/playlist?list=PLwo_W2ZlTOInISZmMKibF1dw602IWYDO0
 
 Forum: https://forum.nemesus.de
