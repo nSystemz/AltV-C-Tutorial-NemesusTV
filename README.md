@@ -28,6 +28,8 @@ Tutorial zum aufsetzen dieses Tutorial Templates: https://www.youtube.com/watch?
 
 Playlist: https://youtube.com/playlist?list=PLwo_W2ZlTOInISZmMKibF1dw602IWYDO0
 
+Homepage: https://nemesus.de
+
 Forum: https://forum.nemesus.de
 
 Discord (Support und Smalltalk): https://discord.nemesus.de
