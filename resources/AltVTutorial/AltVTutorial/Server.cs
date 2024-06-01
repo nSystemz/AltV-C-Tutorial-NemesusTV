@@ -31,6 +31,8 @@ namespace AltVTutorial
             Events.OnWeatherChange(null);
             //Colshapes
             testShape = Alt.CreateColShapeCircle(new Vector3(0, 0, 0), 3.0f);
+            //Cardealer
+            Datenbank.CardealerLoad();
         }
 
         public static void OnPaydayTimer(object state)

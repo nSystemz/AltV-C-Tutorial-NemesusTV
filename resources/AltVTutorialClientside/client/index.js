@@ -1,7 +1,5 @@
 /// <reference types ="@altv/types-client" />
 /// <reference types ="@altv/types-natives" />
-
-
 import * as alt from "alt-client"
 import * as native from "natives"
 import * as NativeUI from 'includes/NativeUIMenu/NativeUI.mjs';
@@ -23,7 +21,9 @@ let mdcShow = false;
 let fpsBoost = false;
 let funmodus = false;
 
-const DISCORD_APP_ID = '1216463013029347399';
+let cardealer = [];
+
+const DISCORD_APP_ID = '';
 
 const nametags = new Map();
 
@@ -36,10 +36,24 @@ alt.onServer('removeFromNametag', (playerId) => {
     nametags.remove(playerId);
 });
 
+//Cardealer
+alt.onServer('createCardealerText', (modelname, price, posx, posy, posz) => {
+    let text = `Das Fahrzeug ${modelname} steht für ${price}$ zum Verkauf!`;
+    let cardealerObj = {
+        text: text,
+        price: price,
+        posx: posx,
+        posy: posy,
+        posz: posz
+    }
+    cardealer.push(cardealerObj);
+});
+
 //Commands
 alt.onServer('freezePlayer', (freeze) => {
     const lPlayer = alt.Player.local.scriptID;
     native.freezeEntityPosition(lPlayer, freeze);
+    alt.showCursor(false);
 })
 
 //Login/Register
@@ -62,7 +76,6 @@ alt.on('connectionComplete', () => {
     loadBlips();
     loadPeds();
 
-    alt.showCursor(true)
     alt.toggleGameControls(false)
     alt.toggleVoiceControls(false)
 
@@ -347,10 +360,16 @@ alt.everyTick(() => {
     drawText2d(`${streetName}\n${zone}`, 0.215, 0.925, 0.5, 4, 244, 210, 66, 255);
 
     //3D Texte
-    const playerPos = { ...alt.Player.local.pos };
-    drawText3d('Nemesus.de', playerPos.x, playerPos.y, playerPos.z, 0.5, 4, 255, 255, 255, 255, true, true);
+    //const playerPos = { ...alt.Player.local.pos };
+    //drawText3d('Nemesus.de', playerPos.x, playerPos.y, playerPos.z, 0.5, 4, 255, 255, 255, 255, true, true);
     drawText3d('Willkommen auf dem NemesusTV Tutorial Server', -424.85275, 1116.712, 326.76343, 0.7, 4, 255, 255, 255, 255);
 
+    //Cardealer
+    for(let i= 0; i < cardealer.length; i++)
+    {
+        drawText3d(cardealer[i].text, cardealer[i].posx, cardealer[i].posy, cardealer[i].posz+0.5, 0.5, 4, 255, 255, 255, 255, true, true);
+    }
+    
     //Nametag
     for(let i = 0; i < players.length; i++)
     {
@@ -606,10 +625,12 @@ alt.on('keydown', (key) => {
 })
 
 alt.on('keydown', (key) => {
-    //Adminmenü
+    //Cursor verstecken
     if(key == 0x71) //F2
     {
-        createAdminMenu();
+        alt.showCursor(false);
+        const lPlayer = alt.Player.local.scriptID;
+        native.freezeEntityPosition(lPlayer, false);
     }
     //Inventar
     if(key == 73)
@@ -637,26 +658,3 @@ alt.on('keydown', (key) => {
         }
     }
 })
-
-//Adminmenü
-function createAdminMenu() {
-    const ui = new NativeUI.Menu("Adminmenü", "Tutorial von Nemesus.de", new NativeUI.Point(150,150));
-
-    alt.Player.all.forEach(player => {
-        ui.AddItem(new NativeUI.UIMenuListItem(
-            player.name,
-            "Spielerbeschreibung",
-            new NativeUI.ItemsCollection(["Kick"])
-        ));
-    });
-
-    ui.Open();
-
-    ui.ItemSelect.on(item => {
-        if(item instanceof NativeUI.UIMenuListItem) {
-            //item.SelectedItem.DisplayText
-            alt.log(JSON.stringify(item));
-        }
-    });
-
-}

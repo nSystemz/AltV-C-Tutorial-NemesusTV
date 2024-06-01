@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fcXtrPVT5a1pPuZe7gAxsKXHG/OU5+e1PwBoAMDxwyqThg89cG+6AUzgR6BKSyTfOIrJmEhopFrzq6oSckLMdQ==",
+  "dgSpecHash": "TrmeSCTZd3fdJjKmPSdz1g+zCRTq0jtHF0fBo5n3bNRIme0Mc5Lq91qJKGlwfb+1+Xh+ZMtb5T4VOXXPx303XQ==",
   "success": true,
   "projectFilePath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
   "expectedPackageFiles": [
@@ -49,10 +49,7 @@
     "C:\\Users\\tschn\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
     "C:\\Users\\tschn\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
-    "C:\\Users\\tschn\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\tschn\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\tschn\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
-    "C:\\Users\\tschn\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512"
+    "C:\\Users\\tschn\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

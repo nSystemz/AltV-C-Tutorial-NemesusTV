@@ -8,8 +8,8 @@
 }
 
 #container {
-    margin-top: 826px;
-    margin-left: 310px;
+    margin-top: 20vw;
+    margin-left: 0.6vw;
     padding: 5px;
     width: 35px;
     height: 35px;
@@ -17,7 +17,7 @@
 }
 
 #container2 {
-    margin-left: 310px;
+    margin-left: 0.6vw;
     padding: 5px;
     width: 35px;
     height: 35px;
@@ -25,7 +25,7 @@
 }
 
 #container3 {
-    margin-left: 310px;
+    margin-left: 0.6vw;
     padding: 5px;
     width: 35px;
     height: 35px;

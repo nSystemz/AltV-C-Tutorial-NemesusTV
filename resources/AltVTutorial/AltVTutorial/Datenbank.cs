@@ -1,4 +1,5 @@
 ﻿using AltV.Net;
+using AltVTutorial.Cardealer;
 using BCrypt.Net;
 using MySql.Data.MySqlClient;
 using System;
@@ -214,6 +215,31 @@ namespace AltVTutorial
                     veh.NumberplateText = veh.vehicleName;
                     veh.Fuel = reader.GetFloat("fuel");
                     veh.EngineOn = Convert.ToBoolean(reader.GetInt16("engine"));
+                }
+            }
+        }
+
+        public static void CardealerLoad()
+        {
+            MySqlCommand command = Connection.CreateCommand();
+            command.CommandText = "SELECT * FROM cardealer";
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                while(reader.Read())
+                {
+                    Models.Cardealer cardealer = new Models.Cardealer();
+                    cardealer.id = reader.GetInt32("id");
+                    cardealer.modelname = reader.GetString("modelname");
+                    cardealer.posx = reader.GetFloat("posx");
+                    cardealer.posy = reader.GetFloat("posy");
+                    cardealer.posz = reader.GetFloat("posz");
+                    cardealer.posa = reader.GetFloat("posa");
+                    cardealer.price = reader.GetInt32("price");
+                    cardealer.vehicle = (TVehicle.TVehicle)Alt.CreateVehicle(Alt.Hash(cardealer.modelname), new AltV.Net.Data.Position(cardealer.posx, cardealer.posy, cardealer.posz), new AltV.Net.Data.Rotation(0, 0, cardealer.posa));
+                    Random rnd = new Random();
+                    cardealer.vehicle.PrimaryColor = (byte)rnd.Next(256);
+                    cardealer.vehicle.SecondaryColor = (byte)rnd.Next(256);
+                    CardealerController.cardealerList.Add(cardealer);
                 }
             }
         }

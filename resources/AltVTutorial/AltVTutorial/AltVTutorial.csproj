@@ -14,6 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Cardealer\CardealerController.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="Datenbank.cs" />
     <Compile Include="DBContext\Context.cs" />
@@ -24,6 +25,7 @@
     <Compile Include="Inventory\InventoryModel.cs" />
     <Compile Include="Inventory\Item.cs" />
     <Compile Include="Inventory\ItemModel.cs" />
+    <Compile Include="Models\Cardealer.cs" />
     <Compile Include="Models\Haus.cs" />
     <Compile Include="Models\Stats.cs" />
     <Compile Include="Server.cs" />

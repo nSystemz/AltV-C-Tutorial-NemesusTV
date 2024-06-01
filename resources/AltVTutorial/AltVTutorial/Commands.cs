@@ -2,6 +2,7 @@
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using AltV.Net.Resources.Chat.Api;
+using AltVTutorial.TVehicle;
 using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.X509;
@@ -57,6 +58,7 @@ namespace AltVTutorial
                     veh.NumberplateText = VehicleName;
                     Datenbank.FahrzeugErstellen(veh);
                 }
+                tplayer.Emit("freezePlayer", false);
             }
             else
             {
@@ -113,9 +115,9 @@ namespace AltVTutorial
                 tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
                 return;
             }
-            if(tplayer.pet == null)
+            if (tplayer.pet == null)
             {
-                tplayer.pet = (Ped)Alt.CreatePed(PedModel.Husky, new AltV.Net.Data.Position((float)(tplayer.Position.X +2.5), tplayer.Position.Y, tplayer.Position.Z), tplayer.Rotation);
+                tplayer.pet = (Ped)Alt.CreatePed(PedModel.Husky, new AltV.Net.Data.Position((float)(tplayer.Position.X + 2.5), tplayer.Position.Y, tplayer.Position.Z), tplayer.Rotation);
                 Utils.sendNotification(tplayer, "success", "Das Tier wurde erstellt!");
                 Alt.Emit("PetFollowPlayer", tplayer, tplayer.pet);
             }
@@ -214,7 +216,52 @@ namespace AltVTutorial
             return;
         }
 
+        [Command("parken")]
+        public void CMD_parken(TPlayer.TPlayer tplayer)
+        {
+            if (tplayer.Vehicle == null)
+            {
+                tplayer.SendChatMessage("{FF0000}Du sitzt in keinem Fahrzeug!");
+                return;
+            }
+            TVehicle.TVehicle veh = (TVehicle.TVehicle)tplayer.Vehicle;
+            if (veh != null && veh.SpielerID == tplayer.id)
+            {
+                Datenbank.SpeichereFahrzeuge(veh);
+                tplayer.SendChatMessage("{04B404}Du hast das Fahrzeug erfolgreich hier geparkt!");
+            }
+        }
 
+        [Command("buyvehicle")]
+        public void CMD_buyvehicle(TPlayer.TPlayer tplayer)
+        {
+            foreach (Models.Cardealer cardealer in Cardealer.CardealerController.cardealerList)
+            {
+                if (tplayer.Vehicle == cardealer.vehicle)
+                {
+                    if (tplayer.geld >= cardealer.price)
+                    {
+                        tplayer.geld -= cardealer.price;
+                        TVehicle.TVehicle veh = (TVehicle.TVehicle)Alt.CreateVehicle(Alt.Hash(cardealer.modelname), new AltV.Net.Data.Position(tplayer.Position.X + 2.5f, tplayer.Position.Y + 2.5f, tplayer.Position.Z), tplayer.Rotation);
+                        if (veh != null)
+                        {
+                            veh.LockState = (VehicleLockState)1;
+                            veh.SpielerID = tplayer.id;
+                            veh.VehicleLock = (int)veh.LockState;
+                            veh.vehicleName = cardealer.modelname;
+                            veh.NumberplateText = tplayer.name;
+                            Datenbank.FahrzeugErstellen(veh);
+                            tplayer.SendChatMessage("{04B404}Du hast dir das Fahrzeug erfolgreich erworben!");
+                        }
+                    }
+                    else
+                    {
+                        tplayer.SendChatMessage("{FF0000}Du hast nicht genügend Geld dabei!");
+                    }
+                    break;
+                }
+            }
+        }
 
         [Command("telexyz")]
         public void CMD_telexyz(TPlayer.TPlayer tplayer, double x, double y, double z)
@@ -278,7 +325,7 @@ namespace AltVTutorial
         [Command("colshapetest")]
         public void CMD_colshapetest(TPlayer.TPlayer tplayer)
         {
-            if(tplayer.colshapeid == Server.testShape.Id)
+            if (tplayer.colshapeid == Server.testShape.Id)
             {
                 tplayer.SendChatMessage("Du bist im richtigen Colshape!");
             }
@@ -519,6 +566,49 @@ namespace AltVTutorial
                 Utils.sendNotification(tplayer, "success", "Motor erfolgreich abgeschaltet!");
                 tvehicle.EngineOn = false;
             }
+        }
+
+        [Command("tuning")]
+        public static void CMD_tuning(TPlayer.TPlayer tplayer, string kategorie, byte komponente)
+        {
+            TVehicle.TVehicle tvehicle = (TVehicle.TVehicle)tplayer.Vehicle;
+            if (tvehicle == null)
+            {
+                Utils.sendNotification(tplayer, "error", "Du sitzt in keinem Fahrzeug!");
+                return;
+            }
+            tvehicle.ModKit = 2;
+            foreach (VehicleModType mod in System.Enum.GetValues(typeof(VehicleModType)))
+            {
+                if (System.Enum.GetName(typeof(VehicleModType), mod).Equals(kategorie))
+                {
+                    if (komponente < 0 || komponente > tvehicle.GetModsCount((byte)mod))
+                    {
+                        Utils.sendNotification(tplayer, "error", "Ungültiges Tuning!");
+                        return;
+                    }
+                    tvehicle.SetMod((byte)mod, komponente);
+                    Utils.sendNotification(tplayer, "success", "Das Tuning wurde erfolgreich gesetzt!");
+                    return;
+                }
+            }
+        }
+
+        [Command("mods")]
+        public static void CMD_mods(TPlayer.TPlayer tplayer)
+        {
+            String tuning = "";
+            TVehicle.TVehicle tvehicle = (TVehicle.TVehicle)tplayer.Vehicle;
+            if (tvehicle == null)
+            {
+                Utils.sendNotification(tplayer, "error", "Du sitzt in keinem Fahrzeug!");
+                return;
+            }
+            foreach (VehicleModType mod in System.Enum.GetValues(typeof(VehicleModType)))
+            {
+                tuning += $"{System.Enum.GetName(typeof(VehicleModType), mod)},";
+            }
+            tplayer.SendChatMessage($"Verfügbares Tuning: {tuning}");
         }
     }
 }

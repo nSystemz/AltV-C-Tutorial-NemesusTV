@@ -54,6 +54,10 @@ namespace AltVTutorial
                 target.Emit("addToNametag", tplayer.id, tplayer.name);
                 tplayer.Emit("addToNametag", target.Id, target.Name);
             }
+            foreach (Models.Cardealer cardealer in Cardealer.CardealerController.cardealerList)
+            {
+                tplayer.Emit("createCardealerText", cardealer.modelname, cardealer.price, cardealer.posx, cardealer.posy, cardealer.posz);
+            }
         }
 
         [ScriptEvent(ScriptEventType.PlayerDisconnect)]
@@ -77,6 +81,13 @@ namespace AltVTutorial
             Utils.ConsoleLog("info", $"Spieler {tplayer.Name} hat den Server verlassen!");
         }
 
+        [ScriptEvent(ScriptEventType.PlayerDead)]
+        public void OnPlayerDead(TPlayer.TPlayer tplayer, IEntity killer, uint weapon)
+        {
+            tplayer.Spawn(new AltV.Net.Data.Position(-427, 1115, 326), 0);
+            tplayer.Model = (uint)PedModel.FreemodeMale01;
+        }
+
         [ScriptEvent(ScriptEventType.PlayerEnterVehicle)]
         public static void OnPlayerEnterVehicle(TVehicle.TVehicle vehicle, TPlayer.TPlayer tplayer, byte seat)
         {
@@ -87,6 +98,14 @@ namespace AltVTutorial
                 if (checkfrak != tplayer.fraktion)
                 {
                     tplayer.SendChatMessage("{FF0000}Dieses Fahrzeug gehört nicht zu deiner Fraktion!");
+                }
+            }
+            foreach (Models.Cardealer cardealer in Cardealer.CardealerController.cardealerList)
+            {
+                if (vehicle == cardealer.vehicle)
+                {
+                    tplayer.SendChatMessage("{04B404}Du kannst dieses Fahrzeug für: " + cardealer.price + "$ erwerben, nutze /buyvehicle!");
+                    break;
                 }
             }
         }
@@ -209,7 +228,7 @@ namespace AltVTutorial
                         }
                         tplayer.Model = (uint)PedModel.FreemodeMale01;
                         tplayer.Emit("CloseLoginHud");
-                        tplayer.Health = 200;
+                        tplayer.Health = 100;
                         Utils.UpdateMoneyHud(tplayer, tplayer.geld);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Healthbar, 1.0);
                         tplayer.Emit("updatePB", (int)TPlayer.TPlayer.ProgressBars.Hungerbar, 0.5);
