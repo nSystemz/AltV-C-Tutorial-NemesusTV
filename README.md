@@ -9,7 +9,7 @@ Hier findet Ihr alle Dateien zur Youtube Tutorialreihe für AltV C#
 
 Installation:
 
-Die benötigten Dateien einfach in euren AltV Server Ordner kopieren, Configs Anpassungen, vue dev Server starten und fertig.
+Die benötigten Dateien einfach in euren AltV Server Ordner kopieren, Configs Anpassungen, npm install im Vuejsserver Ordner und vue dev Server (npm run serve) starten und fertig.
 
 ---
 
