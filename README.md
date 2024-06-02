@@ -5,26 +5,36 @@ Hier findet Ihr alle Dateien zur Youtube Tutorialreihe für AltV C#
 
 (AltV C# Tutorials (C#, CEF, NativeUI, Javascript, Vue.js und vieles mehr)
 
+---
 
 Installation:
 
-Die benötigten Dateien einfach in euren AltV Server Ordner kopieren, Configs Anpassungen, vue dev Server startenn und fertig.
+Die benötigten Dateien einfach in euren AltV Server Ordner kopieren, Configs Anpassungen, vue dev Server starten und fertig.
+
+---
 
 Testuser:
 
 Testuser
 1234567
 
+---
 
 Weitere Links:
 
 Youtube: https://yt.nemesus.de
 
+Tutorial zum aufsetzen dieses Tutorial Templates: https://www.youtube.com/watch?v=1PCipkl_VVI
+
 Playlist: https://youtube.com/playlist?list=PLwo_W2ZlTOInISZmMKibF1dw602IWYDO0
+
+Homepage: https://nemesus.de
 
 Forum: https://forum.nemesus.de
 
 Discord (Support und Smalltalk): https://discord.nemesus.de
+
+---
 
 Ihr wollt uns unterstützen? https://ko-fi.com/nemesustv
 
