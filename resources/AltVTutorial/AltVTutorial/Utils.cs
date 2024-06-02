@@ -3,7 +3,7 @@ using AltV.Net.ColoredConsole;
 using AltV.Net.Elements.Entities;
 using AltVTutorial.Models;
 using Google.Protobuf.WellKnownTypes;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

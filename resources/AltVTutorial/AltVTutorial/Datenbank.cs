@@ -1,12 +1,7 @@
 ﻿using AltV.Net;
 using AltVTutorial.Cardealer;
-using BCrypt.Net;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AltVTutorial
 {

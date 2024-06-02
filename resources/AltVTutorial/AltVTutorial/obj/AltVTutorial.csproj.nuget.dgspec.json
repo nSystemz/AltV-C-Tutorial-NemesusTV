@@ -69,13 +69,13 @@
               "target": "Package",
               "version": "[7.0.15, )"
             },
-            "MySql.Data": {
-              "target": "Package",
-              "version": "[8.0.23, )"
-            },
             "MySql.Data.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.22, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.3.7, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

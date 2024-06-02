@@ -4,7 +4,7 @@ using AltV.Net.Enums;
 using AltV.Net.Resources.Chat.Api;
 using AltVTutorial.TVehicle;
 using Google.Protobuf.WellKnownTypes;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Globalization;

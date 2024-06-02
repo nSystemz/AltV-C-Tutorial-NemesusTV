@@ -1,5 +1,5 @@
 ﻿using AltV.Net;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
