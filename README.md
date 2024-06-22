@@ -1,4 +1,4 @@
-# AltV-C-Tutorial-NemesusTV
+# 🎮 AltV-C-Tutorial-NemesusTV 🎮
 Hier findet Ihr alle Dateien zur Youtube Tutorialreihe für AltV C#
 
 **Auf der Suche nach einem günstigen AltV Server? Ich empfehle euch einen Linux VServer bei ZAP-Hosting: https://bit.ly/3GX1yEx und mit dem Gutschein: Nsus-a-3805 noch kräftig sparen! (Werbung)**
@@ -9,7 +9,7 @@ Hier findet Ihr alle Dateien zur Youtube Tutorialreihe für AltV C#
 
 Installation:
 
-Die benötigten Dateien einfach in euren AltV Server Ordner kopieren, Configs Anpassungen, vue dev Server starten und fertig.
+Die benötigten Dateien einfach in euren AltV Server Ordner kopieren, Configs Anpassungen, npm install im Vuejsserver Ordner und vue dev Server (npm run serve) starten und fertig.
 
 ---
 
@@ -36,6 +36,6 @@ Discord (Support und Smalltalk): https://discord.nemesus.de
 
 ---
 
-Ihr wollt uns unterstützen? https://ko-fi.com/nemesustv
+☕ Ihr wollt uns unterstützen? https://ko-fi.com/nemesustv ☕
 
 Viel Spass!
