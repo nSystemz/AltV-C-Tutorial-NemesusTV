@@ -18,6 +18,7 @@
     <Compile Include="Commands.cs" />
     <Compile Include="Datenbank.cs" />
     <Compile Include="DBContext\Context.cs" />
+    <Compile Include="Discord.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="Garagen\Garagen.cs" />
     <Compile Include="HTTP.cs" />
@@ -46,6 +47,7 @@
     <PackageReference Include="AltV.Net.EntitySync" Version="1.18.0" />
     <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="16.0.10" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Discord.Net" Version="3.15.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.15" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
     <PackageReference Include="MySqlConnector" Version="2.3.7" />

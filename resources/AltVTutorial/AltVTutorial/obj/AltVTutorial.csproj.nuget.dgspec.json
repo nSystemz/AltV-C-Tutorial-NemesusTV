@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "Discord.Net": {
+              "target": "Package",
+              "version": "[3.15.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.15, )"

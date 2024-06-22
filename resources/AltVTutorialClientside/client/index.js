@@ -18,8 +18,8 @@ let bodyCamSet = -1;
 let showInv = false;
 let mdcShow = false;
 
-let fpsBoost = false;
 let funmodus = false;
+let fpsBoost = false;
 
 let cardealer = [];
 
@@ -138,6 +138,10 @@ alt.onServer('createGaragen', (json) => {
     })
 })
 
+alt.onServer('setFunmodus', () => {
+    funmodus = !funmodus;
+})
+
 //FPS Booster
 alt.onServer('fpsBoost', () => {
     if(fpsBoost == false)
@@ -168,10 +172,6 @@ alt.onServer('fpsBoost', () => {
         native.setLightsCutoffDistanceTweak(10.0)
         native.setArtificialLightsState(false)
     }
-})
-
-alt.onServer('setFunmodus', () => {
-    funmodus = !funmodus;
 })
 
 //Blips
@@ -590,35 +590,31 @@ alt.onServer('PetFollowPlayer', (player, ped) => {
 //Tastendrücke
 alt.on('keydown', (key) => {
     const lPlayer = alt.Player.local;
+    //Motorsystem
     if(key == 77)
     {
         alt.emitServer('Event.startStopEngine');
     }
     //Funmodus
     let vehicle = lPlayer.vehicle;
-    if(funmodus == false)
+    if(funmodus)
     {
-        //Jump
+        //Speedboost
         if(key == 17)
         {
             if(vehicle)
             {
-                let velo = getEntityVelocity(vehicle);
-                velo.x = velo.x * 2.25;
-                velo.y = velo.y * 2.25;
-                setEntityVelocity(velocity, velo.x, velo.y, velo.z);
+                let velo = native.getEntityVelocity(vehicle);
+                native.setEntityVelocity(vehicle, velo.x*2.25, velo.y*2.25, velo.z);
             }
         }
-        //Speedboost
+        //Jump
         if(key == 18)
         {
             if(vehicle)
             {
-                let velo = getEntityVelocity(vehicle);
-                velo.x = velo.x + 0.1;
-                velo.y = velo.y + 0.1;
-                velo.z = velo.z + 7.5;
-                setEntityVelocity(velocity, velo.x, velo.y, velo.z);
+                let velo = native.getEntityVelocity(vehicle);
+                native.setEntityVelocity(vehicle, velo.x+0.1, velo.y+0.1, velo.z+7.5);
             }
         }
     }

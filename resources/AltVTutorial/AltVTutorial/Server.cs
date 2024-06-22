@@ -16,6 +16,8 @@ namespace AltVTutorial
 
         public override void OnStart()
         {
+            //
+            Discord.initDiscordBot();
             Utils.ConsoleLog("warning", "Tutorial Gamemode von NemesusTV erfolgreich geladen!");
             Utils.ConsoleLog("warning", "--> https://nemesus.de <--");
             Utils.adminLog("Server wurde gestartet", "TutorialServer");
