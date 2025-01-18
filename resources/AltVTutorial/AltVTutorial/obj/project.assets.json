@@ -1,39 +1,39 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
-      "AltV.Net/16.0.10": {
+    "net8.0": {
+      "AltV.Net/16.4.6": {
         "type": "package",
         "dependencies": {
-          "AltV.Net.Shared": "16.0.10"
+          "AltV.Net.Shared": "16.4.6"
         },
         "compile": {
-          "lib/net6.0/AltV.Net.dll": {}
+          "lib/net8.0/AltV.Net.dll": {}
         },
         "runtime": {
-          "lib/net6.0/AltV.Net.dll": {}
+          "lib/net8.0/AltV.Net.dll": {}
         }
       },
-      "AltV.Net.Async/16.0.10": {
+      "AltV.Net.Async/16.4.6": {
         "type": "package",
         "dependencies": {
-          "AltV.Net": "16.0.10",
+          "AltV.Net": "16.4.6",
           "System.Threading.Channels": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/AltV.Net.Async.dll": {}
+          "lib/net8.0/AltV.Net.Async.dll": {}
         },
         "runtime": {
-          "lib/net6.0/AltV.Net.Async.dll": {}
+          "lib/net8.0/AltV.Net.Async.dll": {}
         }
       },
-      "AltV.Net.CApi/16.0.10": {
+      "AltV.Net.CApi/16.4.6": {
         "type": "package",
         "compile": {
-          "lib/net6.0/AltV.Net.CApi.dll": {}
+          "lib/net8.0/AltV.Net.CApi.dll": {}
         },
         "runtime": {
-          "lib/net6.0/AltV.Net.CApi.dll": {}
+          "lib/net8.0/AltV.Net.CApi.dll": {}
         }
       },
       "AltV.Net.EntitySync/1.18.0": {
@@ -48,28 +48,28 @@
           "lib/net6.0/AltV.Net.EntitySync.dll": {}
         }
       },
-      "AltV.Net.Resources.Chat.Api/16.0.10": {
+      "AltV.Net.Resources.Chat.Api/16.4.6": {
         "type": "package",
         "dependencies": {
-          "AltV.Net": "16.0.10"
+          "AltV.Net": "16.4.6"
         },
         "compile": {
-          "lib/net6.0/AltV.Net.Resources.Chat.Api.dll": {}
+          "lib/net8.0/AltV.Net.Resources.Chat.Api.dll": {}
         },
         "runtime": {
-          "lib/net6.0/AltV.Net.Resources.Chat.Api.dll": {}
+          "lib/net8.0/AltV.Net.Resources.Chat.Api.dll": {}
         }
       },
-      "AltV.Net.Shared/16.0.10": {
+      "AltV.Net.Shared/16.4.6": {
         "type": "package",
         "dependencies": {
-          "AltV.Net.CApi": "16.0.10"
+          "AltV.Net.CApi": "16.4.6"
         },
         "compile": {
-          "lib/net6.0/AltV.Net.Shared.dll": {}
+          "lib/net8.0/AltV.Net.Shared.dll": {}
         },
         "runtime": {
-          "lib/net6.0/AltV.Net.Shared.dll": {}
+          "lib/net8.0/AltV.Net.Shared.dll": {}
         }
       },
       "BCrypt.Net-Next/4.0.3": {
@@ -394,12 +394,12 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {
             "related": ".xml"
           }
         },
@@ -417,12 +417,12 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Caching.Memory.dll": {
+          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Caching.Memory.dll": {
+          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {
             "related": ".xml"
           }
         },
@@ -436,12 +436,12 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
             "related": ".xml"
           }
         },
@@ -455,12 +455,12 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
             "related": ".xml"
           }
         },
@@ -471,12 +471,12 @@
       "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "related": ".xml"
           }
         },
@@ -493,12 +493,12 @@
           "Microsoft.Extensions.Options": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Logging.dll": {
+          "lib/net7.0/Microsoft.Extensions.Logging.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Logging.dll": {
+          "lib/net7.0/Microsoft.Extensions.Logging.dll": {
             "related": ".xml"
           }
         },
@@ -509,12 +509,12 @@
       "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "related": ".xml"
           }
         },
@@ -529,12 +529,12 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Options.dll": {
+          "lib/net7.0/Microsoft.Extensions.Options.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Options.dll": {
+          "lib/net7.0/Microsoft.Extensions.Options.dll": {
             "related": ".xml"
           }
         },
@@ -544,16 +544,13 @@
       },
       "Microsoft.Extensions.Primitives/7.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
-        },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Primitives.dll": {
+          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Primitives.dll": {
+          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {
             "related": ".xml"
           }
         },
@@ -663,16 +660,15 @@
       "MySqlConnector/2.3.7": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
-          "System.Diagnostics.DiagnosticSource": "7.0.2"
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1"
         },
         "compile": {
-          "lib/net6.0/MySqlConnector.dll": {
+          "lib/net8.0/MySqlConnector.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/MySqlConnector.dll": {
+          "lib/net8.0/MySqlConnector.dll": {
             "related": ".xml"
           }
         }
@@ -746,12 +742,12 @@
           "MySqlConnector": "2.2.5"
         },
         "compile": {
-          "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {
+          "lib/net7.0/Pomelo.EntityFrameworkCore.MySql.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {
+          "lib/net7.0/Pomelo.EntityFrameworkCore.MySql.dll": {
             "related": ".xml"
           }
         }
@@ -982,23 +978,24 @@
           }
         }
       },
-      "System.Diagnostics.DiagnosticSource/7.0.2": {
+      "System.Diagnostics.DiagnosticSource/4.0.0": {
         "type": "package",
         "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Threading": "4.0.11"
         },
         "compile": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
+          "lib/netstandard1.3/_._": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
           }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Diagnostics.Tools/4.0.1": {
@@ -2354,45 +2351,45 @@
     }
   },
   "libraries": {
-    "AltV.Net/16.0.10": {
-      "sha512": "0CvNymwk/DmjAw35x3sPwQPIwxnG0EHEH4llNOKpSRYy7OmxFh/0UjbVQsSYjpteu6i+OmV+qHKcfrSIsLECiw==",
+    "AltV.Net/16.4.6": {
+      "sha512": "UUYYIghu4sSoDh7Oje1aayND3pit/+yztLZq3e7bcDNl0UDu5tqoqQcJXARJFKjZgJZuHDTyfpDYxi89JmWPVw==",
       "type": "package",
-      "path": "altv.net/16.0.10",
+      "path": "altv.net/16.4.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.16.0.10.nupkg.sha512",
+        "altv.net.16.4.6.nupkg.sha512",
         "altv.net.nuspec",
         "icon.png",
-        "lib/net6.0/AltV.Net.dll",
+        "lib/net8.0/AltV.Net.dll",
         "license.txt"
       ]
     },
-    "AltV.Net.Async/16.0.10": {
-      "sha512": "AhM08J//+tIFNfj3UqqJua/oU6s6/GGaDlx3WIru+aSMgreznkTKO0xd1g2zq70YMu7F5ksWRRD/pgTeW+Jbqg==",
+    "AltV.Net.Async/16.4.6": {
+      "sha512": "7POytzR/sH2CxaqIi0H3pJuno8ODMjgyVyfK1dkMCt3CboSCiBAN0VJsVydmCPPIgwCLCChtXWBpJH2Si7ZU7A==",
       "type": "package",
-      "path": "altv.net.async/16.0.10",
+      "path": "altv.net.async/16.4.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.async.16.0.10.nupkg.sha512",
+        "altv.net.async.16.4.6.nupkg.sha512",
         "altv.net.async.nuspec",
         "icon.png",
-        "lib/net6.0/AltV.Net.Async.dll",
+        "lib/net8.0/AltV.Net.Async.dll",
         "license.txt"
       ]
     },
-    "AltV.Net.CApi/16.0.10": {
-      "sha512": "+z6aMLTlqRoVwdVapmi2yF0jQK7QoMfkicv0cNSgOsE6gO5YuPgZ5H9GR8+fM7dPgxN4nsAKj54MxFivq+TYog==",
+    "AltV.Net.CApi/16.4.6": {
+      "sha512": "rUC3Esv6oCrUvQs7sA3QkxBlmTjT16wOfnF4uev8ixG8mfn7CYV/eAcrDn41V9RuNneLmtMRDq721Otft8+CmQ==",
       "type": "package",
-      "path": "altv.net.capi/16.0.10",
+      "path": "altv.net.capi/16.4.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.capi.16.0.10.nupkg.sha512",
+        "altv.net.capi.16.4.6.nupkg.sha512",
         "altv.net.capi.nuspec",
         "icon.png",
-        "lib/net6.0/AltV.Net.CApi.dll",
+        "lib/net8.0/AltV.Net.CApi.dll",
         "license.txt"
       ]
     },
@@ -2410,31 +2407,31 @@
         "license.txt"
       ]
     },
-    "AltV.Net.Resources.Chat.Api/16.0.10": {
-      "sha512": "X71V4qkkUxz1oWGCneGIkZx5nNUmiduWYOglxtLwzn3nO5ML2yNskz6OOchzB0En3HNP+9ZFlD9xPO4/AkTZ+Q==",
+    "AltV.Net.Resources.Chat.Api/16.4.6": {
+      "sha512": "Y/BIJxJXIsk9INSTghQq6AOcrtDpsdEq6HyO2a2RiEmeYqAMCmyv6Du3ipvUc1y8C6X3WVJH35wr+CH6qleOOQ==",
       "type": "package",
-      "path": "altv.net.resources.chat.api/16.0.10",
+      "path": "altv.net.resources.chat.api/16.4.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.resources.chat.api.16.0.10.nupkg.sha512",
+        "altv.net.resources.chat.api.16.4.6.nupkg.sha512",
         "altv.net.resources.chat.api.nuspec",
         "icon.png",
-        "lib/net6.0/AltV.Net.Resources.Chat.Api.dll",
+        "lib/net8.0/AltV.Net.Resources.Chat.Api.dll",
         "license.txt"
       ]
     },
-    "AltV.Net.Shared/16.0.10": {
-      "sha512": "5yX6dxNxuAZufQXh7M9NIWeKLy/hByAn/GQB3n3N7xyq2s4miIRYOFsphDTG4Q3TNk9n9Lzuh6cc93Oe2e8+dQ==",
+    "AltV.Net.Shared/16.4.6": {
+      "sha512": "6tlADHrxfKNLSdFCkib4HCPnRGDAN/rJQo8j4JsuTW2ZMhaX4CBBvhl5stTmu88o+CAc1DzR5R6/FHptcynkeg==",
       "type": "package",
-      "path": "altv.net.shared/16.0.10",
+      "path": "altv.net.shared/16.4.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "altv.net.shared.16.0.10.nupkg.sha512",
+        "altv.net.shared.16.4.6.nupkg.sha512",
         "altv.net.shared.nuspec",
         "icon.png",
-        "lib/net6.0/AltV.Net.Shared.dll",
+        "lib/net8.0/AltV.Net.Shared.dll",
         "license.txt"
       ]
     },
@@ -3875,31 +3872,25 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/7.0.2": {
-      "sha512": "hYr3I9N9811e0Bjf2WNwAGGyTuAFbbTgX1RPLt/3Wbm68x3IGcX5Cl75CMmgT6WlNwLQ2tCCWfqYPpypjaf2xA==",
+    "System.Diagnostics.DiagnosticSource/4.0.0": {
+      "sha512": "YKglnq4BMTJxfcr6nuT08g+yJ0UxdePIHxosiLuljuHIUR6t4KhFsyaHOaOc1Ofqp0PUvJ0EmcgiEz6T7vEx3w==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/7.0.2",
+      "path": "system.diagnostics.diagnosticsource/4.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Diagnostics.DiagnosticSource.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
-        "lib/net462/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net462/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net7.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net7.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
-        "system.diagnostics.diagnosticsource.nuspec",
-        "useSharedDesignerContext.txt"
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/net46/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net46/System.Diagnostics.DiagnosticSource.xml",
+        "lib/netstandard1.1/System.Diagnostics.DiagnosticSource.dll",
+        "lib/netstandard1.1/System.Diagnostics.DiagnosticSource.xml",
+        "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll",
+        "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.xml",
+        "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.dll",
+        "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
+        "system.diagnostics.diagnosticsource.4.0.0.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.nuspec"
       ]
     },
     "System.Diagnostics.Tools/4.0.1": {
@@ -7317,11 +7308,11 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "AltV.Net >= 16.0.10",
-      "AltV.Net.Async >= 16.0.10",
+    "net8.0": [
+      "AltV.Net >= 16.4.6",
+      "AltV.Net.Async >= 16.4.6",
       "AltV.Net.EntitySync >= 1.18.0",
-      "AltV.Net.Resources.Chat.Api >= 16.0.10",
+      "AltV.Net.Resources.Chat.Api >= 16.4.6",
       "BCrypt.Net-Next >= 4.0.3",
       "Discord.Net >= 3.15.0",
       "Microsoft.EntityFrameworkCore >= 7.0.15",
@@ -7332,31 +7323,36 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tschn\\.nuget\\packages\\": {}
+    "C:\\Users\\tschn\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+      "projectUniqueName": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
       "projectName": "AltVTutorial",
-      "projectPath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+      "projectPath": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
       "packagesPath": "C:\\Users\\tschn\\.nuget\\packages\\",
-      "outputPath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\obj\\",
+      "outputPath": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\tschn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -7369,19 +7365,20 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "AltV.Net": {
             "target": "Package",
-            "version": "[16.0.10, )"
+            "version": "[16.4.6, )"
           },
           "AltV.Net.Async": {
             "target": "Package",
-            "version": "[16.0.10, )"
+            "version": "[16.4.6, )"
           },
           "AltV.Net.EntitySync": {
             "target": "Package",
@@ -7389,7 +7386,7 @@
           },
           "AltV.Net.Resources.Chat.Api": {
             "target": "Package",
-            "version": "[16.0.10, )"
+            "version": "[16.4.6, )"
           },
           "BCrypt.Net-Next": {
             "target": "Package",
@@ -7436,7 +7433,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

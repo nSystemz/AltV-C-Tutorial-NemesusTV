@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AltVTutorial")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cb02138a6920025bb82eab1a14a99f2d7947f2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("AltVTutorial")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AltVTutorial")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

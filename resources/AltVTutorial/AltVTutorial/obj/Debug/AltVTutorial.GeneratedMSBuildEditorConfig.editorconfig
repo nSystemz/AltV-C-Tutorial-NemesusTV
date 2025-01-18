@@ -1,5 +1,5 @@
 is_global = true
-build_property.TargetFramework = net6.0
+build_property.TargetFramework = net8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
 build_property.ProjectTypeGuids = 
@@ -8,6 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AltVTutorial
-build_property.ProjectDir = J:\Tutorials\AltVServer\resources\AltVTutorial\AltVTutorial\
+build_property.ProjectDir = J:\Tutorials\AltVServer\AltV-C-Tutorial-NemesusTV\resources\AltVTutorial\AltVTutorial\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 

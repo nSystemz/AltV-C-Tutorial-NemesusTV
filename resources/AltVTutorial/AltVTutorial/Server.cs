@@ -21,9 +21,9 @@ namespace AltVTutorial
             Utils.ConsoleLog("warning", "--> https://nemesus.de <--");
             Utils.adminLog("Server wurde gestartet", "TutorialServer");
             //MYSQL
-            //Datenbank.InitConnection();
-            //Datenbank.FahrzeugeLaden();
-            //Garagen.Garagen.GarageLoad();
+            Datenbank.InitConnection();
+            Datenbank.FahrzeugeLaden();
+            Garagen.Garagen.GarageLoad();
             //Timer
             Timer paydayTimer = new Timer(OnPaydayTimer, null, 60000, 60000);
             Timer fuelTimer = new Timer(OnFuelTimer, null, 60000, 60000);

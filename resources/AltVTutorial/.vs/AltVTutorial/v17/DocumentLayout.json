@@ -1,84 +1,92 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\",
+  "WorkspaceRootPath": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\tplayer\\tplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\tplayer\\tplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\altvtutorial.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\altvtutorial.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\tplayer\\tplayerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\tplayer\\tplayerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\altvtutorial.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\altvtutorial.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\inventory\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\tplayer\\tplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\tplayer\\tplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\tplayer\\tplayerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\tplayer\\tplayerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\inventory\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\inventory\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\datenbank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\datenbank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\datenbank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\dbcontext\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\dbcontext\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\dbcontext\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\http.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\http.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\http.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\discord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\discord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\discord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\models\\haus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\models\\haus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\models\\haus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\cardealer\\cardealercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\cardealer\\cardealercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\cardealer\\cardealercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\garagen\\garagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\garagen\\garagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\garagen\\garagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\tvehicle\\tvehiclefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\tvehicle\\tvehiclefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\tvehicle\\tvehiclefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\models\\cardealer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\models\\cardealer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\models\\cardealer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\models\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\models\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\models\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\resources\\altvtutorial\\altvtutorial\\tvehicle\\tvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|j:\\tutorials\\altvserver\\altv-c-tutorial-nemesustv\\resources\\altvtutorial\\altvtutorial\\tvehicle\\tvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{23D5758D-1724-4B19-8039-6B6355E55064}|AltVTutorial\\AltVTutorial.csproj|solutionrelative:altvtutorial\\tvehicle\\tvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -89,250 +97,294 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Item.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Inventory\\Item.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Inventory\\Item.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Inventory\\Item.cs",
-              "RelativeToolTip": "AltVTutorial\\Inventory\\Item.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T16:26:06.502Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Utils.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Utils.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Utils.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Utils.cs",
-              "RelativeToolTip": "AltVTutorial\\Utils.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T10:33:06.507Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AltVTutorial.csproj",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+              "RelativeDocumentMoniker": "AltVTutorial\\AltVTutorial.csproj",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+              "RelativeToolTip": "AltVTutorial\\AltVTutorial.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-18T11:08:50.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Item.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Inventory\\Item.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Inventory\\Item.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Inventory\\Item.cs",
+              "RelativeToolTip": "AltVTutorial\\Inventory\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T16:26:06.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Utils.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Utils.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Utils.cs",
+              "RelativeToolTip": "AltVTutorial\\Utils.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T10:33:06.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "TPlayer.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\TPlayer\\TPlayer.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\TPlayer\\TPlayer.cs",
               "RelativeDocumentMoniker": "AltVTutorial\\TPlayer\\TPlayer.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\TPlayer\\TPlayer.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\TPlayer\\TPlayer.cs",
               "RelativeToolTip": "AltVTutorial\\TPlayer\\TPlayer.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAAAFQAAAABAAAA",
+              "ViewState": "AgIAABQAAAAAAAAAAAA6wCoAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-15T03:53:45.186Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Cardealer.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Models\\Cardealer.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Models\\Cardealer.cs",
               "RelativeDocumentMoniker": "AltVTutorial\\Models\\Cardealer.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Models\\Cardealer.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Models\\Cardealer.cs",
               "RelativeToolTip": "AltVTutorial\\Models\\Cardealer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA2AAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T10:07:19.752Z"
+              "WhenOpened": "2024-05-25T10:07:19.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Events.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Events.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Events.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Events.cs",
+              "RelativeToolTip": "AltVTutorial\\Events.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T19:59:24.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TVehicleFactory.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\TVehicle\\TVehicleFactory.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\TVehicle\\TVehicleFactory.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\TVehicle\\TVehicleFactory.cs",
+              "RelativeToolTip": "AltVTutorial\\TVehicle\\TVehicleFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T16:14:18.38Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Events.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Events.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Events.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Events.cs",
-              "RelativeToolTip": "AltVTutorial\\Events.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T19:59:24.384Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TVehicleFactory.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\TVehicle\\TVehicleFactory.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\TVehicle\\TVehicleFactory.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\TVehicle\\TVehicleFactory.cs",
-              "RelativeToolTip": "AltVTutorial\\TVehicle\\TVehicleFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.38Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "TPlayerFactory.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\TPlayer\\TPlayerFactory.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\TPlayer\\TPlayerFactory.cs",
               "RelativeDocumentMoniker": "AltVTutorial\\TPlayer\\TPlayerFactory.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\TPlayer\\TPlayerFactory.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\TPlayer\\TPlayerFactory.cs",
               "RelativeToolTip": "AltVTutorial\\TPlayer\\TPlayerFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAeAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.382Z"
+              "WhenOpened": "2024-04-11T16:14:18.382Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Inventory.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Inventory\\Inventory.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Inventory\\Inventory.cs",
               "RelativeDocumentMoniker": "AltVTutorial\\Inventory\\Inventory.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Inventory\\Inventory.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Inventory\\Inventory.cs",
               "RelativeToolTip": "AltVTutorial\\Inventory\\Inventory.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAEwGwAAABWAAAA",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAEwGwAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.384Z"
+              "WhenOpened": "2024-04-11T16:14:18.384Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Server.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Server.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Server.cs",
               "RelativeDocumentMoniker": "AltVTutorial\\Server.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Server.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Server.cs",
               "RelativeToolTip": "AltVTutorial\\Server.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBMAAABnAAAA",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Commands.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Commands.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Commands.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Commands.cs",
-              "RelativeToolTip": "AltVTutorial\\Commands.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAowHAAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Haus.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Models\\Haus.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Models\\Haus.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Models\\Haus.cs",
-              "RelativeToolTip": "AltVTutorial\\Models\\Haus.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.388Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HTTP.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\HTTP.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\HTTP.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\HTTP.cs",
-              "RelativeToolTip": "AltVTutorial\\HTTP.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.389Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Datenbank.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Datenbank.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Datenbank.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Datenbank.cs",
-              "RelativeToolTip": "AltVTutorial\\Datenbank.cs",
-              "ViewState": "AQIAAI0AAAAAAAAAAAAQwPIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T08:51:04.961Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Garagen.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Garagen\\Garagen.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Garagen\\Garagen.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Garagen\\Garagen.cs",
-              "RelativeToolTip": "AltVTutorial\\Garagen\\Garagen.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T10:33:11.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Discord.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Discord.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Discord.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Discord.cs",
-              "RelativeToolTip": "AltVTutorial\\Discord.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T12:18:08.081Z"
+              "WhenOpened": "2024-04-11T16:14:18.386Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "CardealerController.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Cardealer\\CardealerController.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Cardealer\\CardealerController.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Cardealer\\CardealerController.cs",
-              "RelativeToolTip": "AltVTutorial\\Cardealer\\CardealerController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABaAAAA",
+              "Title": "Commands.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Commands.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Commands.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Commands.cs",
+              "RelativeToolTip": "AltVTutorial\\Commands.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowHAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T10:09:07.505Z"
+              "WhenOpened": "2024-04-11T16:14:18.387Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Context.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\DBContext\\Context.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\DBContext\\Context.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\DBContext\\Context.cs",
-              "RelativeToolTip": "AltVTutorial\\DBContext\\Context.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "DocumentIndex": 13,
+              "Title": "Haus.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Models\\Haus.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Models\\Haus.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Models\\Haus.cs",
+              "RelativeToolTip": "AltVTutorial\\Models\\Haus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.39Z"
+              "WhenOpened": "2024-04-11T16:14:18.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HTTP.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\HTTP.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\HTTP.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\HTTP.cs",
+              "RelativeToolTip": "AltVTutorial\\HTTP.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T16:14:18.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Datenbank.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Datenbank.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Datenbank.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Datenbank.cs",
+              "RelativeToolTip": "AltVTutorial\\Datenbank.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAQwPIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T08:51:04.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Garagen.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Garagen\\Garagen.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Garagen\\Garagen.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Garagen\\Garagen.cs",
+              "RelativeToolTip": "AltVTutorial\\Garagen\\Garagen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T10:33:11.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Discord.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Discord.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Discord.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Discord.cs",
+              "RelativeToolTip": "AltVTutorial\\Discord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T12:18:08.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CardealerController.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Cardealer\\CardealerController.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Cardealer\\CardealerController.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Cardealer\\CardealerController.cs",
+              "RelativeToolTip": "AltVTutorial\\Cardealer\\CardealerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T10:09:07.505Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Microsoft.PackageDependencyResolution.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ViewState": "AQIAAOoAAAAAAAAAAAAMwAkBAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-07-23T15:36:14.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "TVehicle.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\TVehicle\\TVehicle.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\TVehicle\\TVehicle.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\TVehicle\\TVehicle.cs",
-              "RelativeToolTip": "AltVTutorial\\TVehicle\\TVehicle.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAswBgAAAAdAAAA",
+              "Title": "Context.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\DBContext\\Context.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\DBContext\\Context.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\DBContext\\Context.cs",
+              "RelativeToolTip": "AltVTutorial\\DBContext\\Context.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.391Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Stats.cs",
-              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Models\\Stats.cs",
-              "RelativeDocumentMoniker": "AltVTutorial\\Models\\Stats.cs",
-              "ToolTip": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\Models\\Stats.cs",
-              "RelativeToolTip": "AltVTutorial\\Models\\Stats.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:14:18.392Z"
+              "WhenOpened": "2024-04-11T16:14:18.39Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AltVTutorial",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+              "RelativeDocumentMoniker": "AltVTutorial\\AltVTutorial.csproj",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+              "RelativeToolTip": "AltVTutorial\\AltVTutorial.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-18T11:08:52.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AgIAAOoAAAAAAAAAAAAMwAkBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-07-23T15:36:14.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TVehicle.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\TVehicle\\TVehicle.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\TVehicle\\TVehicle.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\TVehicle\\TVehicle.cs",
+              "RelativeToolTip": "AltVTutorial\\TVehicle\\TVehicle.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T16:14:18.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Stats.cs",
+              "DocumentMoniker": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Models\\Stats.cs",
+              "RelativeDocumentMoniker": "AltVTutorial\\Models\\Stats.cs",
+              "ToolTip": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\Models\\Stats.cs",
+              "RelativeToolTip": "AltVTutorial\\Models\\Stats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T16:14:18.392Z",
+              "EditorCaption": ""
             }
           ]
         }

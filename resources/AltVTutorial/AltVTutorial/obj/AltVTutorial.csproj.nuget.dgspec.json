@@ -1,32 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj": {}
+    "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj": {}
   },
   "projects": {
-    "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj": {
+    "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+        "projectUniqueName": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
         "projectName": "AltVTutorial",
-        "projectPath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
+        "projectPath": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\AltVTutorial.csproj",
         "packagesPath": "C:\\Users\\tschn\\.nuget\\packages\\",
-        "outputPath": "J:\\Tutorials\\AltVServer\\resources\\AltVTutorial\\AltVTutorial\\obj\\",
+        "outputPath": "J:\\Tutorials\\AltVServer\\AltV-C-Tutorial-NemesusTV\\resources\\AltVTutorial\\AltVTutorial\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\tschn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -39,19 +43,20 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AltV.Net": {
               "target": "Package",
-              "version": "[16.0.10, )"
+              "version": "[16.4.6, )"
             },
             "AltV.Net.Async": {
               "target": "Package",
-              "version": "[16.0.10, )"
+              "version": "[16.4.6, )"
             },
             "AltV.Net.EntitySync": {
               "target": "Package",
@@ -59,7 +64,7 @@
             },
             "AltV.Net.Resources.Chat.Api": {
               "target": "Package",
-              "version": "[16.0.10, )"
+              "version": "[16.4.6, )"
             },
             "BCrypt.Net-Next": {
               "target": "Package",
@@ -106,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
