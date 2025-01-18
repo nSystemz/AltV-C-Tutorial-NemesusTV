@@ -24,29 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `cardealer`
---
-
-CREATE TABLE `cardealer` (
-  `id` int(11) NOT NULL,
-  `modelname` varchar(128) NOT NULL,
-  `posx` float NOT NULL,
-  `posy` float NOT NULL,
-  `posz` float NOT NULL,
-  `posa` float NOT NULL,
-  `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Daten für Tabelle `cardealer`
---
-
-INSERT INTO `cardealer` (`id`, `modelname`, `posx`, `posy`, `posz`, `posa`, `price`) VALUES
-(1, 'Sultan', -376.747, 1180, 325.112, -1.95458, 2500);
-
--- --------------------------------------------------------
-
---
 -- Tabellenstruktur für Tabelle `fahrzeuge`
 --
 
@@ -61,15 +38,15 @@ CREATE TABLE `fahrzeuge` (
   `vehicleLock` int(1) NOT NULL,
   `fuel` float NOT NULL,
   `engine` int(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `fahrzeuge`
 --
 
 INSERT INTO `fahrzeuge` (`id`, `owner`, `vehicleName`, `posX`, `posY`, `posZ`, `posA`, `vehicleLock`, `fuel`, `engine`) VALUES
-(2, 1, 'Infernus', -409.833, 1242.59, 325.213, -0.242977, 1, 86, 0),
-(3, 10, 'Sultan', -374.142, 1182.84, 325.196, -1.92948, 1, 100, 0);
+(1, 1, 'Sultan', -376.747, 1180, 325.112, -1.95458, 1, 45, 0),
+(2, 1, 'Infernus', -409.833, 1242.59, 325.213, -0.242977, 1, 86, 0);
 
 -- --------------------------------------------------------
 
@@ -79,11 +56,11 @@ INSERT INTO `fahrzeuge` (`id`, `owner`, `vehicleName`, `posX`, `posY`, `posZ`, `
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -102,7 +79,7 @@ CREATE TABLE `items` (
   `posX` float NOT NULL,
   `posY` float NOT NULL,
   `posZ` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -112,7 +89,7 @@ CREATE TABLE `items` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -133,8 +110,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -146,11 +123,11 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -164,11 +141,11 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `geld` int(11) NOT NULL,
@@ -179,16 +156,15 @@ CREATE TABLE `users` (
   `posx` float NOT NULL,
   `posy` float NOT NULL,
   `posz` float NOT NULL,
-  `posa` float NOT NULL,
-  `einreise` int(1) NOT NULL DEFAULT 0
+  `posa` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Daten für Tabelle `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `geld`, `adminlevel`, `fraktion`, `rang`, `payday`, `posx`, `posy`, `posz`, `posa`, `einreise`) VALUES
-(1, 'Testuser', 'Testuser@email.de', NULL, '$2a$11$2x8zhX8wQKycORBCKxIJ4udny1abfdw2FVkrB7cOgy5UQ2K4lJtEK', NULL, NULL, NULL, 100000, 3, 0, 0, 0, 0, 0, 0, 0, 1);
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `geld`, `adminlevel`, `fraktion`, `rang`, `payday`, `posx`, `posy`, `posz`, `posa`) VALUES
+(1, 'Nemesus', '', NULL, '$2a$12$qtYJFt74/XrTtecqSPvqAe2CBfyEcxJVLWqnqX5AmWKv5MnAx3FB.', 'NmkySi5R8OeUzA8wptlRVgM17MGVIYusMv3xdiGZVdrvGR2lrJfTgysZ6ESb', NULL, NULL, 1000, 3, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -200,7 +176,7 @@ CREATE TABLE `whitelist` (
   `id` int(11) NOT NULL,
   `socialclubid` int(11) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `whitelist`
@@ -212,12 +188,6 @@ INSERT INTO `whitelist` (`id`, `socialclubid`, `timestamp`) VALUES
 --
 -- Indizes der exportierten Tabellen
 --
-
---
--- Indizes für die Tabelle `cardealer`
---
-ALTER TABLE `cardealer`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indizes für die Tabelle `fahrzeuge`
@@ -276,16 +246,10 @@ ALTER TABLE `whitelist`
 --
 
 --
--- AUTO_INCREMENT für Tabelle `cardealer`
---
-ALTER TABLE `cardealer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT für Tabelle `fahrzeuge`
 --
 ALTER TABLE `fahrzeuge`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT für Tabelle `failed_jobs`
@@ -315,7 +279,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT für Tabelle `whitelist`

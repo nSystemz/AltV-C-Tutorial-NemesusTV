@@ -14,6 +14,7 @@ let mdcHud;
 let bodyCam;
 let bodyCamStart;
 let bodyCamSet = -1;
+let cat = null;
 
 let showInv = false;
 let mdcShow = false;
@@ -34,6 +35,11 @@ alt.onServer('addToNametag', (playerId, playerName) => {
 
 alt.onServer('removeFromNametag', (playerId) => {
     nametags.remove(playerId);
+});
+
+//Followme
+alt.onServer('followMe', () => {
+    followMe();
 });
 
 //Cardealer
@@ -76,7 +82,7 @@ alt.on('connectionComplete', () => {
     loadBlips();
     loadPeds();
 
-    alt.toggleGameControls(false)
+    /*alt.toggleGameControls(false)
     alt.toggleVoiceControls(false)
 
     guiHud = new alt.WebView("http://resource/gui/gui.html");
@@ -94,7 +100,7 @@ alt.on('connectionComplete', () => {
 
     loginHud.on('Auth.Register', (name, password) => {
         alt.emitServer('Event.Register', name, password);
-    })
+    })*/
 
     //getOAuth2Token();
 })
@@ -370,7 +376,7 @@ alt.everyTick(() => {
         drawText3d(cardealer[i].text, cardealer[i].posx, cardealer[i].posy, cardealer[i].posz+0.5, 0.5, 4, 255, 255, 255, 255, true, true);
     }
     
-    //Nametag
+    /*//Nametag
     for(let i = 0; i < players.length; i++)
     {
         const player = players[i];
@@ -389,7 +395,7 @@ alt.everyTick(() => {
                 }
             }
         }
-    }
+    }*/
 });
 
 //Charcreator
@@ -557,7 +563,7 @@ alt.onServer('showLockpicking', () => {
 
 //MDC
 alt.onServer('showMDC', () => {
-    if(mdcShow == false)
+    if(!mdcShow)
     {
         mdcHud = new alt.WebView("http://localhost:8080/");
         mdcHud.focus();
@@ -579,12 +585,6 @@ alt.onServer('showMDC', () => {
             alt.toggleVoiceControls(true);
         }
     }
-})
-
-//UpdateMoneyHud
-alt.onServer('PetFollowPlayer', (player, ped) => {
-    native.freezeEntityPosition(ped, false);
-    alt.taskFollowToOffsetOfEntity(ped, player, 2.5, 2.5, 2.5, 1.5, 1, 1.5, true);
 })
 
 //Tastendrücke
@@ -654,3 +654,18 @@ alt.on('keydown', (key) => {
         }
     }
 })
+
+//Followme
+function followMe()
+{
+    if(cat !== null)
+    {
+        native.deletePed(cat);
+        cat = null;
+    }
+    else
+    {
+        cat = createPed('a_c_cat_01', 28, lPlayer.pos.x+1.5, lPlayer.pos.y, lPlayer.pos.z);
+        native.taskFollowToOffsetOfEntity(cat, player, 0, 0, 0, 2.0, -1, 5.0, true);
+    }
+}

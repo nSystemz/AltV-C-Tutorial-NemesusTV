@@ -5,7 +5,7 @@ using System;
 
 namespace AltVTutorial
 {
-    class Datenbank : Server
+    class Datenbank
     {
         public static bool DatenbankVerbindung = false;
         public static MySqlConnection Connection;
@@ -17,9 +17,9 @@ namespace AltVTutorial
         public Datenbank ()
         {
             this.Host = "localhost";
-            this.Username = "altv2";
-            this.Password = "altv2";
-            this.Database = "altv2";
+            this.Username = "altv";
+            this.Password = "altv";
+            this.Database = "altv";
         }
 
         public static String GetConnectionString()

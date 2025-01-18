@@ -2,6 +2,7 @@
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using AltV.Net.Resources.Chat.Api;
+using AltVTutorial.TPlayer;
 using AltVTutorial.TVehicle;
 using Google.Protobuf.WellKnownTypes;
 using MySqlConnector;
@@ -20,6 +21,39 @@ namespace AltVTutorial
         {
             tplayer.SendChatMessage("{FF0000}Befehl " + command + " nicht gefunden!");
             return;
+        }
+
+        [Command("aduty")]
+        public void CMD_aduty(TPlayer.TPlayer tplayer, string password) 
+        {
+            if(!tplayer.IsSpielerAdmin((int)TPlayer.TPlayer.AdminRanks.Moderator))
+            {
+                tplayer.SendChatMessage("{FF0000}Dein Adminlevel ist zu niedrig!");
+                return;
+            }
+            if(password == "test" || tplayer.aduty == true)
+            {
+                if(tplayer.aduty == true)
+                {
+                    tplayer.aduty = false;
+                    tplayer.SendChatMessage("{04B404} Aduty-Modus beendet!");
+                }
+                else
+                {
+                    tplayer.aduty = true;
+                    tplayer.SendChatMessage("{04B404} Aduty-Modus akttiviert!");
+                }
+            }
+            else
+            {
+                tplayer.SendChatMessage("{FF0000}Falsches Adminpasswort!");
+            }
+        }
+
+        [Command("followme")]
+        public void CMD_followme(TPlayer.TPlayer tplayer, string password)
+        {
+            tplayer.Emit("followMe");
         }
 
         [Command("car")]

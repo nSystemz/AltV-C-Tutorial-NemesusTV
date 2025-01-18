@@ -47,9 +47,9 @@ namespace AltVTutorial
             tplayer.Spawn(new AltV.Net.Data.Position(-427, 1115, 326), 0);
             tplayer.Model = (uint)PedModel.FreemodeMale01;
 
-            tplayer.Emit("createGaragen", JsonConvert.SerializeObject(Garagen.Garagen.garageList));
+            //tplayer.Emit("createGaragen", JsonConvert.SerializeObject(Garagen.Garagen.garageList));
 
-            foreach(var target in Alt.GetAllPlayers().Where(p => p != tplayer))
+            foreach (var target in Alt.GetAllPlayers().Where(p => p != tplayer))
             {
                 target.Emit("addToNametag", tplayer.id, tplayer.name);
                 tplayer.Emit("addToNametag", target.Id, target.Name);
@@ -58,6 +58,7 @@ namespace AltVTutorial
             {
                 tplayer.Emit("createCardealerText", cardealer.modelname, cardealer.price, cardealer.posx, cardealer.posy, cardealer.posz);
             }
+            tplayer.Emit("freezePlayer", false);
         }
 
         [ScriptEvent(ScriptEventType.PlayerDisconnect)]

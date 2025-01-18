@@ -37,6 +37,8 @@ namespace AltVTutorial.TPlayer
         public Ped pet { get; set; }
         [NotMapped]
         public uint colshapeid;
+        [NotMapped]
+        public bool aduty;
 
         public TPlayer(ICore core, IntPtr nativePointer, uint id) : base(core, nativePointer, id)
         {
@@ -52,11 +54,12 @@ namespace AltVTutorial.TPlayer
             payday = 60;
             einreise = 0;
             pet = null;
+            aduty = false;
         }
 
         public bool IsSpielerAdmin(int alvl)
         {
-            return adminlevel >= alvl;
+            return adminlevel >= alvl && aduty == true;
         }
 
         public bool IstSpielerInFraktion(int frak)

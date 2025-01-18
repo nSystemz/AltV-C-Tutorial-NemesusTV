@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "AltVTutorial": {
+    "Profil \"1\"": {
       "commandName": "Executable",
       "executablePath": "J:\\Tutorials\\AltVServer\\altv-server.exe",
       "workingDirectory": "J:\\Tutorials\\AltVServer"

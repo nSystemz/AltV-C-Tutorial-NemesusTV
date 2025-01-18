@@ -1,0 +1,30 @@
+import BadgeStyle from "../enums/BadgeStyle.js";
+import ItemsCollection from "../modules/ItemsCollection.js";
+import ListItem from "../modules/ListItem.js";
+import ResText from "../modules/ResText.js";
+import Sprite from "../modules/Sprite.js";
+import UIMenuItem from "./UIMenuItem.js";
+export default class UIMenuListItem extends UIMenuItem {
+    ScrollingEnabled: boolean;
+    HoldTimeBeforeScroll: number;
+    protected _itemText: ResText;
+    protected _arrowLeft: Sprite;
+    protected _arrowRight: Sprite;
+    private _currentOffset;
+    private _itemsCollection;
+    get Collection(): ListItem[];
+    set Collection(v: ListItem[]);
+    set SelectedItem(v: ListItem);
+    get SelectedItem(): ListItem;
+    get SelectedValue(): any;
+    protected _index: number;
+    get Index(): number;
+    set Index(value: number);
+    constructor(text: string, description?: string, collection?: ItemsCollection, startIndex?: number, data?: any);
+    setCollection(collection: ItemsCollection): void;
+    setCollectionItem(index: number, item: ListItem | string, resetSelection?: boolean): void;
+    SetVerticalPosition(y: number): void;
+    SetRightLabel(text: string): this;
+    SetRightBadge(badge: BadgeStyle): this;
+    Draw(): void;
+}

@@ -16,14 +16,13 @@ namespace AltVTutorial
 
         public override void OnStart()
         {
-            //
             Discord.initDiscordBot();
-            Utils.ConsoleLog("warning", "Tutorial Gamemode von NemesusTV erfolgreich geladen!");
+            Utils.ConsoleLog("warning", "Tutorial Gamemode von NemesusTV erfolgreich geladen - test1234!");
             Utils.ConsoleLog("warning", "--> https://nemesus.de <--");
             Utils.adminLog("Server wurde gestartet", "TutorialServer");
             //MYSQL
-            Datenbank.InitConnection();
-            Datenbank.FahrzeugeLaden();
+            //Datenbank.InitConnection();
+            //Datenbank.FahrzeugeLaden();
             //Garagen.Garagen.GarageLoad();
             //Timer
             Timer paydayTimer = new Timer(OnPaydayTimer, null, 60000, 60000);
@@ -34,7 +33,7 @@ namespace AltVTutorial
             //Colshapes
             testShape = Alt.CreateColShapeCircle(new Vector3(0, 0, 0), 3.0f);
             //Cardealer
-            Datenbank.CardealerLoad();
+            //Datenbank.CardealerLoad();
         }
 
         public static void OnPaydayTimer(object state)
