@@ -1,3 +1,0 @@
-client-files = [ 'client/*', 'login/*', 'gui/*', 'lockpicking/*', 'charcreator/*', 'includes/*', 'adminmenu/*']
-client-main = 'client/index.js'
-type = 'js'
