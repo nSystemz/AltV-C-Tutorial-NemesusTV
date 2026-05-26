@@ -1,6 +1,8 @@
 # 🎮 AltV-C-Tutorial-NemesusTV 🎮
 Info: Dieser Repo ist EOL, das AltV Projekt wurde beendet!
 
+---
+
 Hier findet Ihr alle Dateien zur Youtube Tutorialreihe für AltV C#
 
 **Auf der Suche nach einem günstigen AltV Server? Ich empfehle euch einen Linux VServer bei ZAP-Hosting: https://bit.ly/3GX1yEx und mit dem Gutschein: Nsus-a-3805 noch kräftig sparen! (Werbung)**
